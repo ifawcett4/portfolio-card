@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/your-repo-name/static/css/main.2ec2648f.css",
+    "main.js": "/your-repo-name/static/js/main.9bd66762.js",
+    "static/js/453.ea7f03dc.chunk.js": "/your-repo-name/static/js/453.ea7f03dc.chunk.js",
+    "static/media/itme.jpg": "/your-repo-name/static/media/itme.7793c057a80819c3cd44.jpg",
+    "static/media/instagram.svg": "/your-repo-name/static/media/instagram.95aa3fc51fc31e954726ab6df6680bea.svg",
+    "index.html": "/your-repo-name/index.html",
+    "static/media/linkedIn.svg": "/your-repo-name/static/media/linkedIn.245ec5a147078668973751e6aa5e01fe.svg",
+    "static/media/email.svg": "/your-repo-name/static/media/email.e38f04e87ae7f77e29f220d7cbab8f0c.svg",
+    "main.2ec2648f.css.map": "/your-repo-name/static/css/main.2ec2648f.css.map",
+    "main.9bd66762.js.map": "/your-repo-name/static/js/main.9bd66762.js.map",
+    "453.ea7f03dc.chunk.js.map": "/your-repo-name/static/js/453.ea7f03dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ec2648f.css",
+    "static/js/main.9bd66762.js"
+  ]
+}
