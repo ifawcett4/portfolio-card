@@ -2,7 +2,7 @@
   "name": "buisiness-card-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ifawcett4.github.io/portfolio-card",
+  "homepage": "https://www.irinafawcett.xyz",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
