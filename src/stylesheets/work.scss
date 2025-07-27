@@ -1,0 +1,225 @@
+.work-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+/* Video container styles */
+.video-container {
+  width: 75%;
+  margin: 20vh, 0;
+  padding: 5vh 0 10vh 0;
+}
+
+.work-video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid container styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  width: 100%;
+  max-width: 75%;
+  padding-bottom: 5vw;
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Grid item styles */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.grid-item-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Gradient overlay and title on hover */
+.grid-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover::after {
+  opacity: 1;
+}
+
+.grid-item-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .grid-item-title {
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  .modal-content {
+    background-color: #0f0620;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-close-btn {
+      position: absolute;
+      top: 5vh;
+      right: 3vw;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    .main-content {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+
+      .modal-cover {
+        width: 80%;
+        max-width: 1000px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .modal-category,
+      .modal-tools {
+        font-size: 0.9rem;
+        opacity: 0.5;
+        margin: 0;
+      }
+
+      .modal-summary {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+        text-align: left;
+      }
+
+      .modal-summary,
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        width: 100%;
+        text-align: left;
+      }
+
+      .modal-cover,
+      .modal-cover-embed {
+        height: 80vh;
+        width: 100%;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+      }
+
+      .project-gallery {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 10vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .gallery-media {
+          width: 20vw;
+          height: auto;
+          border-radius: 8px;
+          background: #181828;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+          margin-bottom: 0;
+          margin: 3vh;
+
+          &.vertical {
+            width: 10vw;
+          }
+        }
+
+        .gallery-media,
+        .gallery-media-embed {
+          iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+}
