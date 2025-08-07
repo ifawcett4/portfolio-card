@@ -43,10 +43,31 @@ const Work = () => {
       cover: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
       category: "AR VPS Experience",
       toolsUsed: "Blender | 8th Wall | Illustrator",
-      summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      roleSummary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      summary:
+        "We built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
+      roleSummary:
+        "This was an indepdent personal project, Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative directio together.",
       credits: "Noah Ilbery | 8th Wall | VIVERSE",
-      gallery: [{ image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" }],
+      gallery: [
+        {
+          image:
+            "/project_assets/nydia/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960.jpg",
+        },
+        {
+          image:
+            "/project_assets/nydia/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960.jpg",
+        },
+        {
+          image:
+            "/project_assets/nydia/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960.jpg",
+        },
+        {
+          image:
+            "/project_assets/nydia/4sfdaimt4oxyhiqmk40c87im4hwzbi2qqhj0i6b4in503ixfqga3d7w1-540x960.gif",
+        },
+        { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
+        { image: "https://youtu.be/zYneIDcUDuk?si=G8cLiRKsEDTJ4FgM" },
+      ],
     },
     {
       title: "Saint Louis Zoo AR Education",
@@ -54,7 +75,6 @@ const Work = () => {
       cover: "/project_assets/stl_zoo/unseenZoo_reel-1.mp4",
       category: "Web & Social AR",
       toolsUsed: "Blender | 8th Wall | Illustrator",
-
       credits: "Saint Louis Zoo | Paradowski Creative ",
       summary:
         "Three main categories of AR experiences for the Saint Louis Zoo are featured here. The first being the Unseen Zoo, an educational AR expreince showing the worlwide conservation efforts being made by the STL Zoo. The ones we don't often know about since they are not happening onsite, or in otherwords, the unseen work. The next educational activation we did was a series of AR filters on instagram each set up at different stations aroud the zoo for Endangered Specied Day. Each poster at each station featured a QR code that took you to an AR experience telling the user more about that species and their habitat. The final work featured here is the collection os instagram filters made for the exciting events at the zoo such as Boo at the Zoo, Zootoberbest, and Wild Lights.",
@@ -75,59 +95,84 @@ const Work = () => {
         { image: "/project_assets/stl_zoo/ArmenianViper.mov" },
         //EVENTS
         { image: "/project_assets/stl_zoo/preview_booAtZoo_02.mov" },
-        { image: "/project_assets/stl_zoo/preview_zootoberfest.mov" },
+        { image: "/project_assets/stl_zoo/preview_zootoberfest_03.mov" },
         { image: "/project_assets/stl_zoo/WL_preview_02.mov" },
       ],
     },
     {
       title: "Sesame Street Social Media Filters",
-      image: "https://picsum.photos/id/237/1920/1080",
-      cover: "https://picsum.photos/id/237/1920/1080",
+      image: "/project_assets/sesame_filters/elmocover-100.jpg",
+      // cover: "https://picsum.photos/id/237/1920/1080",
       category: "AR Filters",
-      summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      roleSummary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      toolsUsed: "Blender | 8th Wall | Illustrator",
+      toolsUsed: " Effect House | Spark AR ",
+      credits: "Sesame Street | Paradowski Creative ",
+      summary:
+        "Sesame Street aimed to strengthen their social media presence and reconnect with their older audience who feel nostalgic about the beloved Sesame characters. To bring this vision to life, they partnered with us to create interactive filters for both Instagram and TikTok. Our first filter being a  This or That style quiz in which users can pick which character they would rather do certain activities with and reminisce about their favorite characters. Dancing Elmo features three separate popular Elmo songs each featuring a 3D dancing Elmo that users can interact with in their real life environment",
+      roleSummary:
+        "I was the sole AR developer for this project working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters I created custom shadows and the ability to switch between the different dances on Instagram.",
       gallery: [
-        { image: "https://picsum.photos/id/100/1920/1080" },
-        { image: "https://picsum.photos/id/101/1920/1080" },
-        { image: "https://picsum.photos/id/102/1920/1080" },
+        { image: "/project_assets/sesame_filters/2025-01-06-114956882.mp4" },
+        { image: "/project_assets/sesame_filters/2025-01-06-115117627.mp4" },
+        {
+          image:
+            "/project_assets/sesame_filters/dc821b9e2ea1ced326c223c238f6214f.mp4",
+        },
+        {
+          image:
+            "/project_assets/sesame_filters/Screen_Recording_20250106_121519_Instagram.mp4",
+        },
+        {
+          image:
+            "/project_assets/sesame_filters/8d7e11ad5eb2df514aededf6732aa5b8.mp4",
+        },
+        {
+          image:
+            "/project_assets/sesame_filters/8e7be810-3e56-41e8-8675-daaa6cbc1c71.mp4",
+        },
       ],
     },
     {
       title: "United Soybean Board",
       image: "/project_assets/usb/SMM.jpg",
-      cover: "https://picsum.photos/id/237/1920/1080",
+      cover: "https://player.vimeo.com/video/1082935571?h=2a5a18a617",
       category: "Web AR",
+      toolsUsed: "8th Wall Cloud Editor ",
+      credits: "United Soybean Board | Paradowski Creative ",
       summary:
-        "For the United Soybean Board's booth at Commodity Classic 2024 Paradowski Creative created a variety of technical activations to enhance their booth, including these two interactive AR experiences built into one site.",
+        "For the United Soybean Board's booth at Commodity Classic 2024 we created a variety of technical activations to enhance their booth, including these two interactive AR experiences built into one site. In the Soy Much More Portal experience users can immerse themselves in a full 360 stylized world all about soy. The experience includes interactive and informational hotspots that can be tapped to learn more about all the different uses of soy. We also sent a postcard to attendees ahead of the event to build excitement for Commodity Classic. This postcard features the Soy Much More logo and additional 3D soy content that pops up out of the card and gives users a tastse of what they might see at the USB booth this year",
       roleSummary:
-        "I was the sole developer for the AR filters and the website, including the portal and I was overall consultant for all AR work. I aided in testing and collaboration for the AR Mirror wall. I was also able to attend the event and act as a technical guide for our guests",
-      toolsUsed: "Blender | 8th Wall | Illustrator",
+        "I was the sole developer for the AR filters and the website, including the portal and I was overall consultant for all AR work. I aided in testing and collaboration for the AR Mirror wall. I was also able to attend the event and act as a technical guide for our guests!",
       gallery: [
-        { image: "https://picsum.photos/id/100/1920/1080" },
-        { image: "https://picsum.photos/id/101/1920/1080" },
-        { image: "https://picsum.photos/id/102/1920/1080" },
+        {
+          image:
+            "/project_assets/usb/Screen_Recording_20240221_091008_Chrome.mp4",
+        },
+        {
+          image:
+            "/project_assets/usb/Screen_Recording_20240328_094726_Chrome.mp4",
+        },
+        {
+          image:
+            "/project_assets/usb/Screen_Recording_20240328_095015_Chrome.mp4",
+        },
+        ,
       ],
     },
     {
       title: "Adidas x Candace Parker",
-      image: "https://picsum.photos/id/100/1920/1080",
-      cover: "https://picsum.photos/id/237/1920/1080",
+      image: "/project_assets/adidas/Adidas_cover.png",
+      cover: "/projects/adidas/adidas_case_study.mp4",
       category: "Web AR",
       summary:
         "For the launch of the Ace Collection, Adidas teamed up with Hovers Over Water to send stylized boxes of shoes and swag to celebrities, influencers, media, and Candace’s close circle.To bring Candace’s brand to life, we created immersive 3D WebAR scenes narrated by Candace, featuring key moments from her life and career all featuringwhat makes Ace unique, her story as a hooper, mom, and style icon.The experience included 2D video, interactive 3D scenes, and a custom basketball game that connected fans to Parker’s story and the meaning behind the shoes.What would’ve been a simple shoebox became an engaging, memorable way for Candace’s community and sneaker fans to connect with Ace.",
       roleSummary:
-        "able to attend the event and act as a technical guide for our guests",
+        "I was a junior developer for this project. I primarily focused on initial demos for the hoop shooter game, and buiding UI elements including CSS animations. I also got the opportunity to be featured in the case study video!",
       toolsUsed: "8th Wall ",
-      gallery: [
-        { image: "https://picsum.photos/id/100/1920/1080" },
-        { image: "https://picsum.photos/id/101/1920/1080" },
-        { image: "https://picsum.photos/id/102/1920/1080" },
-      ],
+      gallery: [{ image: "/projects/adidas/adidas_other.mp4" }],
     },
     {
       title: "Augmented Reality Gallery",
-      image: "https://picsum.photos/id/237/1920/1080",
+      image: "/project_assets/ar_gallery/arcover-100.jpg",
       category: "Social AR Filters",
       summary:
         " This gallery features both my personal and client AR work made both individually with Paradowski Creative. I was the sole AR developer for each of the folliwng projects, often in collaboration with 3D Artists and Designers for asset developerment.",
@@ -346,7 +391,6 @@ const Work = () => {
                       <video src={coverUrl} controls className="modal-cover" />
                     );
                   } else {
-                    // Default to image
                     return (
                       <img
                         src={coverUrl}
@@ -372,10 +416,16 @@ const Work = () => {
                   <strong>Tools:</strong> {selectedItem.toolsUsed}
                 </p>
               )}
+              {/* Credits ---------------------------------------------------------- */}
+              {selectedItem.credits && (
+                <p className="modal-credits">
+                  <strong>Credits:</strong> {selectedItem.credits}
+                </p>
+              )}
               {/* Summary ---------------------------------------------------------- */}
               {selectedItem.summary && (
                 <>
-                  <h2>Summary</h2>
+                  <h2 className="summary-title">Summary</h2>
                   <p className="modal-summary">{selectedItem.summary}</p>
                 </>
               )}
@@ -386,19 +436,12 @@ const Work = () => {
                   <p>{selectedItem.roleSummary}</p>
                 </>
               )}
-              {/* Credits ---------------------------------------------------------- */}
-              {selectedItem.credits && (
-                <p className="modal-credits">
-                  <strong>Credits:</strong> {selectedItem.credits}
-                </p>
-              )}
               {/* Links ---------------------------------------------------------- */}
               {selectedItem.link &&
                 Array.isArray(selectedItem.link) &&
                 selectedItem.link.filter((l) => l && l.link_title && l.link_src)
                   .length > 0 && (
                   <div className="modal-links">
-                    <h2>Links</h2>
                     <ul>
                       {selectedItem.link
                         .filter((l) => l && l.link_title && l.link_src)
@@ -477,7 +520,9 @@ const Work = () => {
                               </div>
                             );
                           }
-                        } else if (["mp4", "webm", "ogg"].includes(ext)) {
+                        } else if (
+                          ["mp4", "webm", "ogg", "mov"].includes(ext)
+                        ) {
                           return (
                             <video
                               key={idx}
