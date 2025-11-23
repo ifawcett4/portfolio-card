@@ -1,0 +1,106 @@
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: #9ac5ff;
+
+  .contact-form {
+    border: 1px solid #9ac5ff;
+    padding: 5%;
+    border-radius: 16px;
+    width: 50%;
+
+    .section {
+      padding: 2%;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    label {
+      padding: 0 5%;
+    }
+
+    input,
+    textarea {
+      background-color: #9ac5ff;
+      border: none;
+    }
+
+    textarea {
+      width: 50%;
+    }
+
+    button {
+      color: #9ac5ff;
+      background: transparent;
+      border: 0.5px solid #9ac5ff;
+      border-radius: 8px;
+      padding: 0.9% 1%;
+      margin-right: 2%;
+    }
+  }
+
+  .icon-links {
+    width: 80%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 5%;
+  }
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    padding-right: 7%;
+  }
+
+  a {
+    text-decoration: none;
+    color: #9ac5ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link-text {
+    padding-left: 5%;
+    // font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    color: #9ac5ff !important;
+    fill: #9ac5ff !important;
+    transition: fill 0.3s ease;
+    margin: 0;
+    padding: 0;
+  }
+
+  .icon:hover {
+    fill: #93ebfc;
+  }
+}

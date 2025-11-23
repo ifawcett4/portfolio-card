@@ -6,6 +6,7 @@ body {
   overflow-x: hidden;
   box-sizing: content-box;
   background-color: #09111b;
+  font-family: "Electrolize", sans-serif;
 }
 
 .app {
@@ -21,7 +22,12 @@ nav {
   z-index: 1;
   padding: 1vh;
   backdrop-filter: blur(30px);
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.49),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 ul {

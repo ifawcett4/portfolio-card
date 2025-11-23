@@ -11,6 +11,11 @@ function App() {
       <div className="app">
         <nav>
           <ul>
+            {/* <li>
+              <Link to="/work" className="nav-link">
+                Home
+              </Link>
+            </li> */}
             <li>
               <Link to="/work" className="nav-link">
                 Work
@@ -26,10 +31,20 @@ function App() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link
+                to="https://www.pixelfishcreative.xyz/home"
+                className="nav-link"
+              >
+                Pixel Fish
+              </Link>
+            </li>
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<ThreeScene />} />
+          {/* //temp make this work instead */}
+          {/* <Route path="/" element={<ThreeScene />} /> */}
+          <Route path="/" element={<Work />} />
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

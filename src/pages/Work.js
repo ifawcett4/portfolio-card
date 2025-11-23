@@ -301,10 +301,10 @@ const Work = () => {
     <div className="work-page">
       {/* Video at the top */}
       <div className="video-container">
-        <video controls className="work-video">
+        {/* <video controls className="work-video">
           <source src="https://files.catbox.moe/uay7us.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
       </div>
 
       {/* Grid with customizable items */}
@@ -528,6 +528,9 @@ const Work = () => {
                               key={idx}
                               src={url}
                               controls
+                              muted
+                              autoplay
+                              allow="autoplay; fullscreen; picture-in-picture"
                               className="gallery-media"
                               onLoadedMetadata={(e) => {
                                 if (
