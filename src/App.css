@@ -5,7 +5,9 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   box-sizing: content-box;
-  background-color: #09111b;
+  /* background-color: #09111b; */
+    background-color: rgb(2, 12, 22);
+
   font-family: "Electrolize", sans-serif;
 }
 
@@ -19,7 +21,7 @@ nav {
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 1;
+  z-index: 90;
   padding: 1vh;
   backdrop-filter: blur(30px);
   /* background-color: rgba(0, 0, 0, 0.7); */
@@ -49,8 +51,45 @@ ul {
   text-transform: uppercase;
 }
 
+.three-container {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 .three-canvas {
   width: 100%;
   height: 100%;
-  background-color: rgb(24, 6, 34);
+  background-color: rgb(2, 12, 22);
+}
+
+.home-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: rgb(234, 245, 255);
+  text-shadow: #09111b 2px 2px 4px;
+  z-index: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-title {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5rem;
 }

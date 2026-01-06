@@ -4,7 +4,7 @@ import "../stylesheets/contact.scss";
 const Contact = () => {
   return (
     <div className="contact-page">
-      <div className="contact-form">
+      {/* <div className="contact-form">
         <h1>Contact</h1>
         <form>
           <div className="section">
@@ -21,7 +21,7 @@ const Contact = () => {
           </div>
           <button type="submit">Submit</button>
         </form>
-      </div>
+      </div> */}
 
       <div className="icon-links">
         <ul>

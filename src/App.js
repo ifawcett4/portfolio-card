@@ -11,11 +11,11 @@ function App() {
       <div className="app">
         <nav>
           <ul>
-            {/* <li>
-              <Link to="/work" className="nav-link">
+            <li>
+              <Link to="/" className="nav-link">
                 Home
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/work" className="nav-link">
                 Work
@@ -26,11 +26,11 @@ function App() {
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/contact" className="nav-link">
                 Contact
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="https://www.pixelfishcreative.xyz/home"
@@ -43,8 +43,7 @@ function App() {
         </nav>
         <Routes>
           {/* //temp make this work instead */}
-          {/* <Route path="/" element={<ThreeScene />} /> */}
-          <Route path="/" element={<Work />} />
+          <Route path="/" element={<ThreeScene />} />
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
