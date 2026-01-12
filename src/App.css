@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: content-box;
+  /* background-color: #09111b; */
+    background-color: rgb(2, 12, 22);
+
+  font-family: "Electrolize", sans-serif;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 90;
+  padding: 1vh;
+  backdrop-filter: blur(30px);
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.49),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  color: turquoise;
+}
+
+.nav-link {
+  text-align: center;
+  color: aliceblue;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.three-container {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.three-canvas {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(2, 12, 22);
+}
+
+.home-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: rgb(234, 245, 255);
+  text-shadow: #09111b 2px 2px 4px;
+  z-index: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-title {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5rem;
+}

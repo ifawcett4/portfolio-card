@@ -1,0 +1,168 @@
+.about-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  // overflow: hidden;
+}
+
+.about {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  a {
+    text-decoration: underline;
+    color: white;
+  }
+
+  a:hover {
+    color: #9ac5ff;
+  }
+
+  .section {
+    height: 110vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    img {
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      margin-right: 5%;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+  .icon-links {
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 5%;
+  }
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    padding-right: 7%;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link-text {
+    padding-left: 5%;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    color: white !important;
+    fill: white !important;
+    transition: fill 0.3s ease;
+    margin: 0;
+    padding: 0;
+  }
+
+  .icon:hover {
+    fill: #93ebfc;
+  }
+  }
+
+  .skills {
+    width: 50vw;
+
+    // p {
+    //   line-height: 200%;
+    // }
+
+    p{
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 700px;
+      padding-bottom: 5%;
+    }
+
+    
+  }
+
+  .publication {
+    width: 70vw;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      display: flex;
+      flex-direction: column;
+      padding: 2%;
+      color: white;
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 0.5%;
+        line-height: 200%;
+        font-size: 1rem;
+      }
+
+      p {
+        margin: 0;
+        top: 0;
+        line-height: 150%;
+      }
+    }
+  }
+
+}
+
+
+.about-canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
