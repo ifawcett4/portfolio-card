@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../stylesheets/about.scss";
 import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
@@ -6,6 +6,24 @@ import { Sparkles, Shadow, ContactShadows, Billboard, Environment, BakeShadows, 
 
 
 const About = () => {
+  useEffect(() => {
+    const sections = document.querySelectorAll('.about .section');
+    if (!sections) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
 
     <div className="about-page">

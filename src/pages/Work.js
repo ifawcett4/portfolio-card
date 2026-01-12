@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../stylesheets/work.scss";
 
 const Work = () => {
@@ -175,7 +175,7 @@ const Work = () => {
       image: "/project_assets/ar_gallery/arcover-100.jpg",
       category: "Social AR Filters",
       summary:
-        " This gallery features both my personal and client AR work made both individually with Paradowski Creative. I was the sole AR developer for each of the folliwng projects, often in collaboration with 3D Artists and Designers for asset developerment.",
+        " This gallery features both my personal and client AR work made both individually with Paradowski Creative. Some projects featured were purely proof of concept for proposals only. I was the sole AR developer for each of the folliwng projects, often in collaboration with 3D Artists and Designers for asset development.",
       toolsUsed: " 8th Wall | Effect House | Lens Studio | Spark AR",
       gallery: [
         { image: "/project_assets/ar_gallery/2024-05-08-101949162.mp4" },
@@ -287,6 +287,58 @@ const Work = () => {
     setSelectedItem(null);
   };
 
+  useEffect(() => {
+    // Fade in grid items on scroll
+    if (typeof window === 'undefined') return;
+    const items = document.querySelectorAll('.grid-item');
+    if (!items || items.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    // When modal opens, observe the modal children inside the modal scroll root
+    if (!modalOpen) return;
+    const root = document.querySelector('.modal-content');
+    if (!root) return;
+
+    // Ensure modal itself animates in
+    root.classList.add('is-visible');
+
+    const targets = root.querySelectorAll('.main-content > * , .project-gallery .gallery-media');
+    if (!targets || targets.length === 0) return;
+
+    const modalObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            modalObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { root: root, threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
+    );
+
+    targets.forEach((t) => modalObserver.observe(t));
+
+    return () => modalObserver.disconnect();
+  }, [modalOpen]);
+
   {
     /* ==================================================================================================== */
   }
@@ -314,15 +366,20 @@ const Work = () => {
             key={index}
             className={`grid-item item-${index + 1}`}
             onClick={() => openModal(item)}
+            style={{ transitionDelay: `${Math.min(300, index * 70)}ms` }}
           >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="grid-item-image"
-            />
-            <h3 className="grid-item-title">{item.title}</h3>
+            <div className="grid-item-inner">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="grid-item-image"
+              />
+              <div className="gradient"> 
+                </div>
+              <h3 className="grid-item-title">{item.title}</h3>
+            </div>
           </div>
-        ))}
+        ))} 
       </div>
 
       {/* ==================================================================================================== */}

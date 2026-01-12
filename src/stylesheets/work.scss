@@ -44,7 +44,7 @@
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out, scale 0.1s ease-out;
   aspect-ratio: 16 / 9; // 1920x1080 aspect ratio
   width: 100%;
   height: auto;
@@ -52,10 +52,82 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* start hidden */
+  opacity: 0;
+  transform: translateY(18px);
 }
 
-.grid-item:hover {
-  transform: scale(1.05); /* Slight zoom effect */
+.grid-item.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Inner wrapper to handle hover scaling separately from the fade/translate animation */
+.grid-item-inner {
+  transition: transform 0.18s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform-origin: center;
+}
+
+/* Modal fade in */
+.modal-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.modal-content.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Modal children (staggered as they scroll into view) */
+.main-content > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.main-content > *.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.project-gallery .gallery-media {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.project-gallery .gallery-media.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-item,
+  .modal-content,
+  .main-content > *,
+  .project-gallery .gallery-media {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+.grid-item:hover .grid-item-inner {
+  transform: scale(1.02);
+
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
 
 .grid-item-image {
@@ -68,10 +140,47 @@
 
 /* Gradient overlay and title on hover */
 .grid-item::after {
-  content: "";
+  border: 10px solid red;
+  // content: "";
+  // position: absolute;
+  // z-index: 1;
+  // pointer-events: none;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // height: 100%;
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(0, 0, 0, 0) 10%,
+  //   rgba(0, 0, 0, 0.9) 100%
+  // );
+  // opacity: 0;
+  // transition: opacity 0.3s ease;
+}
+
+.grid-item:hover::after {
+  opacity: 1;
+} 
+
+.grid-item-title {
   position: absolute;
-  top: 0;
-  left: 0;
+  z-index: 500 !important;
+  bottom: -5px;
+  left: 3%;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+} 
+
+.grid-item:hover .grid-item-title {
+  opacity: 0.85; 
+}
+
+.gradient{
+  position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(
@@ -79,29 +188,17 @@
     rgba(0, 0, 0, 0) 10%,
     rgba(0, 0, 0, 0.9) 100%
   );
-
   opacity: 0;
+}
+
+.grid-item:hover .grid-item-image {
+  opacity: 0.9; 
+  transition: opacity 0.9s ease;
+}
+
+.grid-item:hover .gradient {
+  opacity: 0.9; 
   transition: opacity 0.3s ease;
-}
-
-.grid-item:hover::after {
-  opacity: 1;
-}
-
-.grid-item-title {
-  position: absolute;
-  bottom: -10px;
-  left: 10px;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
-.grid-item:hover .grid-item-title {
-  opacity: 0.9;
 }
 
 //////////////////////////////////////
@@ -111,6 +208,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;

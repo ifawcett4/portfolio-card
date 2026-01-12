@@ -19,7 +19,7 @@
   }
 
   a:hover {
-    color: #9ac5ff;
+    color: rgb(190, 219, 246);
   }
 
   .section {
@@ -29,6 +29,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .section.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section {
+      transition: none;
+      transform: none;
+    }
   }
 
   .main {
@@ -86,6 +102,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: rgb(190, 219, 246);
+    transform: scale(1.1);
   }
 
   .link-text {
@@ -105,7 +128,7 @@
   }
 
   .icon:hover {
-    fill: #93ebfc;
+    color: rgb(190, 219, 246);
   }
   }
 
