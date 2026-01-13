@@ -3,7 +3,6 @@
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  // overflow: hidden;
 }
 
 .about {
@@ -23,8 +22,8 @@
   }
 
   .section {
-    height: 110vh;
-    width: 90vw;
+    height: 100vh;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,6 +33,14 @@
     transition: opacity 1s ease-out, transform 1s ease-out;
     will-change: opacity, transform;
   }
+
+    @media (max-width: 900px) {
+      .section {
+        height: 110vh;
+        width: 80vw;
+      }
+    }
+
 
   .section.is-visible {
     opacity: 1;
@@ -49,57 +56,65 @@
 
   .main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     align-content: center;
+    width: 100%;
 
     img {
-      width: 300px;
+      width: 25%;
       height: auto;
       border-radius: 8px;
-      margin-right: 5%;
+      margin-right: 2%;
+      margin-top: 2%;
     }
 
     p {
       font-size: 1.2rem;
       line-height: 1.6;
-      max-width: 700px;
     }
+
+    @media (max-width: 900px) {
+      p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+      img {
+        display: none;
+      }
+
+
+    }
+
 
   .icon-links {
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-top: 5%;
+    justify-content: space-between;
+    
   }
 
   li {
-    text-decoration: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    padding-right: 7%;
+    // border: 2px solid purple;
   }
 
+  @media (max-width: 900px) {
+    ul {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+
   a {
-    text-decoration: none;
-    color: white;
-    margin: 0;
-    padding: 0;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
@@ -112,14 +127,20 @@
   }
 
   .link-text {
-    padding-left: 5%;
-    font-weight: 300;
-    font-size: 14px;
+    padding-left: 2%;
+  }
+
+  @media (max-width: 900px) {
+    .link-text {
+      padding-left: 5%;
+      font-weight: 300;
+      font-size: 0.8rem;
+    }
   }
 
   .icon {
-    width: 30px;
-    height: 30px;
+    width:25px;
+    height:25px;
     color: white !important;
     fill: white !important;
     transition: fill 0.3s ease;
@@ -127,35 +148,39 @@
     padding: 0;
   }
 
-  .icon:hover {
-    color: rgb(190, 219, 246);
+  a:hover .icon {
+    color: rgb(190, 219, 246) !important;
+    fill: rgb(190, 219, 246) !important;
   }
   }
 
   .skills {
-    width: 50vw;
-
-    // p {
-    //   line-height: 200%;
-    // }
-
     p{
       font-size: 1.2rem;
       line-height: 1.6;
-      max-width: 700px;
       padding-bottom: 5%;
     }
 
-    
+    .skills-text{
+      line-height: 2;
+    }
+
+      @media (max-width: 900px) {
+        p{
+          font-size: 0.8rem;
+          line-height: 1.6;
+          padding-bottom: 5%;
+        }
+    }
   }
 
   .publication {
-    width: 70vw;
 
     ul {
       display: flex;
       flex-direction: column;
     }
+
     li {
       display: flex;
       flex-direction: column;
@@ -168,6 +193,7 @@
         padding-bottom: 0.5%;
         line-height: 200%;
         font-size: 1rem;
+        letter-spacing: 0.05rem ;
       }
 
       p {
@@ -175,10 +201,43 @@
         top: 0;
         line-height: 150%;
       }
+
+      @media (max-width: 900px) {
+
+        h3 {
+          padding-bottom: 0.5%;
+          line-height: 200%;
+          font-size: 0.8rem;
+          letter-spacing: 0.05rem ;
+        }
+
+        p{
+          font-size: 0.7rem;
+          line-height: 150%;
+        }
+
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      li{
+        padding: 6%;
+      }
     }
   }
 
+    h2{
+      text-transform: uppercase;
+    }
+  
+    .body-text {
+      font-family: "proxima-nova", sans-serif;
+    }
+
 }
+
 
 
 .about-canvas{

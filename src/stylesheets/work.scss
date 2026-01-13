@@ -2,11 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
   position: absolute;
   width: 100vw;
   height: 100vh;
   color: white;
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .work-page  {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vh;
+    padding: 0;
+  }
 }
 
 /* Video container styles */
@@ -34,7 +42,9 @@
 
 @media (max-width: 900px) {
   .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3vh;
+    padding-bottom: 5vh;
   }
 }
 
@@ -52,8 +62,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* start hidden */
   opacity: 0;
   transform: translateY(18px);
 }
@@ -244,12 +252,22 @@
       cursor: pointer;
     }
 
+    @media (max-width: 900px) {
+          .modal-close-btn {
+            top: 2vh;
+            right: 3vw;
+            z-index: 100;
+          }
+    }
+
+
     .main-content {
       width: 75%;
       display: flex;
       flex-direction: column;
       // align-items: center;
       padding: 20px;
+
       .modal-cover,
       .modal-cover-embed {
         height: 80vh;
@@ -262,9 +280,24 @@
         }
       }
 
+       @media (max-width: 900px) {
+          .modal-cover,
+          .modal-cover-embed {
+            height: auto;
+            width: 80vw;          
+          }
+        }
+
       .modal-title {
         font-size: 2rem;
         margin-top: 4%;
+      }
+
+      @media (max-width: 900px) {
+        .modal-title {
+          font-size: 1.5rem;
+          margin-top: 8%;
+        }
       }
 
       .modal-category,
@@ -277,6 +310,12 @@
 
       .summary-title {
         margin-top: 2%;
+      }
+
+      @media (max-width: 900px) {
+        .summary-title {
+          margin-top: 10%;
+        }
       }
 
       .modal-summary {
@@ -304,6 +343,16 @@
               font-size: 0.8rem;
             }
           }
+        }
+      }
+
+      @media (max-width: 900px) {
+       ul {
+         flex-direction: column;
+        }
+
+        li{
+          text-align: center;
         }
       }
 

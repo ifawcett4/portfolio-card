@@ -1,3 +1,9 @@
+all you really need to know
+### `npm start`
+### `npm run build`
+
+using gh-pages branch for github hosting 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -289,15 +289,15 @@ const Work = () => {
 
   useEffect(() => {
     // Fade in grid items on scroll
-    if (typeof window === 'undefined') return;
-    const items = document.querySelectorAll('.grid-item');
+    if (typeof window === "undefined") return;
+    const items = document.querySelectorAll(".grid-item");
     if (!items || items.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
@@ -313,25 +313,27 @@ const Work = () => {
   useEffect(() => {
     // When modal opens, observe the modal children inside the modal scroll root
     if (!modalOpen) return;
-    const root = document.querySelector('.modal-content');
+    const root = document.querySelector(".modal-content");
     if (!root) return;
 
     // Ensure modal itself animates in
-    root.classList.add('is-visible');
+    root.classList.add("is-visible");
 
-    const targets = root.querySelectorAll('.main-content > * , .project-gallery .gallery-media');
+    const targets = root.querySelectorAll(
+      ".main-content > * , .project-gallery .gallery-media"
+    );
     if (!targets || targets.length === 0) return;
 
     const modalObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
             modalObserver.unobserve(entry.target);
           }
         });
       },
-      { root: root, threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
+      { root: root, threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
     );
 
     targets.forEach((t) => modalObserver.observe(t));
@@ -374,12 +376,11 @@ const Work = () => {
                 alt={item.title}
                 className="grid-item-image"
               />
-              <div className="gradient"> 
-                </div>
+              <div className="gradient"></div>
               <h3 className="grid-item-title">{item.title}</h3>
             </div>
           </div>
-        ))} 
+        ))}
       </div>
 
       {/* ==================================================================================================== */}

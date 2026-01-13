@@ -1,3 +1,5 @@
+  @import url("https://use.typekit.net/sdk5zav.css");
+
 body {
   margin: 0;
   padding: 0;
@@ -5,22 +7,20 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   box-sizing: content-box;
-  /* background-color: #09111b; */
-    background-color: rgb(2, 12, 22);
-
+  background-color: rgb(2, 12, 22);
   font-family: "Electrolize", sans-serif;
 }
 
 .app {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
 }
 
 nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100dvw;
   z-index: 90;
   padding: 1vh;
   backdrop-filter: blur(30px);
@@ -54,9 +54,9 @@ ul {
   cursor: pointer;
 }
 
-  .nav-link:hover {
-    transform: scale(1.1);
-  }
+.nav-link:hover {
+  transform: scale(1.1);
+}
 
 .nav-link::after {
   content: '';
@@ -76,8 +76,6 @@ ul {
   transform-origin: bottom center;
 }
 
-
-
 .three-container {
   width: 100%;
   height: 100vh;
@@ -96,6 +94,9 @@ ul {
   position: absolute;
   width: 100%;
   height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: rgb(176, 215, 251);
   text-shadow: #09111b 2px 2px 4px;
@@ -105,6 +106,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .home-title {
@@ -115,9 +117,28 @@ ul {
 
 }
 
+
 .home-subtitle {
   font-size: 1rem;
   margin: 0;
   padding: 0;
   letter-spacing: 0.5rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .home-text {
+    width: 80%;
+  }
+
+  .home-title {
+    font-size:2rem;
+    letter-spacing: 1rem;
+  }
+
+  .home-subtitle {
+    width: 80%;
+    font-size: 0.5rem;
+    letter-spacing: 0.2rem;
+  }
 }
