@@ -27,7 +27,7 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -53,7 +53,7 @@ const About = () => {
                 of art and technology. My expertise lies in web XR and
                 interactive exhibit-based activations, but I enjoy dabbling in a
                 variety of web, immersive development, 3D, and design
-                expolorations.
+                explorations.
               </p>
 
               <p className="body-text">

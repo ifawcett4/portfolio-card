@@ -49,12 +49,12 @@ export default function SceneCanvas() {
     const xRot = THREE.MathUtils.clamp(
       nx * Math.PI * 0.5,
       -Math.PI / 4,
-      Math.PI / 4
+      Math.PI / 4,
     );
     const yRot = THREE.MathUtils.clamp(
       ny * Math.PI * 0.25 + Math.PI / 6,
       -Math.PI / 2,
-      Math.PI / 2
+      Math.PI / 2,
     );
 
     targetRef.current = [yRot, xRot, 0];
@@ -62,27 +62,37 @@ export default function SceneCanvas() {
 
   function ModelWrapper() {
     const ref = useRef();
+    let previous = null;
     useFrame(() => {
       if (!ref.current) return;
       const [tx, ty] = targetRef.current;
 
-      const isMoving =
-        targetRef.current[0] !== Math.PI / 6 || targetRef.current[1] !== 0;
+      const current = tx;
+
+      const valueTracker = (function () {
+        return function () {
+          previous = current;
+        };
+      })();
+
+      const isMoving = previous !== current;
+
+      valueTracker();
 
       if (isMoving) {
         ref.current.rotation.x = THREE.MathUtils.lerp(
           ref.current.rotation.x,
           tx,
-          0.08
+          0.08,
         );
         ref.current.rotation.y = THREE.MathUtils.lerp(
           ref.current.rotation.y,
           ty,
-          0.08
+          0.08,
         );
       } else {
-        ref.current.rotation.x += 0.005;
-        ref.current.rotation.y += 0.005;
+        ref.current.rotation.x += 0.002;
+        ref.current.rotation.y += 0.002;
       }
     });
 
