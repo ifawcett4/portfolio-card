@@ -1,5 +1,10 @@
 import React, { useRef } from "react";
-import { Stage, OrbitControls } from "@react-three/drei";
+import {
+  Stage,
+  OrbitControls,
+  Environment,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import { ChromaticAberration } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import {
@@ -12,6 +17,8 @@ import {
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Abstract } from "./abstract";
 import * as THREE from "three";
+
+import IridescentBlob from "./blob";
 
 export default function SceneCanvas() {
   const targetRef = useRef([Math.PI / 6, 0, 0]);
@@ -105,28 +112,41 @@ export default function SceneCanvas() {
 
   return (
     <div className="three-container">
-      <div className="home-text">
+      {/* <div className="home-text">
         <h1 className="home-title">Irina Fawcett</h1>
         <h2 className="home-subtitle">Creative Technologist | Developer </h2>
-      </div>
+      </div> */}
+
       <Canvas
         className="three-canvas"
         onPointerMove={handleMove}
         style={{ touchAction: "none" }}
       >
+        <PerspectiveCamera
+          makeDefault
+          position={[0, 0, 10]}
+        ></PerspectiveCamera>
+
         <EffectComposer>
           <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} />
-          <Noise opacity={0.2} />
+          {/* <Noise opacity={0.2} /> */}
           <ChromaticAberration
             blendFunction={BlendFunction.NORMAL}
             offset={[0.002, 0.002]}
           />
         </EffectComposer>
         <ambientLight intensity={0.5} />
-        <OrbitControls enableZoom={false} enableRotate={false} />
-        <Stage environment="sunset" intensity={0.5}>
-          <ModelWrapper />
-        </Stage>
+        <ambientLight intensity={1} />
+        <IridescentBlob />
+        <Environment files="/spectrum-flashes-coloured-light_3.exr" />
+        {/* </Stage> */}
+
+        <OrbitControls
+          enableZoom={true}
+          enablePan={false}
+          minDistance={2}
+          maxDistance={4}
+        />
       </Canvas>
     </div>
   );

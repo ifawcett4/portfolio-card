@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../stylesheets/work.scss";
+import SceneCanvas from "../components/ThreeScene";
 
 const Work = () => {
   const gridItems = [
@@ -302,7 +303,7 @@ const Work = () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     items.forEach((item) => observer.observe(item));
@@ -320,7 +321,7 @@ const Work = () => {
     root.classList.add("is-visible");
 
     const targets = root.querySelectorAll(
-      ".main-content > * , .project-gallery .gallery-media"
+      ".main-content > * , .project-gallery .gallery-media",
     );
     if (!targets || targets.length === 0) return;
 
@@ -333,7 +334,7 @@ const Work = () => {
           }
         });
       },
-      { root: root, threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      { root: root, threshold: 0.1, rootMargin: "0px 0px -10% 0px" },
     );
 
     targets.forEach((t) => modalObserver.observe(t));
@@ -352,35 +353,37 @@ const Work = () => {
   }
 
   return (
-    <div className="work-page">
-      {/* Video at the top */}
-      <div className="video-container">
-        {/* <video controls className="work-video">
+    <div>
+      <div className="work-page">
+        {/* Video at the top */}
+        <div className="video-container">
+          {/* <video controls className="work-video">
           <source src="https://files.catbox.moe/uay7us.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video> */}
-      </div>
+        </div>
 
-      {/* Grid with customizable items */}
-      <div className="grid-container">
-        {gridItems.map((item, index) => (
-          <div
-            key={index}
-            className={`grid-item item-${index + 1}`}
-            onClick={() => openModal(item)}
-            style={{ transitionDelay: `${Math.min(300, index * 70)}ms` }}
-          >
-            <div className="grid-item-inner">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="grid-item-image"
-              />
-              <div className="gradient"></div>
-              <h3 className="grid-item-title">{item.title}</h3>
+        {/* Grid with customizable items */}
+        <div className="grid-container">
+          {gridItems.map((item, index) => (
+            <div
+              key={index}
+              className={`grid-item item-${index + 1}`}
+              onClick={() => openModal(item)}
+              style={{ transitionDelay: `${Math.min(300, index * 70)}ms` }}
+            >
+              <div className="grid-item-inner">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="grid-item-image"
+                />
+                <div className="gradient"></div>
+                <h3 className="grid-item-title">{item.title}</h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* ==================================================================================================== */}
@@ -409,7 +412,7 @@ const Work = () => {
                     // Extract YouTube video ID
                     let videoId = "";
                     const match = coverUrl.match(
-                      /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w-]{11})/
+                      /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w-]{11})/,
                     );
                     if (match && match[1]) videoId = match[1];
                     else if (coverUrl.includes("watch?v="))
@@ -537,7 +540,7 @@ const Work = () => {
                           // Extract YouTube video ID
                           let videoId = "";
                           const match = url.match(
-                            /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w-]{11})/
+                            /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w-]{11})/,
                           );
                           if (match && match[1]) videoId = match[1];
                           else if (url.includes("watch?v="))

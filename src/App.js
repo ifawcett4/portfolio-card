@@ -4,6 +4,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ThreeScene from "./components/ThreeScene";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -41,9 +42,10 @@ function App() {
             </li>
           </ul>
         </nav>
+
+        <ThreeScene />
         <Routes>
-          {/* //temp make this work instead */}
-          <Route path="/" element={<ThreeScene />} />
+          <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
