@@ -1,0 +1,538 @@
+.work-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  overflow-x: hidden;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #09192c61;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 900px) {
+  .work-page  {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2vh;
+    padding: 0;
+  }
+}
+
+/* Video container styles */
+.video-container {
+  width: 75%;
+  margin: 20vh, 0;
+  padding: 5vh 0 10vh 0;
+}
+
+.work-video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid container styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  width: 100%;
+  max-width: 75%;
+  padding-bottom: 5vw;
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3vh;
+    padding-bottom: 5vh;
+  }
+}
+
+/* Grid item styles */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out, scale 0.1s ease-out;
+  aspect-ratio: 16 / 9; // 1920x1080 aspect ratio
+  width: 100%;
+  height: auto;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.grid-item.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Inner wrapper to handle hover scaling separately from the fade/translate animation */
+.grid-item-inner {
+  transition: transform 0.18s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform-origin: center;
+}
+
+/* Modal fade in */
+.modal-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.modal-content.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.modal-content.is-loading {
+  opacity: 0.08;
+  transform: none;
+}
+
+.modal-loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 20;
+  border-radius: 8px;
+}
+
+.modal-loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #25f4fb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal children (staggered as they scroll into view) */
+.main-content > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.main-content > *.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.project-gallery .gallery-media {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+
+.project-gallery .gallery-media.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-item,
+  .modal-content,
+  .main-content > *,
+  .project-gallery .gallery-media {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+.grid-item:hover .grid-item-inner {
+  transform: scale(1.02);
+
+    background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.grid-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Gradient overlay and title on hover */
+.grid-item::after {
+  // border: 10px solid red;
+}
+
+.grid-item:hover::after {
+  opacity: 1;
+} 
+
+.grid-item-title {
+  position: absolute;
+  z-index: 500 !important;
+  bottom: -5px;
+  left: 3%;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+  font-family: acktiv;font-family: "aktiv-grotesk", sans-serif;
+} 
+
+.grid-item:hover .grid-item-title {
+  opacity: 0.85; 
+}
+
+.gradient{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0;
+}
+
+.grid-item:hover .grid-item-image {
+  opacity: 0.9; 
+  transition: opacity 0.9s ease;
+}
+
+.grid-item:hover .gradient {
+  opacity: 0.9; 
+  transition: opacity 0.3s ease;
+}
+
+//////////////////////////////////////
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+
+  .modal-content {
+    position: relative;
+    color: white;
+    background-color: #09192c61;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      padding: 0;
+      margin: 0;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 5vh;
+      right: 3vw;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+          .modal-close-btn {
+            top: 2vh;
+            right: 3vw;
+            z-index: 200;
+          }
+
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+    }
+
+        .modal-close-btn {
+          transition: transform 1s ease;
+
+          &:hover {
+            transform: rotate(360deg);
+          }
+        }
+
+
+    .main-content {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+
+      @media (max-width: 900px) {
+        width: 90%;
+        transform: translateY(2%);
+      }
+
+      .modal-cover,
+      .modal-cover-embed {
+        height: 80vh;
+        width: 100%;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+      }
+
+       @media (max-width: 900px) {
+          .modal-cover,
+          .modal-cover-embed {
+            height: auto;
+            width: 80vw;          
+          }
+        }
+
+      .modal-title {
+        font-size: 2rem;
+        margin-top: 4%;
+        font-family: acktiv;font-family: "aktiv-grotesk", sans-serif;
+      }
+
+      @media (max-width: 900px) {
+        .modal-title {
+          font-size: 1.5rem;
+          margin-top: 8%;
+        }
+      }
+
+      .modal-category,
+      .modal-tools,
+      .modal-credits {
+        font-size: 0.9rem;
+        opacity: 0.5;
+        margin: 0;
+      }
+
+      .summary-title {
+        margin-top: 2%;
+      }
+
+      @media (max-width: 900px) {
+        .summary-title {
+          margin-top: 10%;
+        }
+      }
+
+      .modal-summary {
+        margin-bottom: 2%;
+      }
+
+      .modal-links {
+        display: flex;
+        justify-content: flex-start;
+        padding: 2% 0%;
+        width: 100%;
+
+        ul {
+          display: flex;
+          justify-content: flex-start;
+
+          li {
+            border: 0.5px solid #25f4fb;
+            border-radius: 8px;
+            padding: 0.8% 1% 0.9% 1%;
+            margin-right: 2%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            a {
+              color: #25f4fb;
+              text-decoration: none;
+              font-size: 0.8rem;
+              text-align: center;
+            }
+          }
+
+
+          li:hover {
+              transform: scale(1.01);
+              border: 0.5px solid linear-gradient(90deg, #25f4fb, #da4d6e);
+              transition: transform 0.18s ease;
+          }
+        }
+      }
+
+      @media (max-width: 900px) {
+        .modal-links {
+          width: 75%;
+        }
+
+       ul {
+         flex-direction: column;
+        }
+
+        li{
+          text-align: center;
+          padding: 3% !important;
+          margin: 3%;
+        }
+        a{
+          text-align: center;
+        }
+      }
+
+      h2 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: left;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 2;
+        width: 100%;
+        text-align: left;
+      }
+
+      
+       @media (max-width: 900px) {
+          p {
+            font-size: 0.7rem;
+            line-height: 2;
+            width: 100%;
+            text-align: left;
+          }
+        }
+
+      .project-gallery {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 10vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .gallery-media,
+        .gallery-media-embed {
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+          margin-bottom: 0;
+          margin: 1.2vw;
+          width: 20vw;
+          // min-height: 15vw;
+          height: auto;
+          min-width: 250px;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+
+          &.vertical {
+            height: auto;
+            width: 10vw;
+            min-width: 200px;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+          }
+
+          iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      width: 90%;
+    }
+  }
+
+
+
+  .subsection{
+    padding-top: 5%;
+    padding-bottom: 5%;
+  
+        .subsection-media,
+        .subsection-media-embed {
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+          margin-bottom: 0;
+          margin: 1.2vw;
+          width: 50vw;
+          height: auto;
+          min-width: 250px;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+
+          &.vertical {
+            height: auto;
+            width: 25vw;
+            min-width: 200px;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+          }
+
+          iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+          }
+        
+      }
+  }
+
+
+
+}
+
+
