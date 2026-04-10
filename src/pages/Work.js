@@ -171,6 +171,37 @@ const Work = () => {
       gallery: [{ image: "/project_assets/adidas//adidas_other.mp4" }],
     },
     {
+      title: "Escape Artist",
+      image: "/project_assets/esc_art/meta-new-tab-image.jpg",
+      cover: "https://vimeo.com/879963837?fl=pl&fe=sh",
+      category: "Web VR",
+      toolsUsed: "Wonderland Engine | JavaScript | Blender",
+      summary:
+        "Escape Artist is a web XR escape room featuring a narrative about the artist and the muse. In this game the user must solve a variety of puzzles to unlock and reveal new sections of the map until they win. Escape Artist is featured on the Browser home page of the Meta Quest 2 and was recognized as the People’s Voice Winner for Best Narrative Experience at the 2024 Webby Awards and the WebXR Awards’ Experience of the Year.",
+      roleSummary:
+        "I was a Junior Developer at the time, but I was given the opportunity to fully dive in and work on core feature development and overall concepting for this game. The main sections I had the privilege of working on were the piano key puzzle and the bookcase puzzle. I also contributed to the implementation of most of the UI. ",
+      gallery: [
+        {
+          image: "/project_assets/esc_art/escape-artist_0001_Layer-30.png",
+        },
+        {
+          image: "/project_assets/esc_art/meta_connect.png",
+        },
+        {
+          image: "/project_assets/esc_art/escape-artist_0016_Layer-15.png",
+        },
+        {
+          image: "/project_assets/esc_art/escape-artist_0028_Layer-3.png",
+        },
+        {
+          image: "/project_assets/esc_art/escape-artist_0029_Layer-2.png",
+        },
+        {
+          image: "/project_assets/esc_art/escape-artist_0030_Layer-1.png",
+        },
+      ],
+    },
+    {
       title: "Holiday Interactive Mirror",
       image: "/project_assets/holiday_mirror/bylanternlight-3d.png",
       cover: "/project_assets/holiday_mirror/20251207_193732_1.mp4",
@@ -317,59 +348,6 @@ const Work = () => {
         {
           image: "/project_assets/capstone/pics1_0000.jpg",
         },
-        // {
-        //   image: "/project_assets/capstone/20201104_095225.jpg",
-        // },
-
-        // {
-        //   image: "/project_assets/capstone/Snapchat-1250123470.mp4",
-        // },
-        // {
-        //   image: "/project_assets/capstone/20201113_112136.jpg",
-        // },
-      ],
-    },
-    {
-      title: "Photography Gallery",
-      image: "/project_assets/photography/DSC06889.jpg",
-      category: "Photography",
-      summary:
-        " I enjoy photography as a hobbyist! Here's some of my favorites!",
-      roleSummary: null,
-      toolsUsed: null,
-      gallery: [
-        { image: "/project_assets/photography/DSC06889.jpg" },
-
-        { image: "/project_assets/photography/DSC06889.jpg" },
-        { image: "/project_assets/photography/DSC06896.jpg" },
-        { image: "/project_assets/photography/DSC06903.jpg" },
-        { image: "/project_assets/photography/DSC06919.jpg" },
-        { image: "/project_assets/photography/DSC06945.jpg" },
-        { image: "/project_assets/photography/DSC06952.jpg" },
-        { image: "/project_assets/photography/DSC06958.jpg" },
-        { image: "/project_assets/photography/DSC06967.jpg" },
-        { image: "/project_assets/photography/DSC06978.jpg" },
-        { image: "/project_assets/photography/DSC06981.jpg" },
-        { image: "/project_assets/photography/DSC07026.jpg" },
-        { image: "/project_assets/photography/DSC08290.jpg" },
-        { image: "/project_assets/photography/DSC08312.jpg" },
-        { image: "/project_assets/photography/DSC08334.jpg" },
-        { image: "/project_assets/photography/DSC08348.jpg" },
-        { image: "/project_assets/photography/DSC08364.jpg" },
-        { image: "/project_assets/photography/DSC08404.jpg" },
-        { image: "/project_assets/photography/DSC08412.jpg" },
-
-        {
-          image:
-            "/project_assets/photography/20AD857C-6EC5-415F-A689-52D6D3F5DA91.jpg",
-        },
-        {
-          image:
-            "/project_assets/photography/55FC59A8-ED31-4C77-9F6A-3C86FFE94D9C.jpeg",
-        },
-        { image: "/project_assets/photography/20230915_194606.jpg" },
-        { image: "/project_assets/photography/flamingo.jpg" },
-        { image: "/project_assets/photography/IMG_20181004_091416_635.jpg" },
       ],
     },
   ];
