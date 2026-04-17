@@ -21,9 +21,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "deploy:manual": "npm run build && cd build && git rm -r --cached project_assets/ 2>/dev/null; git add . && git commit -m 'deploy' && git push --force --no-thin origin gh-pages",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -b gh-pages",
+    "deploy:reset": "gh-pages -d build -b gh-pages -m \"Reset gh-pages branch\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
