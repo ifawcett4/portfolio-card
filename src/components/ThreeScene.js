@@ -4,6 +4,8 @@ import {
   OrbitControls,
   Environment,
   PerspectiveCamera,
+  Float,
+  Sparkles,
 } from "@react-three/drei";
 import { ChromaticAberration } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
@@ -13,6 +15,7 @@ import {
   EffectComposer,
   Noise,
   Vignette,
+  SMAA,
 } from "@react-three/postprocessing";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Abstract } from "./abstract";
@@ -117,10 +120,19 @@ export default function SceneCanvas() {
         <h2 className="home-subtitle">Creative Technologist | Developer </h2>
       </div> */}
 
+      {/* <EffectComposer multisampling={0}>
+        <SMAA />
+      </EffectComposer> */}
+
       <Canvas
         className="three-canvas"
         onPointerMove={handleMove}
         style={{ touchAction: "none" }}
+        gl={{
+          antialias: true,
+          pixelRatio: Math.min(window.devicePixelRatio, 2),
+        }}
+        dpr={[1, 2]}
       >
         <PerspectiveCamera
           makeDefault
@@ -128,24 +140,31 @@ export default function SceneCanvas() {
         ></PerspectiveCamera>
 
         <EffectComposer>
-          <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} />
-          {/* <Noise opacity={0.2} /> */}
-          <ChromaticAberration
+          <SMAA />
+          {/* <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} /> */}
+          <Noise opacity={0.05} />
+          {/* <ChromaticAberration
             blendFunction={BlendFunction.NORMAL}
             offset={[0.002, 0.002]}
-          />
+          /> */}
         </EffectComposer>
         <ambientLight intensity={0.5} />
         <ambientLight intensity={1} />
-        <IridescentBlob />
-        <Environment files="/spectrum-flashes-coloured-light_3.exr" />
+
+        <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}>
+          <IridescentBlob />
+        </Float>
+        <Environment files="/irridescent_01.exr" />
         {/* </Stage> */}
 
         <OrbitControls
-          enableZoom={true}
+          enableZoom={false}
           enablePan={false}
           minDistance={2}
           maxDistance={4}
+          autoRotate={true}
+          autoRotateSpeed={0.5}
+          enableDamping={true}
         />
       </Canvas>
     </div>

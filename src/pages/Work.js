@@ -278,7 +278,7 @@ const Work = () => {
       gallery: [
         { image: "/project_assets/usb_scrollsite/usb_scrollsite_01.mp4" },
         { image: "/project_assets/usb_scrollsite/usb_scrollsite_01.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_02.png" },
+        { image: "/project_assets/usb_scrollsite/usb_scrollsite_02.jpg" },
         { image: "/project_assets/usb_scrollsite/usb_scrollsite_03.jpg" },
         { image: "/project_assets/usb_scrollsite/usb_scrollsite_04.jpg" },
         { image: "/project_assets/usb_scrollsite/usb_scrollsite_05.png" },

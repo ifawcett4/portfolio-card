@@ -6,7 +6,10 @@ const Home = () => {
     <div>
       <div className="home-text">
         <h1 className="home-title">Irina Fawcett</h1>
-        <h2 className="home-subtitle">Creative Technologist | Developer </h2>
+        <h2 className="home-subtitle">
+          {" "}
+          Designer | Creative Technologist | Developer{" "}
+        </h2>
       </div>
     </div>
   );
