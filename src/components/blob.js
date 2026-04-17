@@ -17,7 +17,10 @@ export default function IridescentBlob() {
   const isMobile = window.innerWidth < window.innerHeight;
   const sphereSize = isMobile ? 1 : 2;
 
-  const envTexture = useLoader(EXRLoader, "/irridescent_05.exr");
+  const envTexture = useLoader(
+    EXRLoader,
+    "https://res.cloudinary.com/dmdjguh0a/raw/upload/v1776456767/irridescent_05_t2lmrj.exr",
+  );
 
   const lastPointer = useRef({ x: 0, y: 0 });
   const isMoving = useRef(false);

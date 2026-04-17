@@ -154,7 +154,7 @@ export default function SceneCanvas() {
         <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}>
           <IridescentBlob />
         </Float>
-        <Environment files="/irridescent_01.exr" />
+        <Environment files="https://res.cloudinary.com/dmdjguh0a/raw/upload/v1776456767/irridescent_05_t2lmrj.exr" />
         {/* </Stage> */}
 
         <OrbitControls
