@@ -21,11 +21,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b gh-pages",
-    "deploy:reset": "gh-pages -d build -b gh-pages -m \"Reset gh-pages branch\"",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BUILD_PATH=docs react-scripts build",
+    "deploy": "npm run build && git add docs && git commit -m \"Deploy to GitHub Pages\" && git push",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,6 +46,8 @@
     ]
   },
   "devDependencies": {
+    "cross": "^1.0.0",
+    "env": "^0.0.2",
     "gh-pages": "^6.3.0"
   }
 }

@@ -1,18 +1,17 @@
 # Portfolio Card Site
 
 Live site: https://www.irinafawcett.xyz  
-Hosted on GitHub Pages via the `gh-pages` branch.
+Hosted on GitHub Pages via the `main` branch (`docs` folder).
 
 ---
 
 ## Branch Structure
 
-| Branch     | Purpose                                               |
-| ---------- | ----------------------------------------------------- |
-| `main`     | Your source code — **always work here**               |
-| `gh-pages` | Auto-generated build output — **never edit directly** |
+| Branch | Purpose                                      |
+| ------ | -------------------------------------------- |
+| `main` | Your source code and deployment — **always work here** |
 
-**Always be on `main` when developing.** The `gh-pages` branch is managed automatically by `npm run deploy` and will be overwritten every time you deploy. Any changes made directly to `gh-pages` will be lost.
+**Always be on `main` when developing.** The `docs` folder contains the auto-generated build output and is committed to `main`. GitHub Pages deploys directly from this folder.
 
 ---
 
@@ -28,23 +27,26 @@ npm start
 
 # 3. When ready to go live
 npm run deploy
-# → builds the app and pushes to gh-pages (this is the ONLY way to update the live site)
-# → git push alone does NOT update the live site
+# → builds the app into docs, commits, and pushes to main (this updates the live site)
+# → git push alone does NOT update the live site unless docs is included
 ```
 
-> After deploying, wait ~2 minutes for the GitHub Actions workflow to finish, then hard refresh the browser (`Ctrl+Shift+R`) to bypass cache.
+> After deploying, wait ~2 minutes for GitHub Pages to update, then hard refresh the browser (`Ctrl+Shift+R`) to bypass cache.
 
-### If the `gh-pages` branch history becomes too large or corrupted
+### If deployment issues occur (e.g., cache or conflicts)
 
-If GitHub Pages rejects a deploy because `gh-pages` has too much history, recreate that branch from a clean build:
+If GitHub Pages has issues or you need to clear the build:
 
 ```bash
-git checkout main
-git push origin --delete gh-pages
+# Remove the old docs folder
+rm -rf docs
+
+# Rebuild and deploy
 npm run deploy
 ```
 
-This removes the old generated branch and rebuilds it cleanly from `main`.
+This rebuilds the `docs` folder cleanly and commits it to
+This rebuilds the `docs` folder cleanly and commits it to `main`.
 
 ---
 
