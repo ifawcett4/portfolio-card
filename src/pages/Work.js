@@ -6,7 +6,8 @@ const Work = () => {
   const gridItems = [
     {
       title: "Meso Mountain",
-      image: "/project_assets/meso_mountain/TitleSequence_Full.jpg",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933799/TitleSequence_Full_gd2d3y.jpg",
       cover: "https://youtu.be/Sp1QQ-kSMhs?si=vPTnnzAUOlCrBsMQ",
       category: "3D Web Game",
       toolsUsed: "8th Wall Studio | Illustrator | Blender",
@@ -31,16 +32,32 @@ const Work = () => {
         },
       ],
       gallery: [
-        { image: "/project_assets/meso_mountain/MesoMountain01.gif" },
-        { image: "/project_assets/meso_mountain/MesoMountain02.gif" },
-        { image: "/project_assets/meso_mountain/MesoMountain03.gif" },
-        { image: "/project_assets/meso_mountain/MesoMountain04.gif" },
-        { image: "/project_assets/meso_mountain/MesoMountain05.gif" },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933824/MesoMountain01_dazeam.gif",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933821/MesoMountain05_sjekzo.gif",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933821/MesoMountain03_udqscm.gif",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933820/MesoMountain04_qe7tuz.gif",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933811/MesoMountain02_esdeyl.gif",
+        },
       ],
     },
     {
       title: "Nydia The Blind Flower Girl",
-      image: "/project_assets/nydia/Thumbnail2.png",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933874/Thumbnail2_kbvk0y.png",
       cover: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
       category: "AR VPS Experience",
       toolsUsed: "Blender | 8th Wall | Illustrator",
@@ -52,27 +69,25 @@ const Work = () => {
       gallery: [
         {
           image:
-            "/project_assets/nydia/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960.jpg",
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933872/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960_b13yay.jpg",
         },
         {
           image:
-            "/project_assets/nydia/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960.jpg",
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960_b0wpce.jpg",
         },
         {
           image:
-            "/project_assets/nydia/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960.jpg",
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960_cp5xmb.jpg",
         },
-        {
-          image:
-            "/project_assets/nydia/4sfdaimt4oxyhiqmk40c87im4hwzbi2qqhj0i6b4in503ixfqga3d7w1-540x960.gif",
-        },
-        { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
         { image: "https://youtu.be/zYneIDcUDuk?si=G8cLiRKsEDTJ4FgM" },
+
+        { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
       ],
     },
     {
       title: "Saint Louis Zoo AR Education",
-      image: "/project_assets/stl_zoo/image.png",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934677/zoo_w6qtlx.jpg",
       cover: "/project_assets/stl_zoo/unseenZoo_reel-1.mp4",
       category: "Web & Social AR",
       toolsUsed: "Blender | 8th Wall | Illustrator",
@@ -102,7 +117,8 @@ const Work = () => {
     },
     {
       title: "Sesame Street Social Media Filters",
-      image: "/project_assets/sesame_filters/elmocover-100.jpg",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
       category: "AR Filters",
       toolsUsed: " Effect House | Spark AR ",
       credits: "Sesame Street | Paradowski Creative ",
@@ -133,8 +149,8 @@ const Work = () => {
     },
     {
       title: "United Soybean Board",
-      image: "/project_assets/usb/SMM.jpg",
-      cover: "https://player.vimeo.com/video/1082935571?h=2a5a18a617",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933966/SMM_gdczkz.jpg",
       category: "Web AR",
       toolsUsed: "8th Wall Cloud Editor ",
       credits: "United Soybean Board | Paradowski Creative ",
@@ -160,19 +176,21 @@ const Work = () => {
     },
     {
       title: "Adidas x Candace Parker",
-      image: "/project_assets/adidas/Adidas_cover.png",
-      cover: "/project_assets/adidas/adidas_case_study.mp4",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933680/Adidas_cover_udhakm.png",
+      cover: "https://vimeo.com/657570533?fl=pl&fe=sh",
       category: "Web AR",
       summary:
         "For the launch of the Ace Collection, Adidas teamed up with Hovers Over Water to send stylized boxes of shoes and swag to celebrities, influencers, media, and Candace’s close circle.To bring Candace’s brand to life, we created immersive 3D WebAR scenes narrated by Candace, featuring key moments from her life and career all featuringwhat makes Ace unique, her story as a hooper, mom, and style icon.The experience included 2D video, interactive 3D scenes, and a custom basketball game that connected fans to Parker’s story and the meaning behind the shoes.What would’ve been a simple shoebox became an engaging, memorable way for Candace’s community and sneaker fans to connect with Ace.",
       roleSummary:
         "I was a junior developer for this project. I primarily focused on initial demos for the hoop shooter game, and buiding UI elements including CSS animations. I also got the opportunity to be featured in the case study video!",
       toolsUsed: "8th Wall ",
-      gallery: [{ image: "/project_assets/adidas//adidas_other.mp4" }],
+      gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
     },
     {
       title: "Escape Artist",
-      image: "/project_assets/esc_art/meta-new-tab-image.jpg",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta-new-tab-image_qufwqt.jpg",
       cover: "https://vimeo.com/879963837?fl=pl&fe=sh",
       category: "Web VR",
       toolsUsed: "Wonderland Engine | JavaScript | Blender",
@@ -182,29 +200,36 @@ const Work = () => {
         "I was a Junior Developer at the time, but I was given the opportunity to fully dive in and work on core feature development and overall concepting for this game. The main sections I had the privilege of working on were the piano key puzzle and the bookcase puzzle. I also contributed to the implementation of most of the UI. ",
       gallery: [
         {
-          image: "/project_assets/esc_art/escape-artist_0001_Layer-30.png",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933755/escape-artist_0029_Layer-2_k4hgdz.png",
         },
         {
-          image: "/project_assets/esc_art/meta_connect.png",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta_connect_hrwe4q.png",
         },
         {
-          image: "/project_assets/esc_art/escape-artist_0016_Layer-15.png",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933754/escape-artist_0001_Layer-30_zfycwt.png",
         },
         {
-          image: "/project_assets/esc_art/escape-artist_0028_Layer-3.png",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933753/escape-artist_0016_Layer-15_qz2fod.png",
         },
         {
-          image: "/project_assets/esc_art/escape-artist_0029_Layer-2.png",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933751/escape-artist_0030_Layer-1_maxzpq.png",
         },
         {
-          image: "/project_assets/esc_art/escape-artist_0030_Layer-1.png",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933749/escape-artist_0028_Layer-3_yudcmm.png",
         },
       ],
     },
     {
       title: "Holiday Interactive Mirror",
-      image: "/project_assets/holiday_mirror/bylanternlight-3d.png",
-      cover: "/project_assets/holiday_mirror/20251207_193732_1.mp4",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777936128/bylanternlight-3d_bi0gaj.jpg",
+      cover: "https://youtu.be/V-pSNEC5sOo",
       category: "Local AR",
       toolsUsed: "Unity",
       credits: "Paradowski Creative",
@@ -214,7 +239,7 @@ const Work = () => {
         "I was the only developer working in collaboration with a Creative Director and 3D Artist to create the content and build this project over a few weeks. Some of the logic references a previous AR mirror made by Paradowksi Creative as a reference and starting point. ",
       gallery: [
         {
-          image: "/project_assets/holiday_mirror/devupdate_12_03.mp4",
+          image: "https://youtu.be/CnX__dsVq2Y",
         },
       ],
     },
@@ -266,8 +291,9 @@ const Work = () => {
     },
     {
       title: "Journey Of a Soybean",
-      image: "/project_assets/usb_scrollsite/scrollsite_cover.png",
-      cover: "/project_assets/usb_scrollsite/usb_scrollsite.mp4",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934012/scrollsite_cover_po7ywb.png",
+      cover: "https://youtu.be/hLw1orruVxU",
       category: "Web Development",
       toolsUsed: "HTML | CSS | JavaScript | React | Lottie",
       credits: "Paradowski Creative",
@@ -277,20 +303,45 @@ const Work = () => {
         "I operated as a creative in the initial concepting stage of this project, and then one of two main developers to build key features. A section I particularly enjoyed developing was the particle effect making upo the 85% on the food,feed, and fuel pages.",
       gallery: [
         { image: "/project_assets/usb_scrollsite/usb_scrollsite_01.mp4" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_01.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_02.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_03.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_04.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_05.png" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_06.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_07.jpg" },
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_00.jpg" },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934006/usb_scrollsite_01_dhcddi.jpg",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934008/usb_scrollsite_02_sdvp7i.jpg",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933997/usb_scrollsite_03_hm4sny.jpg",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933998/usb_scrollsite_04_kqxfjz.jpg",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934003/usb_scrollsite_05_jv4fdi.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934000/usb_scrollsite_06_bryolo.jpg",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934001/usb_scrollsite_07_wjqgaf.jpg",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934005/usb_scrollsite_00_mvkao2.jpg",
+        },
       ],
     },
 
     {
       title: "Research & Development Projects",
-      image: "/project_assets/RD/RD_Cover.jpg",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933896/RD_Cover_emgela.jpg",
       summary:
         "A collection of research and development projects, exploring different technologies. These projects are not fully polished client work, but explorations and fun creations simply for the sake of learning.",
       subsections: [
@@ -298,32 +349,33 @@ const Work = () => {
           subTitle: "AR Coloring Sheets ",
           subSummary:
             "I spent some time looking into creating an AR interactive coloring sheet experience. In this expereince, the user colors a specific coloring sheet, then they scan it with their phone to watch it come to life in 3D in web AR. The scan utilized 8th Wall image target scanning to read the coloring sheet as the base image target, then applied perspective correction to then pull out the drawing and apply it as the texture to the 3D model. ",
-          subContent: "/project_assets/RD/ar_coloring.mp4",
+          subContent: "https://youtube.com/shorts/lX-wnFus_pY",
         },
         {
           subTitle: "Good Chilld Bunting ",
           subSummary:
             "A fun R&D project to celebrate the Saint Louis Cardinals opening day. The purpose of this was to explore Snap's AR technology and experiment with pushing it into something more of an interactive kiosk game type of experience. The team consistened of just me and the developer and a 3D artist to build assets. We collaborated to imagine an AR powered baseball batting game, which became more of a bunting game. The pitcher is a 3D scan of one of our Creative Directors which was then rigged and animated. In this game the ball is pitched to one random zone and the hit point of the bat has to be aligned with that zone in time to qualify as a hit.",
-          subContent: "/project_assets/RD/PC_Bunting_Demo.mp4",
+          subContent: "https://youtu.be/JzNK8h-Fh5E",
         },
         {
           subTitle: "Godot Mini Games",
           subSummary:
             "As a way to begin learning Godot, I developed two potential mini games for a Kiosk display at a trade show event. The first game mechanic is a tap to plant the crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops. ",
-          subContent: "/project_assets/RD/FV_templates_0116.mp4",
+          subContent: "https://youtu.be/kthB-pwudRo",
         },
         {
           subTitle: "3D Interactive Scene",
           subSummary:
             "A Playcanvas experiment for an RFP to create a multi-platform information web experience. The interaction features a main intro scene with hotspot, and then two sub scenes featuring information about above and below ground technology. Each section features different 3D content, a 360 environment, and is functionaly for multiple device types and sizes.",
-          subContent: "/project_assets/RD/vt4pro.mp4",
+          subContent: "https://youtu.be/iBlA254xc64",
         },
       ],
     },
 
     {
       title: "Capstone: Interactive Projection",
-      image: "/project_assets/capstone/room1le0027.jpg",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933721/room1le0027_asl4cl.jpg",
       cover: "https://youtu.be/XvG-k9Gkixg?si=dFY5xspmQGkq1Eru",
       category: "Interactive Exhibit",
       toolsUsed: " Kinect | Electron | Lottie | HTML | CSS | JavaScript ",
@@ -333,20 +385,22 @@ const Work = () => {
         "As this was my Capstone project independently, concepted, designed, and developed all elements of this project. I also taught myself 3D modeling, node.js, and Electron just to bring this project to life. It was a great creative and learning experience.",
       gallery: [
         {
-          image: "/project_assets/capstone/tourVideo.mp4",
+          image: "https://youtu.be/UOcVpnQenb4",
         },
         {
-          image: "/project_assets/capstone/20210219_132525.mp4",
+          image: "https://youtu.be/71qAUVAm1GE",
         },
         {
-          image: "/project_assets/capstone/20210219_141257.mp4",
+          image: "https://youtu.be/gT7BWvs8iDs",
         },
         {
-          image: "/project_assets/capstone/room1i0088.jpg",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933721/pics1_0000_kh2upb.jpg",
         },
 
         {
-          image: "/project_assets/capstone/pics1_0000.jpg",
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777935853/pics1_0000_etkuym.jpg",
         },
       ],
     },
@@ -513,9 +567,9 @@ const Work = () => {
                       videoId = coverUrl.split("watch?v=")[1].split("&")[0];
                     if (videoId) {
                       return (
-                        <div className="modal-cover-embed">
+                        <div className="modal-cover-embed youtube-embed">
                           <iframe
-                            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1`}
+                            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&loop=1&playlist=${videoId}`}
                             title={selectedItem.title || "YouTube video"}
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -656,11 +710,11 @@ const Work = () => {
                           if (videoId) {
                             return (
                               <div
-                                className="gallery-media gallery-media-embed"
+                                className="gallery-media gallery-media-embed youtube-embed"
                                 key={idx}
                               >
                                 <iframe
-                                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1`}
+                                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&loop=1&playlist=${videoId}`}
                                   title={`gallery-youtube-${idx}`}
                                   frameBorder="0"
                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -764,9 +818,9 @@ const Work = () => {
                           videoId = url.split("watch?v=")[1].split("&")[0];
                         if (videoId) {
                           mediaElement = (
-                            <div className="subsection-media-embed">
+                            <div className="subsection-media-embed youtube-embed">
                               <iframe
-                                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1`}
+                                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&loop=1&playlist=${videoId}`}
                                 title={`subsection-youtube-${idx}`}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Stage,
   OrbitControls,
@@ -24,6 +25,8 @@ import * as THREE from "three";
 import IridescentBlob from "./blob";
 
 export default function SceneCanvas() {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   const targetRef = useRef([Math.PI / 6, 0, 0]);
 
   // Unified handler for mouse, touch, and pointer events
@@ -129,32 +132,46 @@ export default function SceneCanvas() {
         onPointerMove={handleMove}
         style={{ touchAction: "none" }}
         gl={{
-          antialias: true,
-          pixelRatio: Math.min(window.devicePixelRatio, 2),
+          antialias: isHomePage, // Disable antialiasing on other pages for performance
+          pixelRatio: Math.min(window.devicePixelRatio, isHomePage ? 2 : 1),
+          powerPreference: "high-performance",
+          alpha: false,
         }}
-        dpr={[1, 2]}
+        dpr={isHomePage ? [1, 2] : [0.5, 1]} // Lower pixel ratio on other pages
+        frameloop={isHomePage ? "always" : "demand"}
       >
         <PerspectiveCamera
           makeDefault
           position={[0, 0, 10]}
         ></PerspectiveCamera>
 
-        <EffectComposer>
-          <SMAA />
-          {/* <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} /> */}
-          <Noise opacity={0.05} />
-          {/* <ChromaticAberration
-            blendFunction={BlendFunction.NORMAL}
-            offset={[0.002, 0.002]}
-          /> */}
-        </EffectComposer>
+        {isHomePage && (
+          <EffectComposer>
+            <SMAA />
+            {/* <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} /> */}
+            <Noise opacity={0.05} />
+            {/* <ChromaticAberration
+              blendFunction={BlendFunction.NORMAL}
+              offset={[0.002, 0.002]}
+            /> */}
+          </EffectComposer>
+        )}
         <ambientLight intensity={0.5} />
         <ambientLight intensity={1} />
 
         <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}>
           <IridescentBlob />
         </Float>
-        <Environment files="https://res.cloudinary.com/dmdjguh0a/raw/upload/v1776456767/irridescent_05_t2lmrj.exr" />
+        {isHomePage && <Abstract />}
+        <Environment
+          files={
+            isHomePage
+              ? "https://res.cloudinary.com/dmdjguh0a/raw/upload/v1776456767/irridescent_05_t2lmrj.exr"
+              : undefined
+          }
+          background={false}
+          preset={isHomePage ? undefined : "sunset"}
+        />
         {/* </Stage> */}
 
         <OrbitControls
@@ -162,9 +179,9 @@ export default function SceneCanvas() {
           enablePan={false}
           minDistance={2}
           maxDistance={4}
-          autoRotate={true}
-          autoRotateSpeed={0.5}
-          enableDamping={true}
+          autoRotate={isHomePage}
+          autoRotateSpeed={isHomePage ? 0.5 : 0}
+          enableDamping={isHomePage}
         />
       </Canvas>
     </div>
