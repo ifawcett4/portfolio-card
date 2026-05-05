@@ -37,12 +37,8 @@ const About = () => {
 
   return (
     <div className="about-page">
-      {/* <Canvas className="about-canvas" camera={{ position: [0, 0, 5], fov: 50 }}>
-        <Sparkles count={100} scale={[10, 5, 10]} size={0.5} speed={0.05} />
-      </Canvas> */}
-
       <div className="about">
-        <div className="section">
+        <div className="section about-intro">
           <div className="main">
             <img src={WorkSample2} alt="irina" className="" />
 
@@ -167,15 +163,24 @@ const About = () => {
                 </ul>
               </div>
             </div>
+          </div>
 
-            <div className="scroll-arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                <path
-                  fill="currentColor"
-                  d="M297.4 566.6C309.9 579.1 330.2 579.1 342.7 566.6L502.7 406.6C515.2 394.1 515.2 373.8 502.7 361.3C490.2 348.8 469.9 348.8 457.4 361.3L352 466.7L352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 466.7L182.6 361.3C170.1 348.8 149.8 348.8 137.3 361.3C124.8 373.8 124.8 394.1 137.3 406.6L297.3 566.6z"
-                />
-              </svg>
-            </div>
+          <div className="scroll-arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              width={20}
+              height={20}
+              fill={"white"}
+              aria-hidden="true"
+            >
+              <path
+                d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7
+                  278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8
+                  489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3
+                  233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z"
+              />
+            </svg>
           </div>
         </div>
 
@@ -207,6 +212,13 @@ const About = () => {
               Unity &#183; Godot{" "}
             </p>
           </div>
+
+          <a
+            href="/PDFS/Resume_Irina_Fawcett_2026 (1).pdf"
+            download="Irina_Fawcett_Resume_2026"
+          >
+            Download Resume
+          </a>
         </div>
 
         <div className=" section">
@@ -214,7 +226,10 @@ const About = () => {
             <h2>Read More</h2>
             <ul>
               <li>
-                <a href="https://www.8thwall.com/blog/post/199206383173/community-spotlight-irina-and-noah-of-pixel-fish-creative">
+                <a
+                  href="/PDFS/Community Spotlight_ Irina and Noah of Pixel Fish Creative _ 8th Wall.pdf"
+                  target="_blank"
+                >
                   <h3>
                     Community Spotlight: Irina and Noah of Pixel Fish Creative |
                     Nov 2025{" "}
@@ -228,16 +243,25 @@ const About = () => {
                 </p>
               </li>
 
-              {/* <li>
-              <h3>Behind the Build: Tee Time At The Arcade | Oct 2025</h3>
-              <p>
-                How Pixel Fish reimagined mini golf with skee ball, air hockey,
-                pinball, and a dash of nostalgia using 8th Wall Studio.
-              </p>
-            </li> */}
+              <li>
+                <a
+                  href="/PDFS/Behind the Build_ Tee Time At The Arcade _ 8th Wall.pdf"
+                  target="_blank"
+                >
+                  <h3>Behind the Build: Tee Time At The Arcade | Oct 2025</h3>
+                </a>
+                <p>
+                  How Pixel Fish reimagined mini golf with skee ball, air
+                  hockey, pinball, and a dash of nostalgia using 8th Wall
+                  Studio.
+                </p>
+              </li>
 
               <li>
-                <a href="https://news.viverse.com/post/forge-the-future-game-jam-winners">
+                <a
+                  href="https://news.viverse.com/post/forge-the-future-game-jam-winners"
+                  target="blank"
+                >
                   <h3>
                     {" "}
                     VIVERSE: Epic WebXR Games You Can Play in Your Browser | Oct
@@ -255,7 +279,10 @@ const About = () => {
               </li>
 
               <li>
-                <a href="https://80.lv/articles/a-team-of-two-on-developing-a-mini-golf-game-for-8th-wall-s-game-jam">
+                <a
+                  href="https://80.lv/articles/a-team-of-two-on-developing-a-mini-golf-game-for-8th-wall-s-game-jam"
+                  target="_blank"
+                >
                   <h3>
                     {" "}
                     80 Level: A Team of Two on Developing a Mini Golf Game For
@@ -273,7 +300,11 @@ const About = () => {
               </li>
 
               <li>
-                <a href="https://www.8thwall.com/blog/post/196635111216/behind-the-build-find-your-lost-dino-eggs-in-meso-mountain">
+                <a
+                  href="/PDFS/Behind the Build_ Find Your Lost Dino Eggs in Meso Mountain _ 8th Wall.pdf"
+                  target="_blank"
+                >
+                  {" "}
                   <h3>
                     Behind the Build: Find Your Lost Dino Eggs in Meso Mountain
                     | Sept 2025
@@ -287,7 +318,10 @@ const About = () => {
               </li>
 
               <li>
-                <a href="https://www.8thwall.com/blog/post/193732390421/behind-the-build-telling-nydias-story-in-webar">
+                <a
+                  href="/PDFS/Behind the Build_ Telling Nydia’s Story in WebAR _ 8th Wall.pdf"
+                  target="_blank"
+                >
                   <h3>
                     Behind the Build: Telling Nydia’s Story in WebAR | July 2025
                   </h3>
