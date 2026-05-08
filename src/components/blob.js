@@ -1,38 +1,54 @@
-import React, { useRef, useMemo, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {
-  MeshDistortMaterial,
-  OrbitControls,
-  GradientTexture,
-  MeshWobbleMaterial,
-  MeshTransmissionMaterial,
-  MeshRefractionMaterial,
-} from "@react-three/drei";
+import { MeshRefractionMaterial } from "@react-three/drei";
 import * as THREE from "three";
 import { EXRLoader } from "three/examples/jsm/loaders/EXRLoader";
 
 export default function IridescentBlob({ isHomePage }) {
   const meshRef = useRef();
   const isMobile = window.innerWidth < window.innerHeight;
-  let sphereSize = isMobile ? 1 : 1.25;
 
-  const smoothingFactor = 0.05;
+  // Base sphere geometry size — fixed, no need to change with page
+  const sphereSize = isMobile ? 1 : 1.25;
 
-  // function animate(targetScale) {
-  //   requestAnimationFrame(animate);
-  //   meshRef.current.scale.lerp(targetScale, smoothingFactor);
-  // }
+  const HOME_SCALE = 1;
+  const NON_HOME_SCALE = isMobile ? 1.6 : 2.1;
 
-  // useEffect(() => {
-  //   if (!isHomePage) {
-  //     meshRef.current.scale = 2;
-  //     // sphereSize = sphereSize * 2;
-  //     // animate(meshRef.current.scale * 2);
-  //   } else {
-  //     meshRef.current.scale = meshRef.current.scale / 2;
-  //     // animate(meshRef.current.scale / 2);
-  //   }
-  // }, [sphereSize]);
+  // ✅ Initialize target from actual starting state, not hardcoded 1
+  const initialScale = isHomePage ? HOME_SCALE : NON_HOME_SCALE;
+  const targetScale = useRef(
+    new THREE.Vector3(initialScale, initialScale, initialScale),
+  );
+
+  // Apply to mesh as soon as ref is available
+  const meshRefCallback = useCallback((node) => {
+    if (node) {
+      node.scale.setScalar(initialScale);
+      meshRef.current = node;
+    }
+  }, []); // empty deps — only needs to run on mount
+
+  useEffect(() => {
+    const s = isHomePage ? HOME_SCALE : NON_HOME_SCALE;
+    targetScale.current.set(s, s, s);
+  }, [isHomePage]);
+
+  // Smooth lerp driven by R3F's render loop — no manual rAF needed
+  // Smooth lerp driven by R3F's render loop — no manual rAF needed
+  useFrame((_, delta) => {
+    if (meshRef.current) {
+      const current = meshRef.current.scale;
+      const target = targetScale.current;
+
+      // Fixed-speed approach: moves at constant units/sec regardless of distance
+      const speed = 2; // units per second — tweak this
+      const step = speed * delta;
+
+      current.x = THREE.MathUtils.lerp(current.x, target.x, Math.min(step, 1));
+      current.y = THREE.MathUtils.lerp(current.y, target.y, Math.min(step, 1));
+      current.z = THREE.MathUtils.lerp(current.z, target.z, Math.min(step, 1));
+    }
+  });
 
   const envTexture = useLoader(
     EXRLoader,
@@ -45,13 +61,9 @@ export default function IridescentBlob({ isHomePage }) {
 
   useFrame((state) => {
     const { x, y } = state.pointer;
-
-    // Detect pointer movement
     if (x !== lastPointer.current.x || y !== lastPointer.current.y) {
       lastPointer.current = { x, y };
       isMoving.current = true;
-
-      // Reset after 150ms of no movement
       clearTimeout(movingTimeout.current);
       movingTimeout.current = setTimeout(() => {
         isMoving.current = false;
@@ -60,9 +72,8 @@ export default function IridescentBlob({ isHomePage }) {
   });
 
   return (
-    <mesh ref={meshRef}>
+    <mesh ref={meshRefCallback}>
       <icosahedronGeometry args={[sphereSize, 50]} />
-
       <MeshRefractionMaterial
         color={"#fff3d6"}
         ior={2}

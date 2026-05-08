@@ -84,7 +84,7 @@ export default function SceneCanvas() {
           alpha: false,
         }}
         dpr={isHomePage ? (isMobile ? [0.5, 1] : [1, 2]) : [0.5, 1]} // Lower pixel ratio on other pages
-        frameloop={isHomePage ? "always" : "demand"}
+        // frameloop={isHomePage ? "always" : "demand"}
       >
         <PerspectiveCamera
           makeDefault
@@ -105,9 +105,9 @@ export default function SceneCanvas() {
         <ambientLight intensity={0.5} />
         <ambientLight intensity={1} />
 
-        <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}>
-          <IridescentBlob isHomePage={isHomePage} />
-        </Float>
+        {/* <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}> */}
+        <IridescentBlob isHomePage={isHomePage} />
+        {/* </Float> */}
         <Environment
           files={
             isHomePage

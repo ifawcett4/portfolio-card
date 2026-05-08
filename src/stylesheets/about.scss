@@ -8,8 +8,8 @@
   height: 100vh;
   overflow-y: scroll;
   background-color: #09192c61;
-  backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .about {
@@ -74,6 +74,12 @@
     align-content: center;
     width: 100%;
 
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+    }
+
     img {
       width: 25%;
       height: auto;
@@ -93,7 +99,7 @@
         line-height: 1.6;
       }
       img {
-        display: none;
+      width: 50%;
       }
     }
 
@@ -185,6 +191,15 @@
         transform: translateY(15vh);
       }
   }
+
+      @media (max-width: 900px) {
+        .scroll-arrow {
+
+            svg{
+              transform: translateY(10vh);
+            }
+        }
+    }
 
   .skills {
     p {
