@@ -19,19 +19,17 @@ import {
   SMAA,
 } from "@react-three/postprocessing";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Abstract } from "./abstract";
 import * as THREE from "three";
 
 import IridescentBlob from "./blob";
+const isMobile = navigator.userAgentData.mobile; //resolves true/false
 
 export default function SceneCanvas() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const targetRef = useRef([Math.PI / 6, 0, 0]);
 
-  // Unified handler for mouse, touch, and pointer events
   const handleMove = (event) => {
-    // Extract clientX/clientY from mouse/pointer events or from touch lists
     let clientX, clientY;
     if (event.touches && event.touches.length > 0) {
       clientX = event.touches[0].clientX;
@@ -73,60 +71,8 @@ export default function SceneCanvas() {
     targetRef.current = [yRot, xRot, 0];
   };
 
-  function ModelWrapper() {
-    const ref = useRef();
-    let previous = null;
-    useFrame(() => {
-      if (!ref.current) return;
-      const [tx, ty] = targetRef.current;
-
-      const current = tx;
-
-      const valueTracker = (function () {
-        return function () {
-          previous = current;
-        };
-      })();
-
-      const isMoving = previous !== current;
-
-      valueTracker();
-
-      if (isMoving) {
-        ref.current.rotation.x = THREE.MathUtils.lerp(
-          ref.current.rotation.x,
-          tx,
-          0.08,
-        );
-        ref.current.rotation.y = THREE.MathUtils.lerp(
-          ref.current.rotation.y,
-          ty,
-          0.08,
-        );
-      } else {
-        ref.current.rotation.x += 0.002;
-        ref.current.rotation.y += 0.002;
-      }
-    });
-
-    return (
-      <group ref={ref}>
-        <Abstract />
-      </group>
-    );
-  }
-
   return (
     <div className="three-container">
-      {/* <div className="home-text">
-        <h1 className="home-title">Irina Fawcett</h1>
-        <h2 className="home-subtitle">Creative Technologist | Developer </h2>
-      </div> */}
-
-      {/* <EffectComposer multisampling={0}>
-        <SMAA />
-      </EffectComposer> */}
-
       <Canvas
         className="three-canvas"
         onPointerMove={handleMove}
@@ -137,7 +83,7 @@ export default function SceneCanvas() {
           powerPreference: "high-performance",
           alpha: false,
         }}
-        dpr={isHomePage ? [1, 2] : [0.5, 1]} // Lower pixel ratio on other pages
+        dpr={isHomePage ? (isMobile ? [0.5, 1] : [1, 2]) : [0.5, 1]} // Lower pixel ratio on other pages
         frameloop={isHomePage ? "always" : "demand"}
       >
         <PerspectiveCamera
@@ -160,9 +106,8 @@ export default function SceneCanvas() {
         <ambientLight intensity={1} />
 
         <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}>
-          <IridescentBlob />
+          <IridescentBlob isHomePage={isHomePage} />
         </Float>
-        {isHomePage && <Abstract />}
         <Environment
           files={
             isHomePage
@@ -172,7 +117,6 @@ export default function SceneCanvas() {
           background={false}
           preset={isHomePage ? undefined : "sunset"}
         />
-        {/* </Stage> */}
 
         <OrbitControls
           enableZoom={false}
@@ -187,39 +131,3 @@ export default function SceneCanvas() {
     </div>
   );
 }
-
-// import React, { useState } from "react";
-// import "../App.css";
-// import { useLoader } from "@react-three/fiber";
-// import { Canvas } from "@react-three/fiber";
-// import { Abstract } from "./abstract";
-// import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-
-// const ThreeScene = () => {
-//   const [rotation, setRotation] = useState([Math.PI / 4, Math.PI / 4, 0]);
-
-//   const handleMouseMove = (event) => {
-//     const { clientX, clientY, target } = event;
-//     const { width, height } = target.getBoundingClientRect();
-//     const x = (clientX / width - 0.5) * Math.PI; // Map mouse X to rotation
-//     const y = (clientY / height - 0.5) * Math.PI; // Map mouse Y to rotation
-//     setRotation([
-//       Math.max(-Math.PI / 2, Math.min(Math.PI / 2, y)), // Limit Y rotation
-//       Math.max(-Math.PI / 2, Math.min(Math.PI / 2, x)), // Limit X rotation
-//       0,
-//     ]);
-//   };
-
-//   const gltf = useLoader(GLTFLoader, "/Poimandres.gltf");
-
-//   return (
-//     <Canvas className="three-canvas" onMouseMove={handleMouseMove}>
-//       <ambientLight />
-//       <pointLight position={[10, 10, 10]} />
-
-//       <primitive object={gltf.scene} />
-//     </Canvas>
-//   );
-// };
-
-// export default ThreeScene;

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   MeshDistortMaterial,
@@ -10,12 +10,29 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 import { EXRLoader } from "three/examples/jsm/loaders/EXRLoader";
-import { createNoise3D } from "simplex-noise";
 
-export default function IridescentBlob() {
+export default function IridescentBlob({ isHomePage }) {
   const meshRef = useRef();
   const isMobile = window.innerWidth < window.innerHeight;
-  const sphereSize = isMobile ? 1 : 2;
+  let sphereSize = isMobile ? 1 : 1.25;
+
+  const smoothingFactor = 0.05;
+
+  // function animate(targetScale) {
+  //   requestAnimationFrame(animate);
+  //   meshRef.current.scale.lerp(targetScale, smoothingFactor);
+  // }
+
+  // useEffect(() => {
+  //   if (!isHomePage) {
+  //     meshRef.current.scale = 2;
+  //     // sphereSize = sphereSize * 2;
+  //     // animate(meshRef.current.scale * 2);
+  //   } else {
+  //     meshRef.current.scale = meshRef.current.scale / 2;
+  //     // animate(meshRef.current.scale / 2);
+  //   }
+  // }, [sphereSize]);
 
   const envTexture = useLoader(
     EXRLoader,
@@ -26,14 +43,8 @@ export default function IridescentBlob() {
   const isMoving = useRef(false);
   const movingTimeout = useRef(null);
 
-  const noise3D = createNoise3D();
-
-  // In your component, add this ref:
-  const originalPositions = useRef(null);
-
   useFrame((state) => {
     const { x, y } = state.pointer;
-    const time = state.clock.getElapsedTime();
 
     // Detect pointer movement
     if (x !== lastPointer.current.x || y !== lastPointer.current.y) {
@@ -46,38 +57,11 @@ export default function IridescentBlob() {
         isMoving.current = false;
       }, 150);
     }
-
-    if (isMoving.current) {
-      // Smoothly follow pointer
-      // meshRef.current.rotation.x = THREE.MathUtils.lerp(
-      //   meshRef.current.rotation.x,
-      //   y / 50,
-      //   0.1,
-      // );
-      // meshRef.current.rotation.y = THREE.MathUtils.lerp(
-      //   meshRef.current.rotation.y,
-      //   x / 50,
-      //   0.1,
-      // );
-    } else {
-      // // Auto animate
-      // meshRef.current.rotation.x = THREE.MathUtils.lerp(
-      //   meshRef.current.rotation.x,
-      //   time * 0.04,
-      //   0.05,
-      // );
-      // meshRef.current.rotation.y = THREE.MathUtils.lerp(
-      //   meshRef.current.rotation.y,
-      //   time * 0.04,
-      //   0.05,
-      // );
-    }
   });
 
   return (
     <mesh ref={meshRef}>
       <icosahedronGeometry args={[sphereSize, 50]} />
-      {/* <sphereGeometry args={[1, 256, 256]} /> */}
 
       <MeshRefractionMaterial
         color={"#fff3d6"}
