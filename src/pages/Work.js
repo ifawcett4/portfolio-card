@@ -18,7 +18,7 @@ const Work = () => {
       title: "Saint Louis Zoo AR Education",
       image:
         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934677/zoo_w6qtlx.jpg",
-      cover: "/project_assets/stl_zoo/unseenZoo_reel-1.mp4",
+      // cover: "/project_assets/stl_zoo/unseenZoo_reel-1.mp4",
       category: "Web & Social AR",
       toolsUsed: "Blender | 8th Wall | Illustrator",
       credits: "Saint Louis Zoo | Paradowski Creative ",
