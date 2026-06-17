@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 
 function App() {
   const handleWorkClick = (event) => {
-    if (window.location.pathname === "/work") {
+    if (window.location.hash === "#/work") {
       window.location.reload();
     }
   };
@@ -47,7 +47,7 @@ function App() {
         <ThreeScene />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
+          <Route path="/work/*" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

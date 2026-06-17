@@ -52,11 +52,11 @@ const About = () => {
               </p>
 
               <p className="body-text">
-                Oustide of work I continue to explore creative technology
+                Outside of work, I continue to explore creative technology
                 through passion projects at Pixel Fish Creative, a co-creative
                 outlet for my partner and me. I also enjoy various video games
                 (currently playing Pokopia), photography, fantasy books, and I'm
-                always looking for new restaurants to try in St. Louis!
+                always looking for new restaurants to try!
               </p>
 
               <div className="icon-links">
@@ -197,8 +197,8 @@ const About = () => {
               Interactive Design degree and my experience as an Immersive
               Technology Developer, I function as a generalist familiar with all
               sides of the pipeline for a variety of work that falls under the
-              creative tech umbrella. My primary focus however, has been in AR
-              and front end web development languages.
+              creative tech umbrella. My primary focus, however, has been in AR
+              and front-end web development languages
             </p>
             <p className="box-text skills-text">
               {" "}

@@ -1,9 +1,278 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../stylesheets/work.scss";
 import SceneCanvas from "../components/ThreeScene";
 
 const Work = () => {
+  // Helper function to generate slug from title
+  const generateSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+  };
+
   const gridItems = [
+    {
+      title: "Saint Louis Zoo AR Education",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934677/zoo_w6qtlx.jpg",
+      cover: "/project_assets/stl_zoo/unseenZoo_reel-1.mp4",
+      category: "Web & Social AR",
+      toolsUsed: "Blender | 8th Wall | Illustrator",
+      credits: "Saint Louis Zoo | Paradowski Creative ",
+      summary:
+        "Three main categories of AR experiences for the Saint Louis Zoo are featured here. The first is the Unseen Zoo, an educational AR experience showcasing the worldwide conservation efforts of the STL Zoo. The ones we don't often know about since they are not happening onsite, or in other words, the unseen work. The next educational activation we did was a series of AR filters on Instagram, each set up at different stations around the zoo for Endangered Species Day. Each poster at each station featured a QR code that took users to an AR experience telling them more about that species and their habitat. The final work featured here is the collection os instagram filters made for the exciting events at the zoo such as Boo at the Zoo, Zootoberbest, and Wild Lights.",
+      roleSummary:
+        "My role in each of these experiences was the sole AR developer working in both Lens Studio and Meta Spark. Additionally, I assisted in overall concepting, creative direction, and client communication. I collaborated closely with 3D artists, graphics designers, and copywriters at Paradowski Creative throughout the entire process.",
+      gallery: [
+        //UNSEEN ZOO
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665815/unseenZoo_reel-1_ngmynp.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665810/apes_reel-1_hpupsz.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665807/hellbender_reel-1_cfw8x5.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665801/penguins_reel-1_swrwmx.mp4",
+        },
+        // ENDANGERED SPECIES DAY
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665829/ESD_Sizzle_jsct3u.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665663/ESDQuizPreview_bsbwds.mp4",
+        },
+        //ESD filters
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665763/VID_195340509_110521_891_lshtmz.mp4",
+        },
+        // {
+        //   image:
+        //     "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665684/ArmenianViper_comjhf.mp4",
+        // },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665683/HornedGuan_nps14c.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665663/RedPanda_t9iyp3.mp4",
+        },
+        //EVENTS
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665661/WL_preview_02_mkb6yg.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665656/preview_zootoberfest_03_qg9hs0.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665653/preview_booAtZoo_02_xhiupt.mp4",
+        },
+      ],
+    },
+    {
+      title: "Augmented Reality Gallery",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1781663044/arcover-100_rgfegi.jpg",
+      category: "Social AR Filters",
+      summary:
+        " This gallery features both my personal and client AR work made both individually with Paradowski Creative. Some projects featured were purely proof-of-concept for proposals only. I was the sole AR developer for each of the following projects, often in collaboration with 3D Artists and Designers for asset development.",
+      toolsUsed: " 8th Wall | Effect House | Lens Studio | Spark AR",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663179/FOD_360_cmmtis.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/DrawToRevealPost_ouja6n.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663079/fireflies_kegkjy.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663154/zebra_cup_yrqway.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663127/grey_goos_catcher_wyjrxs.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663124/dancing_cornelius_xfflos.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/crop_collector_fhndmc.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663097/grey_goose_ffxtut.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663083/purina_dog_sizes_hhgyvy.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663056/antler_head_chpmus.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663169/harvest_hayday_ix7qlt.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663185/calavera_gfsn83.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663047/dancingSteve_fqsdkn.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663971/2026-06-13-181944341_mtoivh.mp4",
+        },
+      ],
+    },
+    {
+      title: "Sesame Street Social Media Filters",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
+      category: "AR Filters",
+      toolsUsed: " Effect House | Spark AR ",
+      credits: "Sesame Street | Paradowski Creative ",
+      summary:
+        "Sesame Street aimed to strengthen their social media presence and reconnect with their older audience who feel nostalgic about the beloved Sesame characters. To bring this vision to life, they partnered with us to create interactive filters for both Instagram and TikTok. Our first filter being a  “This or That” style quiz in which users can pick which character they would rather do certain activities with and reminisce about their favorite characters. Dancing Elmo features three separate popular Elmo songs, each featuring a 3D dancing Elmo that users can interact with in their real-life environment.",
+      roleSummary:
+        "I was the sole AR developer for this project, working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters, I created custom shadows and the ability to switch between the different dances on Instagram.",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664451/2025-01-06-114956882_debhqc.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664418/2025-01-06-115117627_gqfhfg.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664421/dc821b9e2ea1ced326c223c238f6214f_rdd0gt.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664465/Screen_Recording_20250106_121519_Instagram_cjrqxf.mp4",
+        },
+
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664386/8d7e11ad5eb2df514aededf6732aa5b8_knjdy5.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
+        },
+      ],
+    },
+    {
+      title: "Escape Artist",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta-new-tab-image_qufwqt.jpg",
+      cover: "https://vimeo.com/879963837?fl=pl&fe=sh",
+      category: "Web VR",
+      toolsUsed: "Wonderland Engine | JavaScript | Blender",
+      summary:
+        "Escape Artist is a web XR escape room featuring a narrative about the artist and the muse. In this game, the user must solve a variety of puzzles to unlock and reveal new sections of the map until they win. Escape Artist is featured on the Browser home page of the Meta Quest 2 and was recognized as the People’s Voice Winner for Best Narrative Experience at the 2024 Webby Awards and the WebXR Awards’ Experience of the Year.",
+      roleSummary:
+        "I was a Junior Developer at the time, but I was given the opportunity to fully dive in and work on core feature development and overall concepting for this game. The main sections I had the privilege of working on were the piano key puzzle and the bookcase puzzle. I also contributed to the implementation of most of the UI. ",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933755/escape-artist_0029_Layer-2_k4hgdz.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta_connect_hrwe4q.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933754/escape-artist_0001_Layer-30_zfycwt.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933753/escape-artist_0016_Layer-15_qz2fod.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933751/escape-artist_0030_Layer-1_maxzpq.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933749/escape-artist_0028_Layer-3_yudcmm.png",
+        },
+      ],
+    },
+    {
+      title: "Adidas x Candace Parker",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933680/Adidas_cover_udhakm.png",
+      cover: "https://vimeo.com/657570533?fl=pl&fe=sh",
+      category: "Web AR",
+      summary:
+        "For the launch of the Ace Collection, Adidas teamed up with Hovers Over Water to send stylized boxes of shoes and swag to celebrities, influencers, media, and Candace’s close circle.To bring Candace’s brand to life, we created immersive 3D WebAR scenes narrated by Candace, featuring key moments from her life and career, all featuring what makes Ace unique: her story as a hooper, mom, and style icon.The experience included 2D video, interactive 3D scenes, and a custom basketball game that connected fans to Parker’s story and the meaning behind the shoes.What would’ve been a simple shoebox became an engaging, memorable way for Candace’s community and sneaker fans to connect with Ace.",
+      roleSummary:
+        "I was a junior developer for this project. I primarily focused on initial demos for the hoop shooter game and building UI elements, including CSS animations. I also got the opportunity to be featured in the case study video!",
+      toolsUsed: "8th Wall ",
+      gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
+    },
+    {
+      title: "United Soybean Board",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933966/SMM_gdczkz.jpg",
+      category: "Web AR",
+      toolsUsed: "8th Wall Cloud Editor ",
+      credits: "United Soybean Board | Paradowski Creative ",
+      summary:
+        "For the United Soybean Board's booth at Commodity Classic 2024, we created a variety of technical activations to enhance their booth, including these two interactive AR experiences built into one site. In the Soy Much More Portal experience, users can immerse themselves in a full 360 stylized world all about soy. The experience includes interactive and informational hotspots that can be tapped to learn more about all the different uses of soy. We also sent a postcard to attendees ahead of the event to build excitement for Commodity Classic. This postcard features the Soy Much More logo and additional 3D soy content that pops up out of the card and gives users a taste of what they might see at the USB booth this year",
+      roleSummary:
+        "I was the sole developer for the AR filters and the website, including the portal and I was the overall consultant for all AR work. I aided in testing and collaboration for the AR Mirror wall. I was also able to attend the event and act as a technical guide for our guests!",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664783/Screen_Recording_20240328_095015_Chrome_onw6fs.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664752/Screen_Recording_20240328_094726_Chrome_vajugu.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664774/Screen_Recording_20240221_091008_Chrome_nwsldy.mp4",
+        },
+      ],
+    },
+
     {
       title: "Meso Mountain",
       image:
@@ -12,9 +281,9 @@ const Work = () => {
       category: "3D Web Game",
       toolsUsed: "8th Wall Studio | Illustrator | Blender",
       summary:
-        "Meso Moutain is a 3D web platformer game built in 8th Wall's Niantic Studio. In this game you play as an adorable parasaur on a mission to find their lost eggs. Run, jump, and explore the beautiful Mesozoic island to find all your eggs and discover mysteries. Meso mountain placed second in the Forge The Future Game Jame hosted by 8th Wall and VIVERSE. The project was later ported to the VIVERSE platform. For this experience I was able to create a custom Third Person Character Controller and a custom Mobile Joystick controller for best user interaction and control.",
+        "Meso Mountain is a 3D web platformer game built in 8th Wall's Niantic Studio. In this game, you play as an adorable parasaur on a mission to find its lost eggs. Run, jump, and explore the beautiful Mesozoic island to find all your eggs and discover mysteries. Meso Mountain placed second in the Forge The Future Game Jam hosted by 8th Wall and VIVERSE. The project was later ported to the VIVERSE platform. For this experience, I was able to create a custom Third Person Character Controller and a custom Mobile Joystick controller for best user interaction and control.",
       roleSummary:
-        "I was the lead developer and graphic designer for this project, creating the game mechanics and overall user experience. I worked in close collaboration with Noah Ilbery who was the 3D artist and creative partner for the entire game concept and details.",
+        "I was the lead developer and graphic designer for this project, creating the game mechanics and overall user experience. I worked in close collaboration with Noah Ilbery, who was the 3D artist and creative partner for the entire game concept and details.",
       credits: "Noah Ilbery | 8th Wall | VIVERSE",
       link: [
         {
@@ -64,7 +333,7 @@ const Work = () => {
       summary:
         "We built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
       roleSummary:
-        "This was an indepdent personal project, Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative directio together.",
+        "This was an independent personal project that Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative direction together.",
       credits: "Noah Ilbery | 8th Wall | VIVERSE",
       gallery: [
         {
@@ -84,147 +353,7 @@ const Work = () => {
         { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
       ],
     },
-    {
-      title: "Saint Louis Zoo AR Education",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934677/zoo_w6qtlx.jpg",
-      cover: "/project_assets/stl_zoo/unseenZoo_reel-1.mp4",
-      category: "Web & Social AR",
-      toolsUsed: "Blender | 8th Wall | Illustrator",
-      credits: "Saint Louis Zoo | Paradowski Creative ",
-      summary:
-        "Three main categories of AR experiences for the Saint Louis Zoo are featured here. The first being the Unseen Zoo, an educational AR expreince showing the worlwide conservation efforts being made by the STL Zoo. The ones we don't often know about since they are not happening onsite, or in otherwords, the unseen work. The next educational activation we did was a series of AR filters on instagram each set up at different stations aroud the zoo for Endangered Specied Day. Each poster at each station featured a QR code that took you to an AR experience telling the user more about that species and their habitat. The final work featured here is the collection os instagram filters made for the exciting events at the zoo such as Boo at the Zoo, Zootoberbest, and Wild Lights.",
-      roleSummary:
-        "My role in each of these experiences was the sole AR developer working in both Lens Studio and Meta Spark. Additionally I assisted in overall concepting, creative direction, and client communication. I collaborated closely with 3D artists, graphics designers, and copywriters at Paradowski Creative throughout the entire process.",
-      gallery: [
-        //UNSEEN ZOO
-        { image: "/project_assets/stl_zoo/penguins_reel-1.mp4" },
-        { image: "/project_assets/stl_zoo/hellbender_reel-1.mp4" },
-        { image: "/project_assets/stl_zoo/apes_reel-1.mp4" },
-        // ENDANGERED SPECIES DAY
-        { image: "/project_assets/stl_zoo/ESDQuizPreview.mp4" },
-        { image: "/project_assets/stl_zoo/ESD_Sizzle.mp4" },
-        { image: "/project_assets/stl_zoo/VID_195340509_110521_891.mp4" },
-        //ESD filters
-        { image: "/project_assets/stl_zoo/RedPanda.mp4" },
-        { image: "/project_assets/stl_zoo/HornedGuan.mp4" },
-        { image: "/project_assets/stl_zoo/ArmenianViper.mp4" },
-        //EVENTS
-        { image: "/project_assets/stl_zoo/preview_booAtZoo_02.mp4" },
-        { image: "/project_assets/stl_zoo/preview_zootoberfest_03.mp4" },
-        { image: "/project_assets/stl_zoo/WL_preview_02.mp4" },
-      ],
-    },
-    {
-      title: "Sesame Street Social Media Filters",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
-      category: "AR Filters",
-      toolsUsed: " Effect House | Spark AR ",
-      credits: "Sesame Street | Paradowski Creative ",
-      summary:
-        "Sesame Street aimed to strengthen their social media presence and reconnect with their older audience who feel nostalgic about the beloved Sesame characters. To bring this vision to life, they partnered with us to create interactive filters for both Instagram and TikTok. Our first filter being a  This or That style quiz in which users can pick which character they would rather do certain activities with and reminisce about their favorite characters. Dancing Elmo features three separate popular Elmo songs each featuring a 3D dancing Elmo that users can interact with in their real life environment",
-      roleSummary:
-        "I was the sole AR developer for this project working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters I created custom shadows and the ability to switch between the different dances on Instagram.",
-      gallery: [
-        { image: "/project_assets/sesame_filters/2025-01-06-114956882.mp4" },
-        { image: "/project_assets/sesame_filters/2025-01-06-115117627.mp4" },
-        {
-          image:
-            "/project_assets/sesame_filters/dc821b9e2ea1ced326c223c238f6214f.mp4",
-        },
-        {
-          image:
-            "/project_assets/sesame_filters/Screen_Recording_20250106_121519_Instagram.mp4",
-        },
-        {
-          image:
-            "/project_assets/sesame_filters/8d7e11ad5eb2df514aededf6732aa5b8.mp4",
-        },
-        {
-          image:
-            "/project_assets/sesame_filters/8e7be810-3e56-41e8-8675-daaa6cbc1c71.mp4",
-        },
-      ],
-    },
-    {
-      title: "United Soybean Board",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933966/SMM_gdczkz.jpg",
-      category: "Web AR",
-      toolsUsed: "8th Wall Cloud Editor ",
-      credits: "United Soybean Board | Paradowski Creative ",
-      summary:
-        "For the United Soybean Board's booth at Commodity Classic 2024 we created a variety of technical activations to enhance their booth, including these two interactive AR experiences built into one site. In the Soy Much More Portal experience users can immerse themselves in a full 360 stylized world all about soy. The experience includes interactive and informational hotspots that can be tapped to learn more about all the different uses of soy. We also sent a postcard to attendees ahead of the event to build excitement for Commodity Classic. This postcard features the Soy Much More logo and additional 3D soy content that pops up out of the card and gives users a tastse of what they might see at the USB booth this year",
-      roleSummary:
-        "I was the sole developer for the AR filters and the website, including the portal and I was overall consultant for all AR work. I aided in testing and collaboration for the AR Mirror wall. I was also able to attend the event and act as a technical guide for our guests!",
-      gallery: [
-        {
-          image:
-            "/project_assets/usb/Screen_Recording_20240221_091008_Chrome.mp4",
-        },
-        {
-          image:
-            "/project_assets/usb/Screen_Recording_20240328_094726_Chrome.mp4",
-        },
-        {
-          image:
-            "/project_assets/usb/Screen_Recording_20240328_095015_Chrome.mp4",
-        },
-        ,
-      ],
-    },
-    {
-      title: "Adidas x Candace Parker",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933680/Adidas_cover_udhakm.png",
-      cover: "https://vimeo.com/657570533?fl=pl&fe=sh",
-      category: "Web AR",
-      summary:
-        "For the launch of the Ace Collection, Adidas teamed up with Hovers Over Water to send stylized boxes of shoes and swag to celebrities, influencers, media, and Candace’s close circle.To bring Candace’s brand to life, we created immersive 3D WebAR scenes narrated by Candace, featuring key moments from her life and career all featuringwhat makes Ace unique, her story as a hooper, mom, and style icon.The experience included 2D video, interactive 3D scenes, and a custom basketball game that connected fans to Parker’s story and the meaning behind the shoes.What would’ve been a simple shoebox became an engaging, memorable way for Candace’s community and sneaker fans to connect with Ace.",
-      roleSummary:
-        "I was a junior developer for this project. I primarily focused on initial demos for the hoop shooter game, and buiding UI elements including CSS animations. I also got the opportunity to be featured in the case study video!",
-      toolsUsed: "8th Wall ",
-      gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
-    },
-    {
-      title: "Escape Artist",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta-new-tab-image_qufwqt.jpg",
-      cover: "https://vimeo.com/879963837?fl=pl&fe=sh",
-      category: "Web VR",
-      toolsUsed: "Wonderland Engine | JavaScript | Blender",
-      summary:
-        "Escape Artist is a web XR escape room featuring a narrative about the artist and the muse. In this game the user must solve a variety of puzzles to unlock and reveal new sections of the map until they win. Escape Artist is featured on the Browser home page of the Meta Quest 2 and was recognized as the People’s Voice Winner for Best Narrative Experience at the 2024 Webby Awards and the WebXR Awards’ Experience of the Year.",
-      roleSummary:
-        "I was a Junior Developer at the time, but I was given the opportunity to fully dive in and work on core feature development and overall concepting for this game. The main sections I had the privilege of working on were the piano key puzzle and the bookcase puzzle. I also contributed to the implementation of most of the UI. ",
-      gallery: [
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933755/escape-artist_0029_Layer-2_k4hgdz.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta_connect_hrwe4q.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933754/escape-artist_0001_Layer-30_zfycwt.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933753/escape-artist_0016_Layer-15_qz2fod.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933751/escape-artist_0030_Layer-1_maxzpq.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933749/escape-artist_0028_Layer-3_yudcmm.png",
-        },
-      ],
-    },
+
     {
       title: "Holiday Interactive Mirror",
       image:
@@ -243,52 +372,7 @@ const Work = () => {
         },
       ],
     },
-    {
-      title: "Augmented Reality Gallery",
-      image: "/project_assets/ar_gallery/arcover-100.jpg",
-      category: "Social AR Filters",
-      summary:
-        " This gallery features both my personal and client AR work made both individually with Paradowski Creative. Some projects featured were purely proof of concept for proposals only. I was the sole AR developer for each of the folliwng projects, often in collaboration with 3D Artists and Designers for asset development.",
-      toolsUsed: " 8th Wall | Effect House | Lens Studio | Spark AR",
-      gallery: [
-        {
-          image: "/project_assets/ar_gallery/grey_goos_catcher.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/zebra_cup.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/dancingSteve.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/dancing_cornelius.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/FOD_360.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/calavera.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/DrawToRevealPost.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/harvest_hayday.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/purina_dog_sizes.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/grey_goose.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/crop_collector.mp4",
-        },
-        {
-          image: "/project_assets/ar_gallery/fireflies.mp4",
-        },
-      ],
-    },
+
     {
       title: "Journey Of a Soybean",
       image:
@@ -298,11 +382,14 @@ const Work = () => {
       toolsUsed: "HTML | CSS | JavaScript | React | Lottie",
       credits: "Paradowski Creative",
       summary:
-        "The Journey of a Soybean is a scrollytelling style website and kiosk interaction that tells the story of the many pathways soybeans can take to end up in different forms for several different uses. This site was initially built to be featured on a kiosk and then also expanded as an evergreen website that the United Soybean Board uses for educational and informational purposes. The site featured scroll triggered animations as a user scrolls through the experience. ",
+        "The Journey of a Soybean is a scrollytelling-style website and kiosk interaction that tells the story of the many pathways soybeans can take to end up in different forms for several different uses. This site was initially built to be featured on a kiosk and then also expanded as an evergreen website that the United Soybean Board uses for educational and informational purposes. The site featured scroll-triggered animations as a user scrolls through the experience. ",
       roleSummary:
-        "I operated as a creative in the initial concepting stage of this project, and then one of two main developers to build key features. A section I particularly enjoyed developing was the particle effect making upo the 85% on the food,feed, and fuel pages.",
+        "I operated as a creative in the initial concepting stage of this project, and then one of two main developers to build key features. A section I particularly enjoyed developing was the particle effect making up the 85% on the food,feed, and fuel pages.",
       gallery: [
-        { image: "/project_assets/usb_scrollsite/usb_scrollsite_01.mp4" },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665062/usb_scrollsite_01_ebuvm1.mp4",
+        },
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934006/usb_scrollsite_01_dhcddi.jpg",
@@ -348,26 +435,28 @@ const Work = () => {
         {
           subTitle: "AR Coloring Sheets ",
           subSummary:
-            "I spent some time looking into creating an AR interactive coloring sheet experience. In this expereince, the user colors a specific coloring sheet, then they scan it with their phone to watch it come to life in 3D in web AR. The scan utilized 8th Wall image target scanning to read the coloring sheet as the base image target, then applied perspective correction to then pull out the drawing and apply it as the texture to the 3D model. ",
-          subContent: "https://youtube.com/shorts/lX-wnFus_pY",
+            "I spent some time looking into creating an AR interactive coloring sheet experience. In this experience, the user colors a specific coloring sheet, then they scan it with their phone to watch it come to life in 3D in web AR. The scan utilized 8th Wall image target scanning to read the coloring sheet as the base image target, then applied perspective correction to then pull out the drawing and apply it as the texture to the 3D model. ",
+          subContent:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665400/Screen_Recording_20251022_151010_Chrome_mw3hhx.mp4",
         },
         {
           subTitle: "Good Chilld Bunting ",
           subSummary:
-            "A fun R&D project to celebrate the Saint Louis Cardinals opening day. The purpose of this was to explore Snap's AR technology and experiment with pushing it into something more of an interactive kiosk game type of experience. The team consistened of just me and the developer and a 3D artist to build assets. We collaborated to imagine an AR powered baseball batting game, which became more of a bunting game. The pitcher is a 3D scan of one of our Creative Directors which was then rigged and animated. In this game the ball is pitched to one random zone and the hit point of the bat has to be aligned with that zone in time to qualify as a hit.",
+            "A fun R&D project to celebrate the Saint Louis Cardinals' opening day. The purpose of this was to explore Snap's AR technology and experiment with pushing it into something more of an interactive kiosk game type of experience. The team consistened of just me and the developer and a 3D artist to build assets. We collaborated to imagine an AR-powered baseball batting game, which became more of a bunting game. The pitcher is a 3D scan of one of our Creative Directors, which was then rigged and animated. In this game, the ball is pitched to one random zone, and the hit point of the bat has to be aligned with that zone in time to qualify as a hit.",
           subContent: "https://youtu.be/JzNK8h-Fh5E",
         },
         {
           subTitle: "Godot Mini Games",
           subSummary:
-            "As a way to begin learning Godot, I developed two potential mini games for a Kiosk display at a trade show event. The first game mechanic is a tap to plant the crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops. ",
+            "As a way to begin learning Godot, I developed two potential mini-games for a Kiosk display at a trade show event. The first game mechanic is a tap to plant the crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops. ",
           subContent: "https://youtu.be/kthB-pwudRo",
         },
         {
           subTitle: "3D Interactive Scene",
           subSummary:
-            "A Playcanvas experiment for an RFP to create a multi-platform information web experience. The interaction features a main intro scene with hotspot, and then two sub scenes featuring information about above and below ground technology. Each section features different 3D content, a 360 environment, and is functionaly for multiple device types and sizes.",
-          subContent: "https://youtu.be/iBlA254xc64",
+            "A Playcanvas experiment for an RFP to create a multi-platform information web experience. The interaction features a main intro scene with a hotspot, and then two sub scenes featuring information about above and below ground technology. Each section features different 3D content, a 360 environment, and is functional for multiple device types and sizes.",
+          subContent:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1778024259/vt4pro_otuh5i.mp4",
         },
       ],
     },
@@ -380,7 +469,7 @@ const Work = () => {
       category: "Interactive Exhibit",
       toolsUsed: " Kinect | Electron | Lottie | HTML | CSS | JavaScript ",
       summary:
-        "Into the Deep is my Capstone project from my Interactive Design degree at Maryville University. While this is student work, and I have learned much since. We were prompted to design an app or experience for our capstone, and I wanted to push it even further and ended up creating a fully interactive projection experience. I utilized an Xbox Kinect for body tracking and then formed three different interactive scenes, each featuring a different core interaction and educational content about jellyfish. The idea is that this could exist as an exhibit at a science center, aquarium, or zoo as a form of edutainment. While I would go about this project entirely differently today, I wanted to keep this in my portfolio since I think it’s a fun example of where I started and where my interest in interactive technology really started",
+        "Into the Deep is my Capstone project from my Interactive Design degree at Maryville University. We were prompted to design an app or experience for our capstone, and I wanted to push it even further and ended up creating a fully interactive projection experience. I utilized an Xbox Kinect for body tracking and then formed three different interactive scenes, each featuring a different core interaction and educational content about jellyfish. The idea is that this could exist as an exhibit at a science center, aquarium, or zoo as a form of edutainment. While I would go about this project entirely differently today, I wanted to keep this in my portfolio since I think it’s a fun example of where I started and where my interest in interactive technology really started.",
       roleSummary:
         "As this was my Capstone project independently, concepted, designed, and developed all elements of this project. I also taught myself 3D modeling, node.js, and Electron just to bring this project to life. It was a great creative and learning experience.",
       gallery: [
@@ -406,25 +495,63 @@ const Work = () => {
     },
   ];
 
+  const location = useLocation();
+  const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [modalLoading, setModalLoading] = useState(false);
 
+  // Assign slugs to all items
+  const itemsWithSlugs = gridItems.map((item) => ({
+    ...item,
+    slug: generateSlug(item.title),
+  }));
+
+  // Find item by slug
+  const findItemBySlug = (slug) => {
+    return itemsWithSlugs.find((item) => item.slug === slug);
+  };
+
+  // Open modal from grid click
   const openModal = (item) => {
     setSelectedItem(item);
     setModalLoading(true);
     setModalOpen(true);
+    navigate(`/work/project/${item.slug}`);
   };
 
+  // Close modal
   const closeModal = () => {
     setModalOpen(false);
     setSelectedItem(null);
     setModalLoading(false);
+    navigate("/work");
   };
 
   const handleModalMediaReady = () => {
     setModalLoading(false);
   };
+
+  useEffect(() => {
+    // Handle location changes from React Router
+    const projectMatch = location.pathname.match(/\/work\/project\/(.+)/);
+
+    if (projectMatch) {
+      const slug = projectMatch[1];
+      const item = findItemBySlug(slug);
+      if (item) {
+        setSelectedItem(item);
+        setModalLoading(true);
+        setModalOpen(true);
+        return;
+      }
+    }
+
+    // No valid project route, close modal
+    setModalOpen(false);
+    setSelectedItem(null);
+    setModalLoading(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!modalOpen) return;
@@ -504,7 +631,7 @@ const Work = () => {
 
         {/* Grid with customizable items */}
         <div className="grid-container">
-          {gridItems.map((item, index) => (
+          {itemsWithSlugs.map((item, index) => (
             <div
               key={index}
               className={`grid-item item-${index + 1}`}
