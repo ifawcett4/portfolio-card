@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
   Stage,
@@ -7,6 +7,7 @@ import {
   PerspectiveCamera,
   Float,
   Sparkles,
+  Stars
 } from "@react-three/drei";
 import { ChromaticAberration } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
@@ -22,12 +23,17 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 import IridescentBlob from "./blob";
+import {Spiral} from "./Spiral";
 const isMobile = navigator.userAgentData.mobile; //resolves true/false
 
 export default function SceneCanvas() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const targetRef = useRef([Math.PI / 6, 0, 0]);
+
+  // Home | Work | About
+  const [currentMenu, setCurrentMenu] = useState("Home"); 
+
 
   const handleMove = (event) => {
     let clientX, clientY;
@@ -70,12 +76,31 @@ export default function SceneCanvas() {
 
     targetRef.current = [yRot, xRot, 0];
   };
+  
+const COUNT = 10;
+const GAP = 3;
+
+
+
+  const spiralRotation = (index) => {
+
+    switch (currentMenu) {
+      case 'Home':
+        return index * Math.PI * 1.5;
+      case 'Work':
+        return index * Math.PI * 1.5;
+      case 'About':
+        return 90;
+      default:
+        return  index * Math.PI * 1.5;
+    }
+  };
 
   return (
     <div className="three-container">
       <Canvas
         className="three-canvas"
-        onPointerMove={handleMove}
+        // onPointerMove={handleMove}
         style={{ touchAction: "none" }}
         gl={{
           antialias: isHomePage, // Disable antialiasing on other pages for performance
@@ -106,7 +131,23 @@ export default function SceneCanvas() {
         <ambientLight intensity={1} />
 
         {/* <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}> */}
-        <IridescentBlob isHomePage={isHomePage} />
+        {/* <IridescentBlob isHomePage={isHomePage} /> */}
+       
+      {/* <Stars/> */}
+        <Sparkles  count={200} opacity={0.9} scale={[4,3,4]} noise={2}/>  
+        <Stars radius={100} depth={50} count={5000} factor={1} saturation={0} fade speed={51} />
+     
+        <group rotation={[0.1, 0, 0.2]} scale={[0.3, 0.3, 0.3]}>
+            {Array.from({ length: COUNT }).map((_, index) => [
+                <Spiral
+                    key={`billboard-${index}`}
+                    radius={8}
+                    rotation={[0, spiralRotation(index), 0]}
+                    position={[0, (index - (Math.ceil(COUNT / 2) - 1)) * GAP, 0]}
+                />,
+            ])}
+        </group>
+
         {/* </Float> */}
         <Environment
           files={
@@ -124,7 +165,7 @@ export default function SceneCanvas() {
           minDistance={2}
           maxDistance={4}
           autoRotate={isHomePage}
-          autoRotateSpeed={isHomePage ? 0.5 : 0}
+          autoRotateSpeed={isHomePage ? 0.1 : 0}
           enableDamping={isHomePage}
         />
       </Canvas>

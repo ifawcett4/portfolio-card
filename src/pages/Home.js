@@ -5,11 +5,11 @@ const Home = () => {
   return (
     <div>
       <div className="home-text">
-        <h1 className="home-title">Irina Fawcett</h1>
-        <h2 className="home-subtitle">
+        {/* <h1 className="home-title">Irina Fawcett</h1> */}
+        {/* <h2 className="home-subtitle">
           {" "}
           Designer | Creative Technologist | Developer{" "}
-        </h2>
+        </h2> */}
       </div>
     </div>
   );
