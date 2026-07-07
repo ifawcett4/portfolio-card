@@ -80,8 +80,6 @@ export default function SceneCanvas() {
 const COUNT = 10;
 const GAP = 3;
 
-
-
   const spiralRotation = (index) => {
 
     switch (currentMenu) {
@@ -118,12 +116,12 @@ const GAP = 3;
 
         {isHomePage && (
           <EffectComposer>
-            <SMAA />
+            {/* <SMAA /> */}
             {/* <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} /> */}
-            <Noise opacity={0.05} />
+            {/* <Noise opacity={0.08} /> */}
             {/* <ChromaticAberration
               blendFunction={BlendFunction.NORMAL}
-              offset={[0.002, 0.002]}
+              offset={[0.001, 0.001]}
             /> */}
           </EffectComposer>
         )}
