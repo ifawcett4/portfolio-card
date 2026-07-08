@@ -8,6 +8,7 @@ import { useFrame, extend } from '@react-three/fiber';
 import { useRef, useState, useCallback, useEffect } from 'react';
 import { getCanvasTexture } from '../getCanvasTexture';
 
+
 const images = [    
     { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934677/zoo_w6qtlx.jpg" },
     { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1781663044/arcover-100_rgfegi.jpg"},
@@ -22,8 +23,6 @@ const images = [
     { url: "/images/Screenshot 2026-07-06 212315.png"},
     { url: "/images/VideoCapture_20250102-223221.jpg" },
     { url: "/images/VideoCapture_20251105-232337.jpg" },
-
-    
 ]
 
 
@@ -161,10 +160,11 @@ function useCollageTexture(imgs, options = {}) {
 
 
 
-function Spiral({ radius = 1.6, ...props }) {
+function Spiral({ radius = 1.6, targetRotationY = 0, ...props }) {
     const { texture, dimensions, isLoading, error } = useCollageTexture(images);
     const ref = useRef(null);
     const bannerRef = useRef(null);
+    const groupRef = useRef(null);
 
     const bannerTexture = useTexture('/banner_irina.jpg');
     bannerTexture.wrapS = bannerTexture.wrapT = THREE.RepeatWrapping;
@@ -177,9 +177,19 @@ function Spiral({ radius = 1.6, ...props }) {
     useFrame((state, delta) => {
         if (texture) texture.offset.x += delta * 0.005;
 
-        if (!bannerRef.current) return;
-        const bannerMat = bannerRef.current.material;
-        if (bannerMat.map) bannerMat.map.offset.x += delta / 45;
+        if (bannerRef.current) {
+            const bannerMat = bannerRef.current.material;
+            if (bannerMat.map) bannerMat.map.offset.x += delta / 45;
+        }
+
+        if (groupRef.current) {
+            groupRef.current.rotation.y = THREE.MathUtils.damp(
+                groupRef.current.rotation.y,
+                targetRotationY,
+                4,
+                delta
+            );
+        }
     });
 
     if (isLoading || error || !texture || !dimensions) {
@@ -190,12 +200,11 @@ function Spiral({ radius = 1.6, ...props }) {
 
 
     return (
-        <>
-            <mesh ref={ref} {...props}>
+        <group ref={groupRef} {...props}>
+            <mesh ref={ref}>
                 <cylinderGeometry args={[radius, radius, 2, 100, 1, true]} />
                 <meshImageMaterial map={texture} side={THREE.DoubleSide} toneMapped={false} />
             </mesh>
-
             <mesh ref={bannerRef} position={[0, 1.5, 0]} rotation={[0.01 ,0, 0.01]}>
                 <cylinderGeometry
                     args={[bannerRadius, bannerRadius, bannerRadius * 0.05, bannerRadius * 80, bannerRadius * 10, true]}
@@ -209,7 +218,7 @@ function Spiral({ radius = 1.6, ...props }) {
                     // backfaceRepeatX={0.6}
                 />
             </mesh>
-        </>
+        </group>
 
     );
 }

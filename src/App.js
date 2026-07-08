@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link, useLocation } from "react-router-dom";
 import Work from "./pages/Work";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -7,15 +7,18 @@ import ThreeScene from "./components/ThreeScene";
 import Home from "./pages/Home";
 
 function App() {
-  const handleWorkClick = (event) => {
-    if (window.location.hash === "#/work") {
-      window.location.reload();
-    }
-  };
-
   return (
     <Router>
-      <div className="app">
+      <AppRoutes />
+    </Router>
+  );
+}
+
+function AppRoutes() {
+  const location = useLocation();
+
+  return (
+    <div className="app">
         <nav>
           <ul>
             <li>
@@ -24,7 +27,7 @@ function App() {
               </Link>
             </li>
             <li>
-              <Link to="/work" className="nav-link" onClick={handleWorkClick}>
+              <Link to="/work" className="nav-link">
                 Work
               </Link>
             </li>
@@ -44,15 +47,14 @@ function App() {
           </ul>
         </nav>
 
-        <ThreeScene />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/work/*" element={<Work />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </Router>
+      <ThreeScene />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work/*" element={<Work key={location.key} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
   );
 }
 

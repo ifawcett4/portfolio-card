@@ -1,39 +1,41 @@
 import React, { useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
-  Stage,
   OrbitControls,
   Environment,
   PerspectiveCamera,
-  Float,
   Sparkles,
   Stars
 } from "@react-three/drei";
-import { ChromaticAberration } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
-import {
-  Bloom,
-  DepthOfField,
-  EffectComposer,
-  Noise,
-  Vignette,
-  SMAA,
-} from "@react-three/postprocessing";
+
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-import IridescentBlob from "./blob";
 import {Spiral} from "./Spiral";
 const isMobile = navigator.userAgentData.mobile; //resolves true/false
+
+  function RotatingGroup({ targetRotation, children, ...props }) {
+  const groupRef = useRef(null);
+
+  useFrame((state, delta) => {
+    if (!groupRef.current) return;
+    const [tx, ty, tz] = targetRotation;
+    groupRef.current.rotation.x = THREE.MathUtils.damp(groupRef.current.rotation.x, tx, 4, delta);
+    groupRef.current.rotation.y = THREE.MathUtils.damp(groupRef.current.rotation.y, ty, 4, delta);
+    groupRef.current.rotation.z = THREE.MathUtils.damp(groupRef.current.rotation.z, tz, 4, delta);
+  });
+
+  return (
+    <group ref={groupRef} {...props}>
+      {children}
+    </group>
+  );
+}
 
 export default function SceneCanvas() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const targetRef = useRef([Math.PI / 6, 0, 0]);
-
-  // Home | Work | About
-  const [currentMenu, setCurrentMenu] = useState("Home"); 
-
 
   const handleMove = (event) => {
     let clientX, clientY;
@@ -77,22 +79,44 @@ export default function SceneCanvas() {
     targetRef.current = [yRot, xRot, 0];
   };
   
-const COUNT = 10;
-const GAP = 3;
+  const COUNT = isMobile ? 3 : 10;
+  const GAP = 3;
 
-  const spiralRotation = (index) => {
+  const currentMenu = (() => {
+    const path = location.pathname;
+    if (path === "/") return "Home";
+    if (path.startsWith("/work")) return "Work";
+    if (path === "/about") return "About";
+    if (path === "/contact") return "Contact";
+    return "Home";
+  })();
 
+  const bannerRot = (() => {
     switch (currentMenu) {
       case 'Home':
-        return index * Math.PI * 1.5;
+        return isMobile ? [0.05, 0, 0.1] : [0, 0, 0.2];
       case 'Work':
-        return index * Math.PI * 1.5;
+        return [1, 0, 0];
       case 'About':
-        return 90;
+        return [1, 0, 0];
       default:
-        return  index * Math.PI * 1.5;
+        return [0, 0, 0.2];
     }
-  };
+  })();
+
+    const spiralRotationMultiplier = (() => {
+    switch (currentMenu) {
+      case 'Home':
+        return Math.PI * 1.5;
+      case 'Work':
+        return Math.PI / 2;
+      case 'About':
+        return Math.PI / 2;
+      default:
+        return Math.PI * 1.5;
+    }
+  })();
+
 
   return (
     <div className="three-container">
@@ -106,47 +130,34 @@ const GAP = 3;
           powerPreference: "high-performance",
           alpha: false,
         }}
-        dpr={isHomePage ? (isMobile ? [0.5, 1] : [1, 2]) : [0.5, 1]} // Lower pixel ratio on other pages
-        // frameloop={isHomePage ? "always" : "demand"}
+        dpr={isHomePage ? (isMobile ? [0.5, 1] : [1, 2]) : 0.35} // Lower pixel ratio on other pages
       >
         <PerspectiveCamera
           makeDefault
           position={[0, 0, 10]}
         ></PerspectiveCamera>
 
-        {isHomePage && (
-          <EffectComposer>
-            {/* <SMAA /> */}
-            {/* <Bloom luminanceThreshold={5} luminanceSmoothing={0.9} height={1} /> */}
-            {/* <Noise opacity={0.08} /> */}
-            {/* <ChromaticAberration
-              blendFunction={BlendFunction.NORMAL}
-              offset={[0.001, 0.001]}
-            /> */}
-          </EffectComposer>
-        )}
         <ambientLight intensity={0.5} />
         <ambientLight intensity={1} />
 
-        {/* <Float autoInvalidate speed={1} floatingRange={[-0.2, 0.2]}> */}
-        {/* <IridescentBlob isHomePage={isHomePage} /> */}
-       
-      {/* <Stars/> */}
-        <Sparkles  count={200} opacity={0.9} scale={[4,3,4]} noise={2}/>  
-        <Stars radius={100} depth={50} count={5000} factor={1} saturation={0} fade speed={51} />
+        {isHomePage && 
+          <group>
+            <Sparkles  count={200} opacity={0.9} scale={[4,3,4]} noise={2}/>  
+            <Stars radius={100} depth={50} count={5000} factor={1} saturation={0} fade speed={51} />
+          </group>
+        }
      
-        <group rotation={[0.1, 0, 0.2]} scale={[0.3, 0.3, 0.3]}>
-            {Array.from({ length: COUNT }).map((_, index) => [
-                <Spiral
-                    key={`billboard-${index}`}
-                    radius={8}
-                    rotation={[0, spiralRotation(index), 0]}
-                    position={[0, (index - (Math.ceil(COUNT / 2) - 1)) * GAP, 0]}
-                />,
-            ])}
-        </group>
+        <RotatingGroup targetRotation={bannerRot} scale={isMobile ? [0.17, 0.17, 0.17] : [0.3, 0.3, 0.3]}>
+          {Array.from({ length: COUNT }).map((_, index) => (
+            <Spiral
+              key={`billboard-${index}`}
+              radius={8}
+              targetRotationY={index * spiralRotationMultiplier}
+              position={[0, (index - (Math.ceil(COUNT / 2) - 1)) * GAP, 0]}
+            />
+          ))}
+        </RotatingGroup>
 
-        {/* </Float> */}
         <Environment
           files={
             isHomePage
