@@ -44,11 +44,7 @@ const About = () => {
 
             <div className="about-main-right">
               <p className="body-text">
-                Hi! I'm Irina Fawcett, a Creative Technologist with a passion
-                for all things immersive tech. I love exploring the intersection
-                of art and technology. My expertise lies in web XR and
-                interactive activations, but I enjoy dabbling in a variety of
-                web, immersive development, 3D, and design explorations.
+              Hi! I’m Irina! I’m a Creative Technologist with five years of agency experience working in immersive technology and a specialized focus in Augmented Reality. But really, I’m just someone who can’t pick between design and development and loves making cool things. The more interactive and immersive the better! I enjoy dabbling in 3D, web, XR, and interactive installations.
               </p>
 
               <p className="body-text">

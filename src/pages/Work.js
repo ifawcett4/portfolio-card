@@ -159,8 +159,7 @@ const Work = () => {
       category: "AR Filters",
       toolsUsed: " Effect House | Spark AR ",
       credits: "Sesame Street | Paradowski Creative ",
-      summary:
-        "Sesame Street aimed to strengthen their social media presence and reconnect with their older audience who feel nostalgic about the beloved Sesame characters. To bring this vision to life, they partnered with us to create interactive filters for both Instagram and TikTok. Our first filter being a  “This or That” style quiz in which users can pick which character they would rather do certain activities with and reminisce about their favorite characters. Dancing Elmo features three separate popular Elmo songs, each featuring a 3D dancing Elmo that users can interact with in their real-life environment.",
+      summary: "Sesame Street aimed to strengthen their social media presence and reconnect with an older audience nostalgic for the beloved characters, partnering to create interactive filters for Instagram and TikTok. The first filter is a This or That style quiz where users pick which character they'd rather do certain activities with. The world tracked Dancing Elmo filter features three popular Elmo songs, each with a 3D dancing Elmo that users can interact with in their real-life environment",
       roleSummary:
         "I was the sole AR developer for this project, working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters, I created custom shadows and the ability to switch between the different dances on Instagram.",
       gallery: [
@@ -204,8 +203,7 @@ const Work = () => {
       toolsUsed: "Wonderland Engine | JavaScript | Blender",
       summary:
         "Escape Artist is a web XR escape room featuring a narrative about the artist and the muse. In this game, the user must solve a variety of puzzles to unlock and reveal new sections of the map until they win. Escape Artist is featured on the Browser home page of the Meta Quest 2 and was recognized as the People’s Voice Winner for Best Narrative Experience at the 2024 Webby Awards and the WebXR Awards’ Experience of the Year.",
-      roleSummary:
-        "I was a Junior Developer at the time, but I was given the opportunity to fully dive in and work on core feature development and overall concepting for this game. The main sections I had the privilege of working on were the piano key puzzle and the bookcase puzzle. I also contributed to the implementation of most of the UI. ",
+      roleSummary: "In my role as a developer on this project the puzzles that were my area of focus included the bookcase puzzle and the piano puzzle. Additionally I handled all UI implementation.",
       gallery: [
         {
           image:
@@ -241,8 +239,7 @@ const Work = () => {
       category: "Web AR",
       summary:
         "For the launch of the Ace Collection, Adidas teamed up with Hovers Over Water to send stylized boxes of shoes and swag to celebrities, influencers, media, and Candace’s close circle.To bring Candace’s brand to life, we created immersive 3D WebAR scenes narrated by Candace, featuring key moments from her life and career, all featuring what makes Ace unique: her story as a hooper, mom, and style icon.The experience included 2D video, interactive 3D scenes, and a custom basketball game that connected fans to Parker’s story and the meaning behind the shoes.What would’ve been a simple shoebox became an engaging, memorable way for Candace’s community and sneaker fans to connect with Ace.",
-      roleSummary:
-        "I was a junior developer for this project. I primarily focused on initial demos for the hoop shooter game and building UI elements, including CSS animations. I also got the opportunity to be featured in the case study video!",
+      roleSummary: "In my role as a developer on this project I was able to focus on a lot of the up front AR research and development from tracking to mini games as well as concept direction. Additionally, I focused on the hoop shooter game and all UI.",
       toolsUsed: "8th Wall ",
       gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
     },
@@ -282,8 +279,7 @@ const Work = () => {
       toolsUsed: "8th Wall Studio | Illustrator | Blender",
       summary:
         "Meso Mountain is a 3D web platformer game built in 8th Wall's Niantic Studio. In this game, you play as an adorable parasaur on a mission to find its lost eggs. Run, jump, and explore the beautiful Mesozoic island to find all your eggs and discover mysteries. Meso Mountain placed second in the Forge The Future Game Jam hosted by 8th Wall and VIVERSE. The project was later ported to the VIVERSE platform. For this experience, I was able to create a custom Third Person Character Controller and a custom Mobile Joystick controller for best user interaction and control.",
-      roleSummary:
-        "I was the lead developer and graphic designer for this project, creating the game mechanics and overall user experience. I worked in close collaboration with Noah Ilbery, who was the 3D artist and creative partner for the entire game concept and details.",
+      roleSummary: "This was a personal project made in collaboration with just one 3D artist, Noah Ilbery. We collaborated on concept development and gameplay design. I acted as both the designer for all graphics and UI and also the sole developer building game mechanics. ",
       credits: "Noah Ilbery | 8th Wall | VIVERSE",
       link: [
         {
@@ -364,8 +360,7 @@ const Work = () => {
       credits: "Paradowski Creative",
       summary:
         "For the company Holiday Party, I was asked if we could create an interactive mirror as a fun entertainment piece for the guests. Fitting with the winter woodland theme of the party, I paired with creatives and a 3D artist to bring this idea to life. The interaction works by using a ZED camera for body tracking paired with their Unity SDK to drive the behavior for those tracked movements. The key features of the experience include a proximity-triggered lantern that lights up when guests are near, a deer that turns its attention to users when they approach, and physics-based wobbly trees that interact with the guests’ movements.",
-      roleSummary:
-        "I was the only developer working in collaboration with a Creative Director and 3D Artist to create the content and build this project over a few weeks. Some of the logic references a previous AR mirror made by Paradowksi Creative as a reference and starting point. ",
+      roleSummary: "I was the only developer working in collaboration with a Creative Director and 3D Artist to create the content and build this project over just a few weeks. ",
       gallery: [
         {
           image: "https://youtu.be/CnX__dsVq2Y",
@@ -441,20 +436,17 @@ const Work = () => {
         },
         {
           subTitle: "Good Chilld Bunting ",
-          subSummary:
-            "A fun R&D project to celebrate the Saint Louis Cardinals' opening day. The purpose of this was to explore Snap's AR technology and experiment with pushing it into something more of an interactive kiosk game type of experience. The team consistened of just me and the developer and a 3D artist to build assets. We collaborated to imagine an AR-powered baseball batting game, which became more of a bunting game. The pitcher is a 3D scan of one of our Creative Directors, which was then rigged and animated. In this game, the ball is pitched to one random zone, and the hit point of the bat has to be aligned with that zone in time to qualify as a hit.",
+          subSummary: " A fun R&D project to celebrate the Saint Louis Cardinals' opening day, exploring Snap's AR technology and pushing it into more of an interactive kiosk game experience. The team consisted of just me as the developer and a 3D artist to build assets. We collaborated to imagine an AR-powered baseball batting game, which became more of a bunting game. The pitcher is a 3D scan of one of our Creative Directors, rigged and animated, where the ball is pitched to one random zone and the hit point of the bat has to align with that zone in time to qualify as a hit.",
           subContent: "https://youtu.be/JzNK8h-Fh5E",
         },
         {
           subTitle: "Godot Mini Games",
-          subSummary:
-            "As a way to begin learning Godot, I developed two potential mini-games for a Kiosk display at a trade show event. The first game mechanic is a tap to plant the crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops. ",
+          subSummary: "As a way to begin learning Godot, two potential mini-game proof of concepts were developed for a Kiosk display at a trade show event. The first game mechanic has players tap to plant crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops.",
           subContent: "https://youtu.be/kthB-pwudRo",
         },
         {
           subTitle: "3D Interactive Scene",
-          subSummary:
-            "A Playcanvas experiment for an RFP to create a multi-platform information web experience. The interaction features a main intro scene with a hotspot, and then two sub scenes featuring information about above and below ground technology. Each section features different 3D content, a 360 environment, and is functional for multiple device types and sizes.",
+          subSummary: "A Playcanvas experiment for an RFP to create a multi-platform informational web experience. The interaction features a main intro scene with a hotspot, and then two sub scenes featuring information about above and below-ground technology, each with different 3D content, a 360 environment, and functionality across multiple device types and sizes.",
           subContent:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1778024259/vt4pro_otuh5i.mp4",
         },
