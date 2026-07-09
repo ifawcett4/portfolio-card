@@ -121,7 +121,7 @@ const About = () => {
 
                   <li>
                     <a
-                      href="https://www.behance.net/irinafawcett?locale=en_US"
+                      href="https://www.behance.net/irinafawcett1"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
