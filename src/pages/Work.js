@@ -485,6 +485,26 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // FIELD VIEW AR 
+    ////////////////////////////////////////
+
+    //     {
+    //   title: "Field View",
+    //   image:
+    //     "",
+    //   cover: "",
+    //   category: "Augmented Reality",
+    //   toolsUsed: " Effect House | TikTok | 8th Wall ",
+    //   summary: "",
+    //   roleSummary: "",
+    //   gallery: [
+    //     {
+    //       image: "",
+    //     },
+    //   ],
+    // },
   ];
 
   const location = useLocation();

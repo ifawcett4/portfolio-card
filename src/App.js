@@ -36,12 +36,20 @@ function AppRoutes() {
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="https://www.pixelfishcreative.xyz/home"
                 className="nav-link"
               >
                 Pixel Fish
+              </Link>
+            </li> */}
+            <li>
+              <Link
+                to="https://triangles-and-the-universe.pages.dev/"
+                className="nav-link"
+              >
+                Triangles & The Universe
               </Link>
             </li>
           </ul>
