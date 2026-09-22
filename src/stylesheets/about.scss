@@ -45,8 +45,13 @@
 
   @media (max-width: 900px) {
     .section {
-      height: 110vh;
+      height: auto;
+      min-height: 100svh;
       width: 80vw;
+      padding: 12vh 0;
+      margin-bottom: 0;
+      box-sizing: border-box;
+      flex-shrink: 0;
     }
   }
 

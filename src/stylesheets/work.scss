@@ -308,6 +308,7 @@
     @media (max-width: 900px) {
       padding: 0;
       margin: 0;
+      padding-bottom: 2rem;
     }
 
     .modal-close-btn {
@@ -342,7 +343,8 @@
 
     .back-to-gallery-btn {
       margin: 2rem 0 3rem;
-      padding: 0.9% 1%;
+      margin-bottom: 5rem;
+      padding: 0.75rem 1rem;
       border: 0.5px solid #d0e4ff;
       border-radius: 8px;
       background: transparent;
