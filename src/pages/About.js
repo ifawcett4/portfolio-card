@@ -80,7 +80,7 @@ const About = () => {
                   </li>
                   <li>
                     <a
-                      href="linkedin.com/in/irina-fawcett-78b287180 "
+                      href="https://www.linkedin.com/in/irina-fawcett-78b287180 "
                       target="_blank"
                       rel="noopener noreferrer"
                     >

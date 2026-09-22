@@ -152,7 +152,7 @@ export default function SceneCanvas() {
           powerPreference: "high-performance",
           alpha: false,
         }}
-        dpr={isHomePage ? (isMobile ? [0.75, 1] : [1, 2]) : 0.35} // Lower pixel ratio on other pages
+        dpr={isHomePage ? (isMobile ? [0.9, 2] : [1, 2]) : 0.35} // Lower pixel ratio on other pages
       >
         <PerspectiveCamera
           makeDefault
@@ -169,7 +169,7 @@ export default function SceneCanvas() {
           </group>
         }
      
-        <RotatingGroup targetRotation={bannerRot} scale={isMobile ? [0.17, 0.17, 0.17] : [0.3, 0.3, 0.3]}>
+        <RotatingGroup targetRotation={bannerRot} scale={isMobile ? [0.2, 0.2, 0.2] : [0.3, 0.3, 0.3]}>
           {Array.from({ length: COUNT }).map((_, index) => (
             <Spiral
               key={`${location.pathname}-billboard-${index}`}

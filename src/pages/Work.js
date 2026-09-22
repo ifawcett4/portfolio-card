@@ -14,6 +14,81 @@ const Work = () => {
   };
 
   const gridItems = [
+    ////////////////////////////////////////
+    // "Sesame Street
+    ////////////////////////////////////////
+    {
+      title: "Sesame Street Social Media Filters",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
+      category: "AR Filters",
+      toolsUsed: " Effect House | Spark AR ",
+      credits: "Sesame Street | Paradowski Creative ",
+      summary: "Sesame Street aimed to strengthen their social media presence and reconnect with an older audience nostalgic for the beloved characters, partnering to create interactive filters for Instagram and TikTok. The first filter is a This or That style quiz where users pick which character they'd rather do certain activities with. The world tracked Dancing Elmo filter features three popular Elmo songs, each with a 3D dancing Elmo that users can interact with in their real-life environment",
+      roleSummary:
+        "I was the sole AR developer for this project, working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters, I created custom shadows and the ability to switch between the different dances on Instagram.",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664451/2025-01-06-114956882_debhqc.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664418/2025-01-06-115117627_gqfhfg.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664421/dc821b9e2ea1ced326c223c238f6214f_rdd0gt.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664465/Screen_Recording_20250106_121519_Instagram_cjrqxf.mp4",
+        },
+
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664386/8d7e11ad5eb2df514aededf6732aa5b8_knjdy5.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
+        },
+      ],
+    },
+
+    ////////////////////////////////////////
+    // FIELD VIEW AR 
+    ////////////////////////////////////////
+
+    {
+      title: "Field View: Field Rush Game",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1790118819/fr_cover_q0ht2a.jpg",
+      cover: "",
+      category: "Augmented Reality Game",
+      toolsUsed: " Effect House | TikTok ",
+       credits: "FieldView | Paradowski Creative ",
+      summary: "We worked with FieldView to create an immersive game using a TikTok filter as a part of their introduction to the platform. The objective is to smash the different colored buttons as they cross the finish line to grow your crops along with that high score. The game is designed to be simple but fun, with subtle nods to the branding of our recent partnership for their 10th anniversary campaign.",
+      roleSummary: "I was the sole dev, and creative technology lead on this project leading cross-team collaboration and project guidelines. The filter is made entirely in Effect House utilizing visual scripting tools. I worked closely with 3D artists to integrate game elements and ensure they are optimized. ",
+      gallery: [
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1787169228/Field_Rush_Game_Compilation_260707_ubxszv.mp4",
+        },  
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1787169036/Field_Rush_Preview_1_lompye.mp4"
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1790120118/FieldRushBTS_072126_1_f7mccz.mp4"
+        }
+      ],
+    },
+    ////////////////////////////////////////
+    // Saint Louis Zoo
+    ////////////////////////////////////////
     {
       title: "Saint Louis Zoo AR Education",
       image:
@@ -85,6 +160,10 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // Augmented Reality Gallery
+    ////////////////////////////////////////
     {
       title: "Augmented Reality Gallery",
       image:
@@ -152,48 +231,11 @@ const Work = () => {
         },
       ],
     },
-    {
-      title: "Sesame Street Social Media Filters",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
-      category: "AR Filters",
-      toolsUsed: " Effect House | Spark AR ",
-      credits: "Sesame Street | Paradowski Creative ",
-      summary: "Sesame Street aimed to strengthen their social media presence and reconnect with an older audience nostalgic for the beloved characters, partnering to create interactive filters for Instagram and TikTok. The first filter is a This or That style quiz where users pick which character they'd rather do certain activities with. The world tracked Dancing Elmo filter features three popular Elmo songs, each with a 3D dancing Elmo that users can interact with in their real-life environment",
-      roleSummary:
-        "I was the sole AR developer for this project, working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters, I created custom shadows and the ability to switch between the different dances on Instagram.",
-      gallery: [
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664451/2025-01-06-114956882_debhqc.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664418/2025-01-06-115117627_gqfhfg.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664421/dc821b9e2ea1ced326c223c238f6214f_rdd0gt.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664465/Screen_Recording_20250106_121519_Instagram_cjrqxf.mp4",
-        },
 
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664386/8d7e11ad5eb2df514aededf6732aa5b8_knjdy5.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
-        },
-      ],
-    },
+
+    ////////////////////////////////////////
+    // Escape Artist
+    ////////////////////////////////////////
     {
       title: "Escape Artist",
       image:
@@ -231,6 +273,10 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // Adidas x Candace Parker
+    ////////////////////////////////////////
     {
       title: "Adidas x Candace Parker",
       image:
@@ -243,6 +289,10 @@ const Work = () => {
       toolsUsed: "8th Wall ",
       gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
     },
+
+    ////////////////////////////////////////
+    // "United Soybean Board
+    ////////////////////////////////////////
     {
       title: "United Soybean Board",
       image:
@@ -270,6 +320,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // Meso Mountain
+    ////////////////////////////////////////
     {
       title: "Meso Mountain",
       image:
@@ -319,36 +372,46 @@ const Work = () => {
         },
       ],
     },
-    {
-      title: "Nydia The Blind Flower Girl",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933874/Thumbnail2_kbvk0y.png",
-      cover: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
-      category: "AR VPS Experience",
-      toolsUsed: "Blender | 8th Wall | Illustrator",
-      summary:
-        "We built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
-      roleSummary:
-        "This was an independent personal project that Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative direction together.",
-      credits: "Noah Ilbery | 8th Wall | VIVERSE",
-      gallery: [
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933872/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960_b13yay.jpg",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960_b0wpce.jpg",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960_cp5xmb.jpg",
-        },
-        { image: "https://youtu.be/zYneIDcUDuk?si=G8cLiRKsEDTJ4FgM" },
 
-        { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
-      ],
-    },
+    ////////////////////////////////////////
+    // Nydia The Blind Flower Girl
+    ////////////////////////////////////////
+    // {
+    //   title: "Nydia The Blind Flower Girl",
+    //   image:
+    //     "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933874/Thumbnail2_kbvk0y.png",
+    //   cover: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
+    //   category: "AR VPS Experience",
+    //   toolsUsed: "Blender | 8th Wall | Illustrator",
+    //   summary:
+    //     "We built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
+    //   roleSummary:
+    //     "This was an independent personal project that Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative direction together.",
+    //   credits: "Noah Ilbery | 8th Wall | VIVERSE",
+    //   gallery: [
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933872/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960_b13yay.jpg",
+    //     },
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960_b0wpce.jpg",
+    //     },
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960_cp5xmb.jpg",
+    //     },
+    //     { image: "https://youtu.be/zYneIDcUDuk?si=G8cLiRKsEDTJ4FgM" },
+
+    //     { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
+    //   ],
+    // },
+
+
+
+    ////////////////////////////////////////
+    // Holiday Interactive Mirror
+    ////////////////////////////////////////
 
     {
       title: "Holiday Interactive Mirror",
@@ -367,6 +430,10 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // Journey Of a Soybean
+    ////////////////////////////////////////
 
     {
       title: "Journey Of a Soybean",
@@ -420,6 +487,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    //R&D PROJECTS
+    ////////////////////////////////////////
     {
       title: "Research & Development Projects",
       image:
@@ -452,6 +522,11 @@ const Work = () => {
         },
       ],
     },
+
+
+    ////////////////////////////////////////
+    // CAPSTONE PROJECT
+    ////////////////////////////////////////
 
     {
       title: "Capstone: Interactive Projection",
@@ -486,25 +561,7 @@ const Work = () => {
       ],
     },
 
-    ////////////////////////////////////////
-    // FIELD VIEW AR 
-    ////////////////////////////////////////
 
-    //     {
-    //   title: "Field View",
-    //   image:
-    //     "",
-    //   cover: "",
-    //   category: "Augmented Reality",
-    //   toolsUsed: " Effect House | TikTok | 8th Wall ",
-    //   summary: "",
-    //   roleSummary: "",
-    //   gallery: [
-    //     {
-    //       image: "",
-    //     },
-    //   ],
-    // },
   ];
 
   const location = useLocation();
