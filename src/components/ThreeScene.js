@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
   OrbitControls,
@@ -17,12 +17,19 @@ const isMobile = navigator.userAgentData.mobile; //resolves true/false
   function RotatingGroup({ targetRotation, children, ...props }) {
   const groupRef = useRef(null);
 
+  useLayoutEffect(() => {
+    if (groupRef.current) {
+      const [tx, ty, tz] = targetRotation;
+      groupRef.current.rotation.set(tx, ty, tz);
+    }
+  }, [targetRotation]);
+
   useFrame((state, delta) => {
     if (!groupRef.current) return;
     const [tx, ty, tz] = targetRotation;
-    groupRef.current.rotation.x = THREE.MathUtils.damp(groupRef.current.rotation.x, tx, 4, delta);
-    groupRef.current.rotation.y = THREE.MathUtils.damp(groupRef.current.rotation.y, ty, 4, delta);
-    groupRef.current.rotation.z = THREE.MathUtils.damp(groupRef.current.rotation.z, tz, 4, delta);
+    groupRef.current.rotation.x = THREE.MathUtils.damp(groupRef.current.rotation.x, tx, 0.5, delta);
+    groupRef.current.rotation.y = THREE.MathUtils.damp(groupRef.current.rotation.y, ty, 0.5, delta);
+    groupRef.current.rotation.z = THREE.MathUtils.damp(groupRef.current.rotation.z, tz, 0.5, delta);
   });
 
   return (
@@ -36,6 +43,7 @@ export default function SceneCanvas() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const targetRef = useRef([Math.PI / 6, 0, 0]);
+  const [loadedSpirals, setLoadedSpirals] = useState(0);
 
   const handleMove = (event) => {
     let clientX, clientY;
@@ -79,8 +87,16 @@ export default function SceneCanvas() {
     targetRef.current = [yRot, xRot, 0];
   };
   
-  const COUNT = isMobile ? 3 : 10;
+  const COUNT = isMobile || !isHomePage ? 3 : 10;
   const GAP = 3;
+
+  useEffect(() => {
+    setLoadedSpirals(0);
+  }, [location.pathname]);
+
+  const handleSpiralLoaded = () => {
+    setLoadedSpirals((loadedCount) => Math.min(loadedCount + 1, COUNT));
+  };
 
   const currentMenu = (() => {
     const path = location.pathname;
@@ -120,6 +136,12 @@ export default function SceneCanvas() {
 
   return (
     <div className="three-container">
+      {loadedSpirals < COUNT && (
+        <div className="three-loading" role="status" aria-live="polite">
+          <div className="three-loading-mark" aria-hidden="true" />
+          <p>Loading 3D content</p>
+        </div>
+      )}
       <Canvas
         className="three-canvas"
         // onPointerMove={handleMove}
@@ -130,7 +152,7 @@ export default function SceneCanvas() {
           powerPreference: "high-performance",
           alpha: false,
         }}
-        dpr={isHomePage ? (isMobile ? [0.5, 1] : [1, 2]) : 0.35} // Lower pixel ratio on other pages
+        dpr={isHomePage ? (isMobile ? [0.75, 1] : [1, 2]) : 0.35} // Lower pixel ratio on other pages
       >
         <PerspectiveCamera
           makeDefault
@@ -150,7 +172,8 @@ export default function SceneCanvas() {
         <RotatingGroup targetRotation={bannerRot} scale={isMobile ? [0.17, 0.17, 0.17] : [0.3, 0.3, 0.3]}>
           {Array.from({ length: COUNT }).map((_, index) => (
             <Spiral
-              key={`billboard-${index}`}
+              key={`${location.pathname}-billboard-${index}`}
+              onLoaded={handleSpiralLoaded}
               radius={8}
               targetRotationY={index * spiralRotationMultiplier}
               position={[0, (index - (Math.ceil(COUNT / 2) - 1)) * GAP, 0]}
@@ -177,7 +200,7 @@ export default function SceneCanvas() {
           autoRotateSpeed={isHomePage ? 0.1 : 0}
           enableDamping={isHomePage}
         />
-      </Canvas>
+      </Canvas> 
     </div>
   );
 }

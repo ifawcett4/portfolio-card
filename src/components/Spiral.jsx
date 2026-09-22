@@ -5,7 +5,7 @@
 import * as THREE from 'three';
 import { useTexture } from '@react-three/drei';
 import { useFrame, extend } from '@react-three/fiber';
-import { useRef, useState, useCallback, useEffect } from 'react';
+import { useRef, useState, useCallback, useEffect, useLayoutEffect } from 'react';
 import { getCanvasTexture } from '../getCanvasTexture';
 
 
@@ -109,44 +109,46 @@ function setupCylinderTextureMapping(texture, dimensions, radius, height) {
     texture.offset.y = (1 - texture.repeat.y) / 2;
 }
 
+const collageTextureCache = new Map();
+
 function useCollageTexture(imgs, options = {}) {
     const [textureResults, setTextureResults] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    console.log("useCollageTexture")
-
     const { gap = 0, canvasHeight = 512, canvasWidth = 512, axis = 'x' } = options;
+    const cacheKey = `${axis}:${gap}:${canvasHeight}:${canvasWidth}:${imgs.map(({ url }) => url).join('|')}`;
 
     const createTexture = useCallback(async () => {
         try {
-            console.log("try create texture")
             setIsLoading(true);
             setError(null);
-            const result = await getCanvasTexture({
-                images: imgs,
-                gap,
-                canvasHeight,
-                canvasWidth,
-                axis,
-            });
-            setTextureResults(result);
-            console.log("result", result)
+            let texturePromise = collageTextureCache.get(cacheKey);
+            if (!texturePromise) {
+                texturePromise = getCanvasTexture({
+                    images: imgs,
+                    gap,
+                    canvasHeight,
+                    canvasWidth,
+                    axis,
+                });
+                collageTextureCache.set(cacheKey, texturePromise);
+            }
 
+            const result = await texturePromise;
+            setTextureResults(result);
         } catch (err) {
+            collageTextureCache.delete(cacheKey);
             setError(err instanceof Error ? err : new Error('Failed to create texture'));
 
         } finally {
             setIsLoading(false);
         }
-    }, [imgs, gap, canvasHeight, canvasWidth, axis]);
+    }, [imgs, gap, canvasHeight, canvasWidth, axis, cacheKey]);
 
     useEffect(() => {
-        if (imgs.length > 0){ 
-            console.log("images length", imgs.length)
+        if (imgs.length > 0){
             createTexture()
-        } else {
-             console.log("no images!")
         }
     }, [imgs.length, createTexture]);
 
@@ -160,11 +162,18 @@ function useCollageTexture(imgs, options = {}) {
 
 
 
-function Spiral({ radius = 1.6, targetRotationY = 0, ...props }) {
+function Spiral({ radius = 1.6, targetRotationY = 0, onLoaded, ...props }) {
     const { texture, dimensions, isLoading, error } = useCollageTexture(images);
     const ref = useRef(null);
     const bannerRef = useRef(null);
     const groupRef = useRef(null);
+    const hasReportedLoad = useRef(false);
+
+    useLayoutEffect(() => {
+        if (groupRef.current) {
+            groupRef.current.rotation.y = targetRotationY;
+        }
+    }, [targetRotationY]);
 
     const bannerTexture = useTexture('/banner_irina.jpg');
     bannerTexture.wrapS = bannerTexture.wrapT = THREE.RepeatWrapping;
@@ -174,19 +183,26 @@ function Spiral({ radius = 1.6, targetRotationY = 0, ...props }) {
         setupCylinderTextureMapping(texture, dimensions, radius, 2);
     }, [texture, dimensions, radius, isLoading]);
 
+    useEffect(() => {
+        if (!isLoading && (texture || error) && !hasReportedLoad.current) {
+            hasReportedLoad.current = true;
+            onLoaded?.();
+        }
+    }, [error, isLoading, onLoaded, texture]);
+
     useFrame((state, delta) => {
-        if (texture) texture.offset.x += delta * 0.005;
+        if (texture) texture.offset.x += delta * 0.0005;
 
         if (bannerRef.current) {
             const bannerMat = bannerRef.current.material;
-            if (bannerMat.map) bannerMat.map.offset.x += delta / 45;
+            if (bannerMat.map) bannerMat.map.offset.x += delta / 180;
         }
 
         if (groupRef.current) {
             groupRef.current.rotation.y = THREE.MathUtils.damp(
                 groupRef.current.rotation.y,
                 targetRotationY,
-                4,
+                5,
                 delta
             );
         }

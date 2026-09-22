@@ -672,14 +672,7 @@ const Work = () => {
 
       {modalOpen && selectedItem && (
         <div className="modal-overlay">
-          <div
-            className={`modal-content ${modalLoading ? "is-loading" : "is-visible"}`}
-          >
-            {modalLoading && (
-              <div className="modal-loading-overlay">
-                <div className="modal-loading-spinner" />
-              </div>
-            )}
+          <div className="modal-content is-visible">
             <button className="modal-close-btn" onClick={closeModal}>
               ×
             </button>
@@ -687,7 +680,13 @@ const Work = () => {
             <div className="main-content">
               {/* Cover Media (image, video file, or video URL) ------------------------ */}
               {selectedItem.cover &&
-                (() => {
+                <div className="modal-media-shell">
+                  {modalLoading && (
+                    <div className="modal-loading-overlay" role="status" aria-label="Loading project media">
+                      <div className="modal-loading-spinner" />
+                    </div>
+                  )}
+                  {(() => {
                   const coverUrl = selectedItem.cover;
                   const ext = coverUrl.split(".").pop().toLowerCase();
                   // Check for YouTube or Vimeo URL
@@ -747,6 +746,7 @@ const Work = () => {
                         muted
                         playsInline
                         onLoadedData={handleModalMediaReady}
+                        onError={handleModalMediaReady}
                       />
                     );
                   } else {
@@ -755,14 +755,17 @@ const Work = () => {
                         src={coverUrl}
                         alt={selectedItem.title || "Project Cover"}
                         className="modal-cover"
-                        loading="lazy"
+                        loading="eager"
+                        fetchPriority="high"
                         decoding="async"
                         onLoad={handleModalMediaReady}
+                        onError={handleModalMediaReady}
                       />
                     );
                   }
                   return null;
-                })()}
+                  })()}
+                </div>}
               {selectedItem.title && (
                 <h2 className="modal-title">{selectedItem.title}</h2>
               )}
@@ -854,6 +857,7 @@ const Work = () => {
                               >
                                 <iframe
                                   src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&loop=1&playlist=${videoId}`}
+                                  loading="lazy"
                                   title={`gallery-youtube-${idx}`}
                                   frameBorder="0"
                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -874,6 +878,7 @@ const Work = () => {
                               >
                                 <iframe
                                   src={`https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&playsinline=1`}
+                                  loading="lazy"
                                   frameBorder="0"
                                   allow="autoplay; fullscreen; picture-in-picture"
                                   allowFullScreen
@@ -891,7 +896,7 @@ const Work = () => {
                               src={url}
                               controls
                               muted
-                              autoPlay
+                              preload="metadata"
                               loop
                               playsInline
                               allow="autoplay; fullscreen; picture-in-picture"
@@ -960,6 +965,7 @@ const Work = () => {
                             <div className="subsection-media-embed youtube-embed">
                               <iframe
                                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&loop=1&playlist=${videoId}`}
+                                loading="lazy"
                                 title={`subsection-youtube-${idx}`}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -977,6 +983,7 @@ const Work = () => {
                             <div className="subsection-media-embed">
                               <iframe
                                 src={`https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&playsinline=1`}
+                                loading="lazy"
                                 frameBorder="0"
                                 allow="autoplay; fullscreen; picture-in-picture"
                                 allowFullScreen
@@ -991,7 +998,7 @@ const Work = () => {
                             src={url}
                             controls
                             muted
-                            autoPlay
+                            preload="metadata"
                             loop
                             playsInline
                             allow="autoplay; fullscreen; picture-in-picture"
@@ -1037,6 +1044,13 @@ const Work = () => {
                   </>
                 )}
             </div>
+            <button
+              type="button"
+              className="back-to-gallery-btn"
+              onClick={closeModal}
+            >
+              Back to gallery
+            </button>
           </div>
         </div>
       )}
