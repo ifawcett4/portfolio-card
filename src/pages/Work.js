@@ -611,8 +611,8 @@ const Work = () => {
       cover: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792462106/butterflies_01_fnrsnu.mp4",
       category: "Interactive Experience",
       toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron ",
-      summary: "",
-      roleSummary: "",
+      summary: "More visual content coming soon! This project features an interactive 3D holographic experience designed for an 86-inch Looking Glass HLD display in a dedicated room within Bayer’s tour facility in Chesterfield, Missouri. Leveraging Looking Glass’s immersive display technology, the experience creates a striking, glasses-free 3D visual environment that brings agricultural content to life. Unlike traditional holographic displays that focus primarily on visual presentation, this experience allows visitors to actively engage with the content through a sequence of interactive 3D scenes, animations, and hands-on interactions at each stage. The content explores key aspects of corn production, including pests, weather conditions, and weeds, providing an engaging and informative look at the challenges and factors that influence crop growth. Designed to complement and enhance the guided tour experience, the installation serves as an interactive storytelling tool for Bayer’s tour guides, helping them communicate complex agricultural concepts in a visually compelling, memorable, and accessible way.",
+      roleSummary: "Served as one of two developers, contributing significantly to core features and interactive functionality. Developed 3D objects and animations, liquid glass and glow effects, and UI interactions for content sequencing and scene transitions. Built with Electron, React, and React Three Fiber, with a focus on delivering visually rich, interactive 3D content while maintaining performance on the Looking Glass HLD display.",
       gallery: [
         {
           image: "",
