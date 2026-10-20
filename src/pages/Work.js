@@ -62,6 +62,36 @@ const Work = () => {
     },
 
     ////////////////////////////////////////
+    // FIELD VIEW: FIELD RUSH
+    ////////////////////////////////////////
+    {
+      title: "Field View: Field Rush Game",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1790118819/fr_cover_q0ht2a.jpg",
+      category: "Augmented Reality Game",
+      toolsUsed: "Effect House | TikTok",
+      credits: "FieldView | Paradowski Creative",
+      summary:
+        "We worked with FieldView to create an immersive game using a TikTok filter as part of their introduction to the platform. Players smash colored buttons as they cross the finish line to grow their crops and build a high score. The game is designed to be simple but fun, with subtle nods to the branding of our recent partnership for their 10th anniversary campaign.",
+      roleSummary:
+        "I was the sole developer and creative technology lead on this project, leading cross-team collaboration and project guidelines. The filter is made entirely in Effect House using visual scripting tools. I worked closely with 3D artists to integrate game elements and ensure they are optimized.",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1787169228/Field_Rush_Game_Compilation_260707_ubxszv.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1787169036/Field_Rush_Preview_1_lompye.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1790120118/FieldRushBTS_072126_1_f7mccz.mp4",
+        },
+      ],
+    },
+
+    ////////////////////////////////////////
     // STL ZOO
     ////////////////////////////////////////
     {

@@ -1,7 +1,5 @@
-@import url("https://use.typekit.net/sdk5zav.css");
-
 html {
-  font-size: 80%;
+  font-size: 100%;
 }
 
 /* SCSS HEX */
@@ -18,8 +16,8 @@ body {
   overflow-x: hidden;
   box-sizing: content-box;
   background-color: rgb(2, 12, 22);
-  /* font-family: "Electrolize", sans-serif; */
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(1rem, 0.94rem + 0.18vw, 1.125rem);
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -65,6 +63,9 @@ ul {
   position: relative;
   transition: transform 0.3s ease;
   cursor: pointer;
+  font-family: "Electrolize", sans-serif;
+  font-size: clamp(0.85rem, 0.76rem + 0.25vw, 1.1rem);
+  letter-spacing: 0.04em;
 }
 
 .nav-icon {
@@ -134,7 +135,7 @@ ul {
   pointer-events: none;
   text-transform: uppercase;
   letter-spacing: 0.18rem;
-  font-size: 0.7rem;
+  font-size: clamp(0.8rem, 0.74rem + 0.15vw, 0.95rem);
 }
 
 .three-loading p {
@@ -160,7 +161,7 @@ ul {
 }
 
 .home-text {
-  font-family: "aktiv-grotesk", sans-serif;
+  font-family: "Electrolize", sans-serif;
   font-weight: 800;
   font-style: normal;
   position: absolute;
@@ -182,16 +183,16 @@ ul {
 }
 
 .home-title {
-  font-size: 5rem;
+  font-size: clamp(3.25rem, 8vw, 7rem);
   margin: 0;
   padding: 0;
   letter-spacing: 0.9rem;
   font-weight: 800;
-  line-height: 5.5rem;
+  line-height: 1.05;
 }
 
 .home-subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.25rem);
   margin: 0;
   padding: 0;
   letter-spacing: 0.6rem;
@@ -204,16 +205,16 @@ ul {
   }
 
   .home-title {
-    font-size: 2rem;
-    line-height: 2.1rem;
-    letter-spacing: 1rem;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: 0.45rem;
   }
 
   .home-subtitle {
     width: 90%;
-    font-size: 0.5rem;
-    letter-spacing: 0.2rem;
-    line-height: 1rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    letter-spacing: 0.12rem;
+    line-height: 1.4;
     margin-top: 5%;
   }
 }

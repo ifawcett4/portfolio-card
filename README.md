@@ -17,36 +17,62 @@ Hosted on GitHub Pages via the `main` branch (`docs` folder).
 
 ## Development & Deployment
 
+### Deploying Changes
+
+Run these commands from the repository root after making changes:
+
 ```bash
-# 1. Make sure you're on main
+# 1. Make sure the source branch is current
 git checkout main
+git pull origin main
 
-# 2. Run locally
-npm start
-# → http://localhost:3000
+# 2. Test the production build locally
+npm install
+npm run build
 
-# 3. When ready to go live
+# 3. Commit and push source changes first
+git add src public README.md package.json package-lock.json
+git commit -m "Describe the source changes"
+git push origin main
+
+# 4. Build docs and publish the GitHub Pages files
 npm run deploy
-# → builds the app into docs, commits, and pushes to main (this updates the live site)
-# → git push alone does NOT update the live site unless docs is included
+
+# 5. Confirm both source and generated output are synced
+git status --short --branch
+git log -2 --oneline --decorate
 ```
 
-> After deploying, wait ~2 minutes for GitHub Pages to update, then hard refresh the browser (`Ctrl+Shift+R`) to bypass cache.
+`npm run deploy` is required because GitHub Pages serves the committed `docs/`
+folder. A normal `git push` only publishes source changes and does not rebuild
+the site. The deploy command creates a separate `Deploy to GitHub Pages` commit
+for the generated files.
 
-### If deployment issues occur (e.g., cache or conflicts)
+If `npm run deploy` reports that there is nothing to commit, run `npm run build`
+and inspect `git status`. The source change may not be included in the build, or
+the `docs/` output may already match the current source.
+
+### Local Development
+
+```bash
+npm start
+# -> http://localhost:3000
+```
+
+### If Deployment Issues Occur
 
 If GitHub Pages has issues or you need to clear the build:
 
 ```bash
-# Remove the old docs folder
+# Remove the old docs folder, then rebuild and deploy
 rm -rf docs
-
-# Rebuild and deploy
 npm run deploy
 ```
 
-This rebuilds the `docs` folder cleanly and commits it to
 This rebuilds the `docs` folder cleanly and commits it to `main`.
+
+After deploying, wait about two minutes for GitHub Pages to update, then hard
+refresh the browser (`Ctrl+Shift+R`) to bypass cache.
 
 ---
 
