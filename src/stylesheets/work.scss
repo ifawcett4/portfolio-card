@@ -343,19 +343,26 @@
 
     .back-to-gallery-btn {
       margin: 2rem 0 3rem;
-      padding: 0.9% 1%;
-      border: 0.5px solid #d0e4ff;
-      border-radius: 8px;
-      background: transparent;
-      color: #d0e4ff;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid rgba(206, 253, 254, 0.3);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      color: rgba(255, 255, 255, 0.88);
       font: inherit;
-      text-transform: uppercase;
+      font-size: 0.76rem;
       cursor: pointer;
-      transition: opacity 0.2s ease;
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
     }
 
     .back-to-gallery-btn:hover {
-      opacity: 0.9;
+      color: #cefdfe;
+      border-color: rgba(206, 253, 254, 0.8);
+      background: rgba(206, 253, 254, 0.08);
+      transform: translateY(-2px);
     }
 
     .main-content {

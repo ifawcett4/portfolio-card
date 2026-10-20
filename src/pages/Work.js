@@ -14,6 +14,56 @@ const Work = () => {
   };
 
   const gridItems = [
+
+    ////////////////////////////////////////
+    // SESAME STREET
+    ////////////////////////////////////////
+    {
+      title: "Sesame Street Social Media Filters",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
+      category: "AR Filters",
+      toolsUsed: " Effect House | Spark AR ",
+      credits: "Sesame Street | Paradowski Creative ",
+      summary: "Sesame Street aimed to strengthen their social media presence and reconnect with an older audience nostalgic for the beloved characters, partnering to create interactive filters for Instagram and TikTok. The first filter is a This or That style quiz where users pick which character they'd rather do certain activities with. The world tracked Dancing Elmo filter features three popular Elmo songs, each with a 3D dancing Elmo that users can interact with in their real-life environment",
+      roleSummary:
+        "I was the sole AR developer for this project, working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters, I created custom shadows and the ability to switch between the different dances on Instagram.",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664451/2025-01-06-114956882_debhqc.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664418/2025-01-06-115117627_gqfhfg.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664421/dc821b9e2ea1ced326c223c238f6214f_rdd0gt.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664465/Screen_Recording_20250106_121519_Instagram_cjrqxf.mp4",
+        },
+
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664386/8d7e11ad5eb2df514aededf6732aa5b8_knjdy5.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
+        },
+      ],
+    },
+
+    ////////////////////////////////////////
+    // STL ZOO
+    ////////////////////////////////////////
     {
       title: "Saint Louis Zoo AR Education",
       image:
@@ -85,6 +135,10 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // AR GALLERY
+    ////////////////////////////////////////
     {
       title: "Augmented Reality Gallery",
       image:
@@ -94,6 +148,9 @@ const Work = () => {
         " This gallery features both my personal and client AR work made both individually with Paradowski Creative. Some projects featured were purely proof-of-concept for proposals only. I was the sole AR developer for each of the following projects, often in collaboration with 3D Artists and Designers for asset development.",
       toolsUsed: " 8th Wall | Effect House | Lens Studio | Spark AR",
       gallery: [
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792460501/Snap_Dummen_Orange_flowers_eabm1n.mp4"
+        },
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663179/FOD_360_cmmtis.mp4",
@@ -152,48 +209,10 @@ const Work = () => {
         },
       ],
     },
-    {
-      title: "Sesame Street Social Media Filters",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
-      category: "AR Filters",
-      toolsUsed: " Effect House | Spark AR ",
-      credits: "Sesame Street | Paradowski Creative ",
-      summary: "Sesame Street aimed to strengthen their social media presence and reconnect with an older audience nostalgic for the beloved characters, partnering to create interactive filters for Instagram and TikTok. The first filter is a This or That style quiz where users pick which character they'd rather do certain activities with. The world tracked Dancing Elmo filter features three popular Elmo songs, each with a 3D dancing Elmo that users can interact with in their real-life environment",
-      roleSummary:
-        "I was the sole AR developer for this project, working in both Effect House and Spark AR. I created custom weighted logic to create a tier system for the priority order of characters in the quiz while ensuring results do not repeat. For the dancing characters, I created custom shadows and the ability to switch between the different dances on Instagram.",
-      gallery: [
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664451/2025-01-06-114956882_debhqc.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664418/2025-01-06-115117627_gqfhfg.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664421/dc821b9e2ea1ced326c223c238f6214f_rdd0gt.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664465/Screen_Recording_20250106_121519_Instagram_cjrqxf.mp4",
-        },
 
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664386/8d7e11ad5eb2df514aededf6732aa5b8_knjdy5.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
-        },
-      ],
-    },
+    ////////////////////////////////////////
+    // ESCAPE ARTIST
+    ////////////////////////////////////////
     {
       title: "Escape Artist",
       image:
@@ -231,6 +250,10 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // ADIDAS
+    ////////////////////////////////////////
     {
       title: "Adidas x Candace Parker",
       image:
@@ -243,6 +266,10 @@ const Work = () => {
       toolsUsed: "8th Wall ",
       gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
     },
+
+    ////////////////////////////////////////
+    // UNITED SOYBEAN BOARD
+    ////////////////////////////////////////
     {
       title: "United Soybean Board",
       image:
@@ -270,6 +297,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // MESO MOUNTAIN
+    ////////////////////////////////////////
     {
       title: "Meso Mountain",
       image:
@@ -319,6 +349,10 @@ const Work = () => {
         },
       ],
     },
+
+    ////////////////////////////////////////
+    // NYDIA THE BLIND FLOWER GIRL
+    ////////////////////////////////////////
     {
       title: "Nydia The Blind Flower Girl",
       image:
@@ -350,6 +384,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // HOLIDAY INTERACTIVE MIRROR
+    ////////////////////////////////////////
     {
       title: "Holiday Interactive Mirror",
       image:
@@ -368,6 +405,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // JOURNEY OF A SOYBEAN
+    ////////////////////////////////////////
     {
       title: "Journey Of a Soybean",
       image:
@@ -420,6 +460,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // R&D Projects
+    ////////////////////////////////////////
     {
       title: "Research & Development Projects",
       image:
@@ -453,6 +496,9 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // CAPSTONE: INTERACTIVE PROJECTION
+    ////////////////////////////////////////
     {
       title: "Capstone: Interactive Projection",
       image:
@@ -487,9 +533,66 @@ const Work = () => {
     },
 
     ////////////////////////////////////////
+    // PURINA ARENA
+    ////////////////////////////////////////
+    {
+      title: "Purina Arena Pet Racing",
+      image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459632/Screenshot_2026-05-21_at_3.05.27_PM_yobs7r.png",
+      cover: "https://vimeo.com/paradowski/purina-arena-preview?share=copy&fl=cl&fe=ci",
+      category: "Game",
+      toolsUsed: " Roblox | Lua ",
+      summary: "Purina Arena Pet Racing was named a 2025 Webby Honoree in the AI, Immersive & Games category and has reached 3.65M users since launch. The Roblox game lets players race adopted dogs and cats across diverse courses, care for their pets, collect exclusive accessories, and celebrate with emotes. Developed with St. Louis-based Paradowski Creative, the experience makes Purina one of the first pet care companies to launch a branded game on Roblox.",
+      roleSummary:"I contributed as a developer working on key gameplay features and analytics. This was my first Roblox game and when I learned scripting in Lua. ",
+      gallery: [
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-9_eueahg.jpg",
+        },
+        {
+          image: "https://vimeo.com/1008913904",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-8_wp7hzb.jpg",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-6_n9rryj.jpg",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-4_gc7jzy.jpg",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-7_qi3rrs.jpg",
+        },
+                {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-3_hfs5pp.jpg",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-5_ccl8ka.jpg",
+        },
+
+      ],
+    },
+
+    ////////////////////////////////////////
+    // Bayer Tour
+    ////////////////////////////////////////
+    {
+      title: "Bayer Tour Interactive Display",
+      image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792462102/IMG_2200_dcggle.jpg",
+      cover: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792462106/butterflies_01_fnrsnu.mp4",
+      category: "Interactive Experience",
+      toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron ",
+      summary: "",
+      roleSummary: "",
+      gallery: [
+        {
+          image: "",
+        },
+      ],
+    },
+
+    ////////////////////////////////////////
     // FIELD VIEW AR 
     ////////////////////////////////////////
-
     //     {
     //   title: "Field View",
     //   image:

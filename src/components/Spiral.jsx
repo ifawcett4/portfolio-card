@@ -10,6 +10,7 @@ import { getCanvasTexture } from '../getCanvasTexture';
 
 
 const images = [    
+    { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792466470/1-Nov-06-2025-06-05-46-0136-PM_bujpno.png" },
     { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777934677/zoo_w6qtlx.jpg" },
     { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1781663044/arcover-100_rgfegi.jpg"},
     { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg"},
@@ -19,10 +20,14 @@ const images = [
     { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933896/RD_Cover_emgela.jpg"},
     { url: "/images/2024-05-23 18_48_03.477-0500.jpg" },
     { url: "/images/20260319_103947.jpg"},
-     { url: "/images/Screenshot 2026-07-06 212027.png" },
+    { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792466125/IMG_20260903_104709327_tupssr.jpg" },
+    { url: "/images/Screenshot 2026-07-06 212027.png" },
     { url: "/images/Screenshot 2026-07-06 212315.png"},
     { url: "/images/VideoCapture_20250102-223221.jpg" },
     { url: "/images/VideoCapture_20251105-232337.jpg" },
+    { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792466112/IMG_20260903_104722670_nb2pje.jpg" },
+    { url: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1785460211/VideoCapture_20250512-230205_brnux8.jpg" }
+
 ]
 
 

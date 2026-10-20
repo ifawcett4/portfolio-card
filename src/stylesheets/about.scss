@@ -67,6 +67,21 @@
     flex-direction: column;
   }
 
+  .about-intro,
+  .skills-section {
+    box-sizing: border-box;
+    height: auto;
+    min-height: 100vh;
+    padding: 5rem 0;
+  }
+
+  .intro-card,
+  .skills-card {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+  }
+
   .main {
     display: flex;
     flex-direction: row;
@@ -81,100 +96,86 @@
     }
 
     img {
-      width: 25%;
+      width: 29%;
       height: auto;
-      border-radius: 8px;
-      margin-right: 2%;
-      margin-top: 2%;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 4%;
+      margin-top: 0;
     }
 
     p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .about-main-right {
+      flex: 1;
+      min-width: 0;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      text-align: left;
+      letter-spacing: 0.08em;
     }
 
     @media (max-width: 900px) {
       p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         line-height: 1.6;
       }
       img {
-      width: 50%;
+        width: min(55%, 280px);
+        margin: 0 0 1.5rem;
       }
     }
 
     .icon-links {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    ul {
-      list-style: none;
-      justify-content: flex-start;
-    }
-
-    li {
-      padding-right: 5%;
-    }
-
-    @media (max-width: 900px) {
-      ul {
-        justify-content: space-around;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.35rem;
     }
 
     a {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid rgba(206, 253, 254, 0.3);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.76rem;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.035);
+      transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
       cursor: pointer;
     }
 
     a:hover {
-      color: #b3fcff;
-      transform: scale(1.05);
+      color: #cefdfe;
+      border-color: rgba(206, 253, 254, 0.8);
+      background: rgba(206, 253, 254, 0.08);
+      transform: translateY(-2px);
     }
-
-    // .link-text {
-    //   padding-left: 2%;
-    //   font-size: 0.9rem;
-    // }
-
-    // @media (max-width: 900px) {
-    //   .link-text {
-    //     padding-left: 5%;
-    //     font-weight: 300;
-    //     font-size: 0.8rem;
-    //   }
-    // }
 
     .icon {
-      width: 25px;
-      height: 25px;
-      color: white !important;
-      fill: white !important;
-      transition: fill 0.3s ease;
-      margin: 0;
-      padding: 0;
+      display: block;
+      width: 16px;
+      height: 16px;
+      color: currentColor;
+      fill: currentColor;
+      flex: 0 0 auto;
     }
 
-    a:hover .icon {
-      color: #b3fcff !important;
-      fill: #b3fcff !important;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-20px);
-      }
-      60% {
-        transform: translateY(-10px);
+    @media (max-width: 900px) {
+      .icon-links {
+        justify-content: center;
       }
     }
   }
@@ -202,72 +203,229 @@
     }
 
   .skills {
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      padding-bottom: 5%;
+    width: 100%;
+
+    h2 {
+      margin: 0 0 1rem;
+      text-align: left;
+      letter-spacing: 0.08em;
     }
 
-    .skills-text {
-      line-height: 2;
+    p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .skill-tags {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      padding: 0.32rem 0.55rem;
+      border: 1px solid rgba(206, 253, 254, 0.18);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      line-height: 1.2;
     }
 
     @media (max-width: 900px) {
       p {
-        font-size: 0.8rem;
-        line-height: 1.6;
-        padding-bottom: 5%;
+        font-size: 0.88rem;
       }
     }
   }
 
+  .resume-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    margin: 1.5rem auto 0;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(206, 253, 254, 0.3);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-size: 0.76rem;
+    text-decoration: none !important;
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease;
+    background: rgba(255, 255, 255, 0.035);
+
+    .icon {
+      display: block;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: #cefdfe !important;
+      transform: translateY(-2px);
+      border-color: rgba(206, 253, 254, 0.8);
+      background: rgba(206, 253, 254, 0.08);
+    }
+  }
+
+  .awards-section {
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 4rem 0;
+  }
+
+  .awards,
   .publication {
+    width: 100%;
+    max-width: 900px;
+
+    h2 {
+      margin: 0 0 1.5rem;
+      text-align: left;
+      letter-spacing: 0.14em;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
+      gap: 0.8rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     li {
-      display: flex;
-      flex-direction: column;
-      padding: 2%;
+      min-width: 0;
+    }
+
+    .recognition-card {
+      display: block;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(206, 253, 254, 0.35);
+      border-radius: 16px;
+      background: rgba(8, 18, 32, 0.2);
       color: white;
+      text-decoration: none;
+      transition:
+        border-color 180ms ease,
+        background-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
 
-      h3 {
-        margin: 0;
-        padding: 0;
-        padding-bottom: 0.5%;
-        line-height: 200%;
-        font-size: 1rem;
-        letter-spacing: 0.05rem;
+      &:hover {
+        transform: translateY(-2px);
+        border-color: rgba(206, 253, 254, 0.8);
+        background: rgba(206, 253, 254, 0.055);
+        box-shadow: 0 0 18px rgba(110, 226, 239, 0.1);
       }
 
-      p {
-        margin: 0;
-        top: 0;
-        line-height: 150%;
+      &:focus-visible {
+        outline: 2px solid #cefdfe;
+        outline-offset: 3px;
+      }
+    }
+
+    .recognition-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.45rem;
+      color: rgba(255, 255, 255, 0.72);
+      font-family: "proxima-nova", sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.015em;
+
+      span {
+        font-style: italic;
       }
 
-      @media (max-width: 900px) {
-        h3 {
-          padding-bottom: 0.5%;
-          line-height: 200%;
-          font-size: 0.8rem;
-          letter-spacing: 0.05rem;
-        }
-
-        p {
-          font-size: 0.7rem;
-          line-height: 150%;
-        }
+      time {
+        flex: 0 0 auto;
+        color: rgba(255, 255, 255, 0.78);
+        font-family: monospace;
+        font-size: 0.88rem;
       }
+    }
+
+    h3 {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: 0.015em;
+
+      strong {
+        color: white;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding-top: 0.35rem;
+      color: rgba(255, 255, 255, 0.76);
+      font-family: "proxima-nova", sans-serif;
+      font-size: 0.86rem;
+      line-height: 1.5;
     }
 
     @media (max-width: 900px) {
-      li {
-        padding: 6%;
+      ul {
+        gap: 0.65rem;
+      }
+
+      .recognition-card {
+        padding: 0.85rem 1rem;
+      }
+
+      .recognition-meta {
+        font-size: 0.8rem;
+
+        time {
+          font-size: 0.78rem;
+        }
+      }
+
+      h3 {
+        font-size: 0.85rem;
+        line-height: 1.45;
+      }
+
+      p {
+        font-size: 0.75rem;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .recognition-card {
+        transition: none;
+
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .publication-section {
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 4rem 0;
   }
 
   h2 {
