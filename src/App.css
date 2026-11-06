@@ -2,6 +2,17 @@ html {
   font-size: 100%;
 }
 
+:root {
+  /* Golden-ratio type scale, in half-steps for a smoother hierarchy. */
+  --type-small: 0.786rem;
+  --type-base: 0.9rem;
+  --type-large: 1.272rem;
+  --type-heading: 1.618rem;
+  --type-display: 2.058rem;
+  --type-hero: 2.618rem;
+  --type-jumbo: 4.236rem;
+}
+
 /* SCSS HEX */
 @intense-cherry: #BB333Bff;
 @electric-rose: #D848A9ff;
@@ -17,9 +28,45 @@ body {
   box-sizing: content-box;
   background-color: rgb(2, 12, 22);
   font-family: "Nunito", sans-serif;
-  font-size: clamp(1rem, 0.94rem + 0.18vw, 1.125rem);
+  font-size: var(--type-base);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "aktiv-grotesk", sans-serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(var(--type-hero), 8vw, var(--type-jumbo));
+}
+
+h2 {
+  font-size: var(--type-heading);
+}
+
+h3 {
+  font-size: var(--type-large);
+}
+
+h4,
+h5,
+h6,
+p {
+  font-size: var(--type-base);
+  
+}
+
+p {
+  line-height: 1.65;
+
 }
 
 .app {
@@ -33,6 +80,7 @@ nav {
   left: 0;
   width: 100dvw;
   z-index: 90;
+  font-family: "aktiv-grotesk", sans-serif;
   padding: 1vh;
   backdrop-filter: blur(30px);
   /* background-color: rgba(0, 0, 0, 0.7); */
@@ -63,8 +111,8 @@ ul {
   position: relative;
   transition: transform 0.3s ease;
   cursor: pointer;
-  font-family: "Electrolize", sans-serif;
-  font-size: clamp(0.85rem, 0.76rem + 0.25vw, 1.1rem);
+  font-family: "aktiv-grotesk", sans-serif;
+  font-size: var(--type-base);
   letter-spacing: 0.04em;
 }
 
@@ -135,7 +183,7 @@ ul {
   pointer-events: none;
   text-transform: uppercase;
   letter-spacing: 0.18rem;
-  font-size: clamp(0.8rem, 0.74rem + 0.15vw, 0.95rem);
+  font-size: var(--type-small);
 }
 
 .three-loading p {
@@ -161,7 +209,7 @@ ul {
 }
 
 .home-text {
-  font-family: "Electrolize", sans-serif;
+  font-family: "aktiv-grotesk", sans-serif;
   font-weight: 800;
   font-style: normal;
   position: absolute;
@@ -183,7 +231,7 @@ ul {
 }
 
 .home-title {
-  font-size: clamp(3.25rem, 8vw, 7rem);
+  font-size: clamp(var(--type-hero), 8vw, var(--type-jumbo));
   margin: 0;
   padding: 0;
   letter-spacing: 0.9rem;
@@ -192,7 +240,7 @@ ul {
 }
 
 .home-subtitle {
-  font-size: clamp(0.9rem, 1.2vw, 1.25rem);
+  font-size: var(--type-base);
   margin: 0;
   padding: 0;
   letter-spacing: 0.6rem;
@@ -205,14 +253,14 @@ ul {
   }
 
   .home-title {
-    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-size: clamp(var(--type-heading), 12vw, var(--type-hero));
     line-height: 1.1;
     letter-spacing: 0.45rem;
   }
 
   .home-subtitle {
     width: 90%;
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-size: var(--type-small);
     letter-spacing: 0.12rem;
     line-height: 1.4;
     margin-top: 5%;

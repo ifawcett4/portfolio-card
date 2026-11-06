@@ -1276,7 +1276,7 @@ const Work = () => {
                 className="back-to-gallery-btn"
                 onClick={closeModal}
               >
-                Back to gallery
+                GALLERY
               </button>
               <button
                 type="button"
