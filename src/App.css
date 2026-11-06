@@ -40,7 +40,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "aktiv-grotesk", sans-serif;
+    font-family: "Oxanium", sans-serif;
+
   line-height: 1.2;
 }
 
@@ -80,7 +81,8 @@ nav {
   left: 0;
   width: 100dvw;
   z-index: 90;
-  font-family: "aktiv-grotesk", sans-serif;
+    font-family: "Oxanium", sans-serif;
+
   padding: 1vh;
   backdrop-filter: blur(30px);
   /* background-color: rgba(0, 0, 0, 0.7); */
@@ -111,7 +113,8 @@ ul {
   position: relative;
   transition: transform 0.3s ease;
   cursor: pointer;
-  font-family: "aktiv-grotesk", sans-serif;
+    font-family: "Oxanium", sans-serif;
+
   font-size: var(--type-base);
   letter-spacing: 0.04em;
 }
@@ -209,7 +212,8 @@ ul {
 }
 
 .home-text {
-  font-family: "aktiv-grotesk", sans-serif;
+    font-family: "Oxanium", sans-serif;
+
   font-weight: 800;
   font-style: normal;
   position: absolute;
