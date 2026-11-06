@@ -218,22 +218,26 @@
     }
 
     .skill-tags {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 0.4rem;
+      display: block;
       margin: 1.5rem 0 0;
       padding: 0;
       list-style: none;
     }
 
     li {
-      padding: 0.32rem 0.55rem;
-      border: 1px solid rgba(206, 253, 254, 0.18);
-      border-radius: 999px;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: var(--type-small);
-      line-height: 1.2;
+      display: inline;
+      padding: 0;
+      border: 0;
+      font-size: var(--type-base);
+      line-height: 1.65;
+    }
+
+    li + li::before {
+      content: "·";
+      font-size: var(--type-large);
+      display: inline-block;
+      padding: 0 0.2em;
+      color: #caeaf1;
     }
 
     @media (max-width: 900px) {
