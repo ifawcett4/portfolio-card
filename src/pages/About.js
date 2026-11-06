@@ -58,6 +58,33 @@ const awards = [
     detail: "AI, Immersive & Games",
     href: "https://winners.webbyawards.com/2024/ai-immersive-games/immersive-features/best-narrative-experience/285660/the-escape-artist",
   },
+  {
+    type: "Webby Award",
+    year: "2023",
+    dateTime: "2023",
+    result: "Honoree",
+    project: "Above Par-adowski",
+    detail: "Apps, Software & Immersive · Immersive Gaming",
+    href: "https://paradowski.com/stories/above-par-adowski-webby-honors-webxr-game-of-the-year",
+  },
+  {
+    type: "WebXR Awards",
+    year: "2023",
+    dateTime: "2023",
+    result: "Game of the Year",
+    project: "Above Par-adowski",
+    detail: "",
+    href: "https://paradowski.com/stories/above-par-adowski-webby-honors-webxr-game-of-the-year",
+  },
+  {
+    type: "Glitch",
+    year: "2022",
+    dateTime: "2022",
+    result: "Coolest WebXR Experience",
+    project: "Above Par-adowski",
+    detail: "WebXR Recognition",
+    href: "https://paradowski.com/stories/above-par-adowski-webby-honors-webxr-game-of-the-year",
+  },
 ];
 
 const articles = [
@@ -208,7 +235,7 @@ const About = () => {
               </p>
               <ul className="skill-tags">
                 {/* <!-- Web Development --> */}
-                <li>Front-End Development</li>
+                {/* <li>Front-End Development</li> */}
                 <li>Web Development</li>
                 <li>JavaScript</li>
                 <li>TypeScript</li>
@@ -228,12 +255,12 @@ const About = () => {
                 <li>Augmented Reality (AR)</li>
                 <li>Virtual Reality (VR)</li>
                 <li>Mixed Reality (MR)</li>
-                <li>WebXR</li>
+                {/* <li>WebXR</li> */}
                 {/* <li>Immersive Experience Design</li> */}
                 <li>Experiential Design</li>
                 {/* <li>Spatial Interaction Design</li> */}
-                <li>3D Interaction Design</li>
-                <li>Location-Based Experiences</li>
+                {/* <li>3D Interaction Design</li> */}
+                {/* <li>Location-Based Experiences</li> */}
                 {/* <li>World Tracking &amp; Image Tracking</li> */}
 
                 {/* <!-- Creative Technology & Prototyping --> */}
@@ -244,14 +271,14 @@ const About = () => {
                 {/* <li>Experimental Prototyping</li> */}
                 <li>Rapid Prototyping</li>
                 <li>Technical Art</li>
-                <li>Real-Time Rendering</li>
-                <li>3D Visualization</li>
+                {/* <li>Real-Time Rendering</li> */}
+                {/* <li>3D Visualization</li> */}
                 <li>Photogrammetry</li>
-                <li>MediaPipe</li>
-                <li>WebGL</li>
+                {/* <li>MediaPipe</li> */}
+                {/* <li>WebGL</li> */}
 
                 {/* <!-- Design & Creative Strategy --> */}
-                <li>Interaction Design</li>
+                {/* <li>Interaction Design</li> */}
                 {/* <li>Interactive Design</li> */}
                 <li>UX / UI</li>
                 <li>Web Design</li>
@@ -261,7 +288,7 @@ const About = () => {
                 <li>Creative Strategy</li>
                 {/* <li>Concept Development</li> */}
                 {/* <li>Creative Concepting</li> */}
-                <li>Creative Direction</li>
+                {/* <li>Creative Direction</li> */}
 
    
 
@@ -286,7 +313,7 @@ const About = () => {
 
               </ul>
             </div>
-            <a className="resume-link" href="/PDFS/Resume_Irina_Fawcett_2026 (1).pdf" download="Irina_Fawcett_Resume_2026">
+            <a className="resume-link" href="/PDFS/Fawcett, Irina Resume 2026-2027.pdf" download="Irina_Fawcett_Resume_2026">
               <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true">
                 <path fill="currentColor" d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 405.8 252.8 393.3 265.3L352 306.7L352 96zM160 384C124.7 384 96 412.7 96 448L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 448C544 412.7 515.3 384 480 384L433.1 384L376.5 440.6C345.3 471.8 294.6 471.8 263.4 440.6L206.9 384L160 384zM464 440C477.3 440 488 450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 450.7 450.7 440 464 440z" />
               </svg>
@@ -300,7 +327,7 @@ const About = () => {
             <h2 id="awards-heading">Awards &amp; Recognition</h2>
             <ul>
               {awards.map((award) => (
-                <li key={`${award.year}-${award.project}`}>
+                <li key={`${award.year}-${award.type}-${award.result}`}>
                   <a
                     className="recognition-card"
                     href={award.href}

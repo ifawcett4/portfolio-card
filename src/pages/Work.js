@@ -62,6 +62,57 @@ const Work = () => {
     },
 
     ////////////////////////////////////////
+    // Bayer Tour
+    ////////////////////////////////////////
+    {
+      title: "Holographic Light Field Displays",
+      image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1793931398/Screenshot_2026-11-05_201443_k3keca.png",
+      cover: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793929514/Looking_Glass_Slack_Hype_260918b_v2iyxs.mp4",
+      category: "Interactive Experience",
+      toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron ",
+      summary: "This video showcases two interactive 3D holographic experiences built for the Looking Glass HLD display. The first is an 86-inch installation in a dedicated room within Bayer’s tour facility in Chesterfield, Missouri. Using Looking Glass’s glasses-free 3D technology, it lets visitors engage with a sequence of interactive scenes, animations, and hands-on interactions that explore the challenges of corn production, including pests, weather conditions, and weeds. Designed to complement the guided tour, it serves as a storytelling tool that helps Bayer’s tour guides communicate complex agricultural concepts in a visually compelling, memorable, and accessible way. The second is a research and development project for an undisclosed floral brand, which uses Gaussian splat technology to capture the true likeness of real flowers and present the company’s catalogue in 3D. It also features deep dives into color variations and plant information for each species.",
+      roleSummary: "On the Bayer project, I served as one of two developers, contributing significantly to core features and interactive functionality. I developed 3D objects and animations, liquid glass and glow effects, and UI interactions for content sequencing and scene transitions, using Electron, React, and React Three Fiber while maintaining performance on the HLD display. On the plant-branding R&D project, I was the sole developer collaborating with a 3D artist, building the experience in PlayCanvas and implementing the Gaussian splat pipeline that brings the flower catalogue to life.",
+      gallery: [
+
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792462106/butterflies_01_fnrsnu.mp4",
+        },        
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792462102/IMG_2200_dcggle.jpg",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793931620/20260826_143531_y2zgdp.mp4",
+        },
+
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792466112/IMG_20260903_104722670_nb2pje.jpg",
+        },
+        {
+          image: "https://vimeo.com/1244030018?fl=tl&fe=ec",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793931802/Frontera_Agency_Stand_Up_5_xqdw26.mp4"
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793931796/Frontera_Agency_Stand_Up_3_wakrrp.mp4",
+        },
+               {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793931755/Flowers_rqugev.mp4",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792466099/IMG_20260903_104632732_n1mnfk.jpg"
+        },
+
+                {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792466125/IMG_20260903_104709327_tupssr.jpg",
+        },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793931777/Frontera_Agency_Stand_Up_2_jl8avx.mp4"
+        },
+      ],
+    },  
+
+    ////////////////////////////////////////
     // FIELD VIEW: FIELD RUSH
     ////////////////////////////////////////
     {
@@ -91,6 +142,49 @@ const Work = () => {
       ],
     },
 
+    ////////////////////////////////////////
+    // ESCAPE ARTIST
+    ////////////////////////////////////////
+    {
+      title: "Escape Artist VR",
+      image:
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792630396/escape_artist_cover_uhkmf1.jpg",
+      cover: "https://vimeo.com/1244018352?fl=tl&fe=ec",
+      category: "Web VR",
+      toolsUsed: "Wonderland Engine | JavaScript | Blender",
+      summary:
+        "Escape Artist is a web XR escape room featuring a narrative about the artist and the muse. In this game, the user must solve a variety of puzzles to unlock and reveal new sections of the map until they win. Escape Artist is featured on the Browser home page of the Meta Quest 2 and was recognized as the People’s Voice Winner for Best Narrative Experience at the 2024 Webby Awards and the WebXR Awards’ Experience of the Year.",
+      roleSummary: "In my role as a developer on this project the puzzles that were my area of focus included the bookcase puzzle and the piano puzzle. Additionally I handled all UI implementation.",
+      gallery: [
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933755/escape-artist_0029_Layer-2_k4hgdz.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta_connect_hrwe4q.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933754/escape-artist_0001_Layer-30_zfycwt.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933753/escape-artist_0016_Layer-15_qz2fod.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933751/escape-artist_0030_Layer-1_maxzpq.png",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933749/escape-artist_0028_Layer-3_yudcmm.png",
+        },
+        {
+          image: "https://vimeo.com/1244022361?fl=tl&fe=ec"
+        }
+      ],
+    },
     ////////////////////////////////////////
     // STL ZOO
     ////////////////////////////////////////
@@ -164,120 +258,45 @@ const Work = () => {
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781665653/preview_booAtZoo_02_xhiupt.mp4",
         },
       ],
-    },
+    },  
 
     ////////////////////////////////////////
-    // AR GALLERY
+    // PURINA ARENA
     ////////////////////////////////////////
     {
-      title: "Augmented Reality Gallery",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1781663044/arcover-100_rgfegi.jpg",
-      category: "Social AR Filters",
-      summary:
-        " This gallery features both my personal and client AR work made both individually with Paradowski Creative. Some projects featured were purely proof-of-concept for proposals only. I was the sole AR developer for each of the following projects, often in collaboration with 3D Artists and Designers for asset development.",
-      toolsUsed: " 8th Wall | Effect House | Lens Studio | Spark AR",
+      title: "Purina Arena Pet Racing",
+      image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792630064/purina_arena_cover_vlmr4h.jpg",
+      cover: "https://vimeo.com/1244019970?fl=tl&fe=ec",
+      category: "Game",
+      toolsUsed: " Roblox | Lua ",
+      summary: "Purina Arena Pet Racing was named a 2025 Webby Honoree in the AI, Immersive & Games category and has reached 3.65M users since launch. The Roblox game lets players race adopted dogs and cats across diverse courses, care for their pets, collect exclusive accessories, and celebrate with emotes. Developed with St. Louis-based Paradowski Creative, the experience makes Purina one of the first pet care companies to launch a branded game on Roblox.",
+      roleSummary:"I contributed as a developer working on key gameplay features and analytics. This was my first Roblox game and when I learned scripting in Lua. ",
       gallery: [
         {
-          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792460501/Snap_Dummen_Orange_flowers_eabm1n.mp4"
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-9_eueahg.jpg",
+        },
+        // {
+        //   image: "https://vimeo.com/1008913904",
+        // },
+        {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-8_wp7hzb.jpg",
         },
         {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663179/FOD_360_cmmtis.mp4",
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-6_n9rryj.jpg",
         },
         {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/DrawToRevealPost_ouja6n.mp4",
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-4_gc7jzy.jpg",
         },
         {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663079/fireflies_kegkjy.mp4",
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-7_qi3rrs.jpg",
+        },
+                {
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-3_hfs5pp.jpg",
         },
         {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663154/zebra_cup_yrqway.mp4",
+          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-5_ccl8ka.jpg",
         },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663127/grey_goos_catcher_wyjrxs.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663124/dancing_cornelius_xfflos.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/crop_collector_fhndmc.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663097/grey_goose_ffxtut.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663083/purina_dog_sizes_hhgyvy.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663056/antler_head_chpmus.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663169/harvest_hayday_ix7qlt.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663185/calavera_gfsn83.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663047/dancingSteve_fqsdkn.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663971/2026-06-13-181944341_mtoivh.mp4",
-        },
-      ],
-    },
 
-    ////////////////////////////////////////
-    // ESCAPE ARTIST
-    ////////////////////////////////////////
-    {
-      title: "Escape Artist",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta-new-tab-image_qufwqt.jpg",
-      cover: "https://vimeo.com/879963837?fl=pl&fe=sh",
-      category: "Web VR",
-      toolsUsed: "Wonderland Engine | JavaScript | Blender",
-      summary:
-        "Escape Artist is a web XR escape room featuring a narrative about the artist and the muse. In this game, the user must solve a variety of puzzles to unlock and reveal new sections of the map until they win. Escape Artist is featured on the Browser home page of the Meta Quest 2 and was recognized as the People’s Voice Winner for Best Narrative Experience at the 2024 Webby Awards and the WebXR Awards’ Experience of the Year.",
-      roleSummary: "In my role as a developer on this project the puzzles that were my area of focus included the bookcase puzzle and the piano puzzle. Additionally I handled all UI implementation.",
-      gallery: [
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933755/escape-artist_0029_Layer-2_k4hgdz.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933745/meta_connect_hrwe4q.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933754/escape-artist_0001_Layer-30_zfycwt.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933753/escape-artist_0016_Layer-15_qz2fod.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933751/escape-artist_0030_Layer-1_maxzpq.png",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933749/escape-artist_0028_Layer-3_yudcmm.png",
-        },
       ],
     },
 
@@ -287,14 +306,22 @@ const Work = () => {
     {
       title: "Adidas x Candace Parker",
       image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933680/Adidas_cover_udhakm.png",
-      cover: "https://vimeo.com/657570533?fl=pl&fe=sh",
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1793932765/Screenshot_2026-11-05_203911_n32ggl.png",
+      cover: "https://vimeo.com/1244022457?fl=tl&fe=ec",
       category: "Web AR",
       summary:
         "For the launch of the Ace Collection, Adidas teamed up with Hovers Over Water to send stylized boxes of shoes and swag to celebrities, influencers, media, and Candace’s close circle.To bring Candace’s brand to life, we created immersive 3D WebAR scenes narrated by Candace, featuring key moments from her life and career, all featuring what makes Ace unique: her story as a hooper, mom, and style icon.The experience included 2D video, interactive 3D scenes, and a custom basketball game that connected fans to Parker’s story and the meaning behind the shoes.What would’ve been a simple shoebox became an engaging, memorable way for Candace’s community and sneaker fans to connect with Ace.",
       roleSummary: "In my role as a developer on this project I was able to focus on a lot of the up front AR research and development from tracking to mini games as well as concept direction. Additionally, I focused on the hoop shooter game and all UI.",
       toolsUsed: "8th Wall ",
-      gallery: [{ image: "https://youtu.be/kzS4q2b8cvE" }],
+      gallery: [
+        { image: "https://youtu.be/kzS4q2b8cvE" },
+        { image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793930145/Card_Stories_Reel_020428_xwtspb.mp4" },
+        { image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793930065/Social_Cutdown_220506_ggkdbt.mp4" },
+        { image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793930046/Intro_Reel_220428_hlverp.mp4" },
+        { image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793929846/Hooper_Game_Reel_220427_xgq69o.mp4" },
+        { image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793929341/Home_Court_Reel_220427_totvdk.mp4" },
+        { image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793929258/Hero_Banner_Video__220428_oqb4wl.mp4" },
+      ],
     },
 
     ////////////////////////////////////////
@@ -383,57 +410,57 @@ const Work = () => {
     ////////////////////////////////////////
     // NYDIA THE BLIND FLOWER GIRL
     ////////////////////////////////////////
-    {
-      title: "Nydia The Blind Flower Girl",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933874/Thumbnail2_kbvk0y.png",
-      cover: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
-      category: "AR VPS Experience",
-      toolsUsed: "Blender | 8th Wall | Illustrator",
-      summary:
-        "We built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
-      roleSummary:
-        "This was an independent personal project that Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative direction together.",
-      credits: "Noah Ilbery | 8th Wall | VIVERSE",
-      gallery: [
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933872/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960_b13yay.jpg",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960_b0wpce.jpg",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960_cp5xmb.jpg",
-        },
-        { image: "https://youtu.be/zYneIDcUDuk?si=G8cLiRKsEDTJ4FgM" },
+    // {
+    //   title: "Nydia The Blind Flower Girl",
+    //   image:
+    //     "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933874/Thumbnail2_kbvk0y.png",
+    //   cover: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
+    //   category: "AR VPS Experience",
+    //   toolsUsed: "Blender | 8th Wall | Illustrator",
+    //   summary:
+    //     "We built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
+    //   roleSummary:
+    //     "This was an independent personal project that Noah Ilbery and I collaborated on together. I acted as the developer for the project, working in Niantic Studio. We both developed the concept and creative direction together.",
+    //   credits: "Noah Ilbery | 8th Wall | VIVERSE",
+    //   gallery: [
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933872/2q1s1fljg6ms73y3zbvhkbooyvxzu69tj0oc9amne1sokmqfikedn68x-540x960_b13yay.jpg",
+    //     },
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2tmaamr215tryukcgrzocq3x4icow7xoatmipkhjstm8yn62qu7racl0-540x960_b0wpce.jpg",
+    //     },
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933871/2dd8jm3vjc20jtbxypods1hf7s7kfmn7kdqt5gy0x8y1pncbil07fol4-540x960_cp5xmb.jpg",
+    //     },
+    //     { image: "https://youtu.be/zYneIDcUDuk?si=G8cLiRKsEDTJ4FgM" },
 
-        { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
-      ],
-    },
+    //     { image: "https://youtu.be/s-_2jrnb2TY?si=wTj-a_6IHqv8pUSL" },
+    //   ],
+    // },
 
     ////////////////////////////////////////
     // HOLIDAY INTERACTIVE MIRROR
     ////////////////////////////////////////
-    {
-      title: "Holiday Interactive Mirror",
-      image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777936128/bylanternlight-3d_bi0gaj.jpg",
-      cover: "https://youtu.be/V-pSNEC5sOo",
-      category: "Local AR",
-      toolsUsed: "Unity",
-      credits: "Paradowski Creative",
-      summary:
-        "For the company Holiday Party, I was asked if we could create an interactive mirror as a fun entertainment piece for the guests. Fitting with the winter woodland theme of the party, I paired with creatives and a 3D artist to bring this idea to life. The interaction works by using a ZED camera for body tracking paired with their Unity SDK to drive the behavior for those tracked movements. The key features of the experience include a proximity-triggered lantern that lights up when guests are near, a deer that turns its attention to users when they approach, and physics-based wobbly trees that interact with the guests’ movements.",
-      roleSummary: "I was the only developer working in collaboration with a Creative Director and 3D Artist to create the content and build this project over just a few weeks. ",
-      gallery: [
-        {
-          image: "https://youtu.be/CnX__dsVq2Y",
-        },
-      ],
-    },
+    // {
+    //   title: "Holiday Interactive Mirror",
+    //   image:
+    //     "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777936128/bylanternlight-3d_bi0gaj.jpg",
+    //   cover: "https://youtu.be/V-pSNEC5sOo",
+    //   category: "Local AR",
+    //   toolsUsed: "Unity",
+    //   credits: "Paradowski Creative",
+    //   summary:
+    //     "For the company Holiday Party, I was asked if we could create an interactive mirror as a fun entertainment piece for the guests. Fitting with the winter woodland theme of the party, I paired with creatives and a 3D artist to bring this idea to life. The interaction works by using a ZED camera for body tracking paired with their Unity SDK to drive the behavior for those tracked movements. The key features of the experience include a proximity-triggered lantern that lights up when guests are near, a deer that turns its attention to users when they approach, and physics-based wobbly trees that interact with the guests’ movements.",
+    //   roleSummary: "I was the only developer working in collaboration with a Creative Director and 3D Artist to create the content and build this project over just a few weeks. ",
+    //   gallery: [
+    //     {
+    //       image: "https://youtu.be/CnX__dsVq2Y",
+    //     },
+    //   ],
+    // },
 
     ////////////////////////////////////////
     // JOURNEY OF A SOYBEAN
@@ -490,6 +517,43 @@ const Work = () => {
       ],
     },
 
+
+    // ////////////////////////////////////////
+    // // CAPSTONE: INTERACTIVE PROJECTION
+    // ////////////////////////////////////////
+    // {
+    //   title: "Capstone: Interactive Projection",
+    //   image:
+    //     "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933721/room1le0027_asl4cl.jpg",
+    //   cover: "https://youtu.be/XvG-k9Gkixg?si=dFY5xspmQGkq1Eru",
+    //   category: "Interactive Exhibit",
+    //   toolsUsed: " Kinect | Electron | Lottie | HTML | CSS | JavaScript ",
+    //   summary:
+    //     "Into the Deep is my Capstone project from my Interactive Design degree at Maryville University. We were prompted to design an app or experience for our capstone, and I wanted to push it even further and ended up creating a fully interactive projection experience. I utilized an Xbox Kinect for body tracking and then formed three different interactive scenes, each featuring a different core interaction and educational content about jellyfish. The idea is that this could exist as an exhibit at a science center, aquarium, or zoo as a form of edutainment. While I would go about this project entirely differently today, I wanted to keep this in my portfolio since I think it’s a fun example of where I started and where my interest in interactive technology really started.",
+    //   roleSummary:
+    //     "As this was my Capstone project independently, concepted, designed, and developed all elements of this project. I also taught myself 3D modeling, node.js, and Electron just to bring this project to life. It was a great creative and learning experience.",
+    //   gallery: [
+    //     {
+    //       image: "https://youtu.be/UOcVpnQenb4",
+    //     },
+    //     {
+    //       image: "https://youtu.be/71qAUVAm1GE",
+    //     },
+    //     {
+    //       image: "https://youtu.be/gT7BWvs8iDs",
+    //     },
+    //     {
+    //       image:
+    //         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933721/pics1_0000_kh2upb.jpg",
+    //     },
+
+    //     // {
+    //     //   image:
+    //     //     "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777935853/pics1_0000_etkuym.jpg",
+    //     // },
+    //   ],
+    // },
+
     ////////////////////////////////////////
     // R&D Projects
     ////////////////////////////////////////
@@ -500,6 +564,17 @@ const Work = () => {
       summary:
         "A collection of research and development projects, exploring different technologies. These projects are not fully polished client work, but explorations and fun creations simply for the sake of learning.",
       subsections: [
+
+        {
+          subTitle: "Interactive Holiday Mirror",
+          subSummary: "For the company Holiday Party, I was asked if we could create an interactive mirror as a fun entertainment piece for the guests. Fitting with the winter woodland theme of the party, I paired with creatives and a 3D artist to bring this idea to life. The interaction works by using a ZED camera for body tracking paired with their Unity SDK to drive the behavior for those tracked movements. The key features of the experience include a proximity-triggered lantern that lights up when guests are near, a deer that turns its attention to users when they approach, and physics-based wobbly trees that interact with the guests’ movements.",
+          subContent: "https://youtu.be/V-pSNEC5sOo",
+        },
+        {
+          subTitle: "Nydia The Blind Flower Girl |  VPS Grand Prize for 8th Wall's Real World Impact Challenge",
+          subSummary: "As a duo, my partner and I built an immersive educational AR experience demo using VPS and Gaussian splats, featuring the Nydia statue at Saint Louis Art Museum for our submission to 8th Wall's Real World Impact Challenge. The experience transports users to a moment in time where they can step into and explore to experience the chaos of the eruption of Mt. Vesuvius with Nydia. We used VPS to anchor the AR content to the statue in real-time. We 3D modeled the imagined environment around Nydia in her story, and then to further push the realism we digitally photo-scanned the model and created a .ply Gaussian splat of it to capture a high level of detail. We then converted this .ply to an .spz to make it compatible with 8th Wall's Studio to bring it into our scene. The scene also features spatial audio, informational ui, and voiceover narration to fully engage the user. Nydia has won the VPS Grand Prize for 8th Wall's Real World Impact Challenge. This Prize is awarded to the entry that best integrates VPS technology to create an engaging, real-world AR experience that connects players with their surroundings in a new and interactive way.",
+          subContent: "https://youtu.be/hjyRgRD9OmU?si=8qvvpj_VIZ29Otxd",
+        },
         {
           subTitle: "AR Coloring Sheets ",
           subSummary:
@@ -512,11 +587,11 @@ const Work = () => {
           subSummary: " A fun R&D project to celebrate the Saint Louis Cardinals' opening day, exploring Snap's AR technology and pushing it into more of an interactive kiosk game experience. The team consisted of just me as the developer and a 3D artist to build assets. We collaborated to imagine an AR-powered baseball batting game, which became more of a bunting game. The pitcher is a 3D scan of one of our Creative Directors, rigged and animated, where the ball is pitched to one random zone and the hit point of the bat has to align with that zone in time to qualify as a hit.",
           subContent: "https://youtu.be/JzNK8h-Fh5E",
         },
-        {
-          subTitle: "Godot Mini Games",
-          subSummary: "As a way to begin learning Godot, two potential mini-game proof of concepts were developed for a Kiosk display at a trade show event. The first game mechanic has players tap to plant crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops.",
-          subContent: "https://youtu.be/kthB-pwudRo",
-        },
+        // {
+        //   subTitle: "Godot Mini Games",
+        //   subSummary: "As a way to begin learning Godot, two potential mini-game proof of concepts were developed for a Kiosk display at a trade show event. The first game mechanic has players tap to plant crops in all the correct plots without hitting any wrong spots before time runs out. In the second game, the user must tap bugs to keep them off their crops.",
+        //   subContent: "https://youtu.be/kthB-pwudRo",
+        // },
         {
           subTitle: "3D Interactive Scene",
           subSummary: "A Playcanvas experiment for an RFP to create a multi-platform informational web experience. The interaction features a main intro scene with a hotspot, and then two sub scenes featuring information about above and below-ground technology, each with different 3D content, a 360 environment, and functionality across multiple device types and sizes.",
@@ -527,117 +602,79 @@ const Work = () => {
     },
 
     ////////////////////////////////////////
-    // CAPSTONE: INTERACTIVE PROJECTION
+    // AR GALLERY
     ////////////////////////////////////////
     {
-      title: "Capstone: Interactive Projection",
+      title: "Augmented Reality Gallery",
       image:
-        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933721/room1le0027_asl4cl.jpg",
-      cover: "https://youtu.be/XvG-k9Gkixg?si=dFY5xspmQGkq1Eru",
-      category: "Interactive Exhibit",
-      toolsUsed: " Kinect | Electron | Lottie | HTML | CSS | JavaScript ",
+        "https://res.cloudinary.com/dmdjguh0a/image/upload/v1781663044/arcover-100_rgfegi.jpg",
+      category: "Social AR Filters",
       summary:
-        "Into the Deep is my Capstone project from my Interactive Design degree at Maryville University. We were prompted to design an app or experience for our capstone, and I wanted to push it even further and ended up creating a fully interactive projection experience. I utilized an Xbox Kinect for body tracking and then formed three different interactive scenes, each featuring a different core interaction and educational content about jellyfish. The idea is that this could exist as an exhibit at a science center, aquarium, or zoo as a form of edutainment. While I would go about this project entirely differently today, I wanted to keep this in my portfolio since I think it’s a fun example of where I started and where my interest in interactive technology really started.",
-      roleSummary:
-        "As this was my Capstone project independently, concepted, designed, and developed all elements of this project. I also taught myself 3D modeling, node.js, and Electron just to bring this project to life. It was a great creative and learning experience.",
+        " This gallery features both my personal and client AR work made both individually with Paradowski Creative. Some projects featured were purely proof-of-concept for proposals only. I was the sole AR developer for each of the following projects, often in collaboration with 3D Artists and Designers for asset development.",
+      toolsUsed: " 8th Wall | Effect House | Lens Studio | Spark AR",
       gallery: [
         {
-          image: "https://youtu.be/UOcVpnQenb4",
-        },
-        {
-          image: "https://youtu.be/71qAUVAm1GE",
-        },
-        {
-          image: "https://youtu.be/gT7BWvs8iDs",
+          image: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792460501/Snap_Dummen_Orange_flowers_eabm1n.mp4"
         },
         {
           image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933721/pics1_0000_kh2upb.jpg",
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663179/FOD_360_cmmtis.mp4",
         },
-
         {
           image:
-            "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777935853/pics1_0000_etkuym.jpg",
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/DrawToRevealPost_ouja6n.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663079/fireflies_kegkjy.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663154/zebra_cup_yrqway.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663127/grey_goos_catcher_wyjrxs.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663124/dancing_cornelius_xfflos.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/crop_collector_fhndmc.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663097/grey_goose_ffxtut.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663083/purina_dog_sizes_hhgyvy.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663056/antler_head_chpmus.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663169/harvest_hayday_ix7qlt.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663185/calavera_gfsn83.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663047/dancingSteve_fqsdkn.mp4",
+        },
+        {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663971/2026-06-13-181944341_mtoivh.mp4",
         },
       ],
     },
 
-    ////////////////////////////////////////
-    // PURINA ARENA
-    ////////////////////////////////////////
-    {
-      title: "Purina Arena Pet Racing",
-      image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459632/Screenshot_2026-05-21_at_3.05.27_PM_yobs7r.png",
-      cover: "https://vimeo.com/paradowski/purina-arena-preview?share=copy&fl=cl&fe=ci",
-      category: "Game",
-      toolsUsed: " Roblox | Lua ",
-      summary: "Purina Arena Pet Racing was named a 2025 Webby Honoree in the AI, Immersive & Games category and has reached 3.65M users since launch. The Roblox game lets players race adopted dogs and cats across diverse courses, care for their pets, collect exclusive accessories, and celebrate with emotes. Developed with St. Louis-based Paradowski Creative, the experience makes Purina one of the first pet care companies to launch a branded game on Roblox.",
-      roleSummary:"I contributed as a developer working on key gameplay features and analytics. This was my first Roblox game and when I learned scripting in Lua. ",
-      gallery: [
-        {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-9_eueahg.jpg",
-        },
-        {
-          image: "https://vimeo.com/1008913904",
-        },
-        {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-8_wp7hzb.jpg",
-        },
-        {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459693/paradowski-purina-arena-6_n9rryj.jpg",
-        },
-        {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-4_gc7jzy.jpg",
-        },
-        {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-7_qi3rrs.jpg",
-        },
-                {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-3_hfs5pp.jpg",
-        },
-        {
-          image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792459694/paradowski-purina-arena-5_ccl8ka.jpg",
-        },
-
-      ],
-    },
-
-    ////////////////////////////////////////
-    // Bayer Tour
-    ////////////////////////////////////////
-    {
-      title: "Bayer Tour Interactive Display",
-      image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1792462102/IMG_2200_dcggle.jpg",
-      cover: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1792462106/butterflies_01_fnrsnu.mp4",
-      category: "Interactive Experience",
-      toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron ",
-      summary: "More visual content coming soon! This project features an interactive 3D holographic experience designed for an 86-inch Looking Glass HLD display in a dedicated room within Bayer’s tour facility in Chesterfield, Missouri. Leveraging Looking Glass’s immersive display technology, the experience creates a striking, glasses-free 3D visual environment that brings agricultural content to life. Unlike traditional holographic displays that focus primarily on visual presentation, this experience allows visitors to actively engage with the content through a sequence of interactive 3D scenes, animations, and hands-on interactions at each stage. The content explores key aspects of corn production, including pests, weather conditions, and weeds, providing an engaging and informative look at the challenges and factors that influence crop growth. Designed to complement and enhance the guided tour experience, the installation serves as an interactive storytelling tool for Bayer’s tour guides, helping them communicate complex agricultural concepts in a visually compelling, memorable, and accessible way.",
-      roleSummary: "Served as one of two developers, contributing significantly to core features and interactive functionality. Developed 3D objects and animations, liquid glass and glow effects, and UI interactions for content sequencing and scene transitions. Built with Electron, React, and React Three Fiber, with a focus on delivering visually rich, interactive 3D content while maintaining performance on the Looking Glass HLD display.",
-      gallery: [
-        {
-          image: "",
-        },
-      ],
-    },
-
-    ////////////////////////////////////////
-    // FIELD VIEW AR 
-    ////////////////////////////////////////
-    //     {
-    //   title: "Field View",
-    //   image:
-    //     "",
-    //   cover: "",
-    //   category: "Augmented Reality",
-    //   toolsUsed: " Effect House | TikTok | 8th Wall ",
-    //   summary: "",
-    //   roleSummary: "",
-    //   gallery: [
-    //     {
-    //       image: "",
-    //     },
-    //   ],
-    // },
   ];
 
   const location = useLocation();
