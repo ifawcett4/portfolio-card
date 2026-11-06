@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../stylesheets/work.scss";
 import SceneCanvas from "../components/ThreeScene";
@@ -33,10 +33,10 @@ const Work = () => {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664451/2025-01-06-114956882_debhqc.mp4",
         },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
-        },
+        // {
+        //   image:
+        //     "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664450/2025-01-07-110040575_smvwng.mp4",
+        // },
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664418/2025-01-06-115117627_gqfhfg.mp4",
@@ -44,6 +44,10 @@ const Work = () => {
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664421/dc821b9e2ea1ced326c223c238f6214f_rdd0gt.mp4",
+        },
+                {
+          image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
         },
         {
           image:
@@ -53,10 +57,6 @@ const Work = () => {
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664386/8d7e11ad5eb2df514aededf6732aa5b8_knjdy5.mp4",
-        },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781664429/8e7be810-3e56-41e8-8675-daaa6cbc1c71_zngo1j.mp4",
         },
       ],
     },
@@ -69,7 +69,7 @@ const Work = () => {
       image: "https://res.cloudinary.com/dmdjguh0a/image/upload/v1793931398/Screenshot_2026-11-05_201443_k3keca.png",
       cover: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793929514/Looking_Glass_Slack_Hype_260918b_v2iyxs.mp4",
       category: "Interactive Experience",
-      toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron ",
+      toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron | PlayCanvas",
       summary: "This video showcases two interactive 3D holographic experiences built for the Looking Glass HLD display. The first is an 86-inch installation in a dedicated room within Bayer’s tour facility in Chesterfield, Missouri. Using Looking Glass’s glasses-free 3D technology, it lets visitors engage with a sequence of interactive scenes, animations, and hands-on interactions that explore the challenges of corn production, including pests, weather conditions, and weeds. Designed to complement the guided tour, it serves as a storytelling tool that helps Bayer’s tour guides communicate complex agricultural concepts in a visually compelling, memorable, and accessible way. The second is a research and development project for an undisclosed floral brand, which uses Gaussian splat technology to capture the true likeness of real flowers and present the company’s catalogue in 3D. It also features deep dives into color variations and plant information for each species.",
       roleSummary: "On the Bayer project, I served as one of two developers, contributing significantly to core features and interactive functionality. I developed 3D objects and animations, liquid glass and glow effects, and UI interactions for content sequencing and scene transitions, using Electron, React, and React Three Fiber while maintaining performance on the HLD display. On the plant-branding R&D project, I was the sole developer collaborating with a 3D artist, building the experience in PlayCanvas and implementing the Gaussian splat pipeline that brings the flower catalogue to life.",
       gallery: [
@@ -618,16 +618,17 @@ const Work = () => {
         },
         {
           image:
+            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663079/fireflies_kegkjy.mp4",
+        },
+        {
+          image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663179/FOD_360_cmmtis.mp4",
         },
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663101/DrawToRevealPost_ouja6n.mp4",
         },
-        {
-          image:
-            "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663079/fireflies_kegkjy.mp4",
-        },
+
         {
           image:
             "https://res.cloudinary.com/dmdjguh0a/video/upload/v1781663154/zebra_cup_yrqway.mp4",
@@ -740,6 +741,33 @@ const Work = () => {
     if (!selectedItem || !selectedItem.cover) {
       setModalLoading(false);
     }
+  }, [modalOpen, selectedItem]);
+
+  useLayoutEffect(() => {
+    if (!modalOpen) return;
+
+    const modal = document.querySelector(".modal-content");
+    if (!modal) return;
+
+    modal.querySelectorAll("video").forEach((video) => {
+      video.muted = true;
+      video.play().catch(() => {});
+    });
+
+    return () => {
+      modal.querySelectorAll("video").forEach((video) => {
+        video.pause();
+        video.removeAttribute("src");
+        video.querySelectorAll("source").forEach((source) => {
+          source.removeAttribute("src");
+        });
+        video.load();
+      });
+
+      modal.querySelectorAll("iframe").forEach((iframe) => {
+        iframe.src = "about:blank";
+      });
+    };
   }, [modalOpen, selectedItem]);
 
   useEffect(() => {
@@ -1065,6 +1093,7 @@ const Work = () => {
                               key={idx}
                               src={url}
                               controls
+                              autoPlay
                               muted
                               preload="metadata"
                               loop
@@ -1167,6 +1196,7 @@ const Work = () => {
                           <video
                             src={url}
                             controls
+                            autoPlay
                             muted
                             preload="metadata"
                             loop
