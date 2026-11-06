@@ -22,7 +22,7 @@ const isMobile = navigator.userAgentData.mobile; //resolves true/false
       const [tx, ty, tz] = targetRotation;
       groupRef.current.rotation.set(tx, ty, tz);
     }
-  }, [targetRotation]);
+  }, [targetRotation[0], targetRotation[1], targetRotation[2]]);
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;
@@ -41,6 +41,11 @@ const isMobile = navigator.userAgentData.mobile; //resolves true/false
 
 export default function SceneCanvas() {
   const location = useLocation();
+  // Treat project modal URLs as the Work page so opening/closing a modal
+  // doesn't remount the spirals or restart their transition.
+  const currentPage = location.pathname.startsWith("/work")
+    ? "/work"
+    : location.pathname;
   const isHomePage = location.pathname === "/";
   const targetRef = useRef([Math.PI / 6, 0, 0]);
   const [loadedSpirals, setLoadedSpirals] = useState(0);
@@ -92,7 +97,7 @@ export default function SceneCanvas() {
 
   useEffect(() => {
     setLoadedSpirals(0);
-  }, [location.pathname]);
+  }, [currentPage]);
 
   const handleSpiralLoaded = () => {
     setLoadedSpirals((loadedCount) => Math.min(loadedCount + 1, COUNT));
@@ -172,7 +177,7 @@ export default function SceneCanvas() {
         <RotatingGroup targetRotation={bannerRot} scale={isMobile ? [0.2, 0.2, 0.2] : [0.3, 0.3, 0.3]}>
           {Array.from({ length: COUNT }).map((_, index) => (
             <Spiral
-              key={`${location.pathname}-billboard-${index}`}
+              key={`${currentPage}-billboard-${index}`}
               onLoaded={handleSpiralLoaded}
               radius={8}
               targetRotationY={index * spiralRotationMultiplier}

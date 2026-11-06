@@ -19,7 +19,7 @@ const Work = () => {
     // SESAME STREET
     ////////////////////////////////////////
     {
-      title: "Sesame Street Social Media Filters",
+      title: "Sesame Street Social Filters",
       image:
         "https://res.cloudinary.com/dmdjguh0a/image/upload/v1777933916/elmocover-100_vw82vj.jpg",
       category: "AR Filters",
@@ -711,6 +711,17 @@ const Work = () => {
     navigate("/work");
   };
 
+  const navigateToAdjacentProject = (direction) => {
+    const currentIndex = itemsWithSlugs.findIndex(
+      (item) => item.slug === selectedItem?.slug,
+    );
+    if (currentIndex === -1) return;
+
+    const nextIndex =
+      (currentIndex + direction + itemsWithSlugs.length) % itemsWithSlugs.length;
+    navigate(`/work/project/${itemsWithSlugs[nextIndex].slug}`);
+  };
+
   const handleModalMediaReady = () => {
     setModalLoading(false);
   };
@@ -1244,13 +1255,45 @@ const Work = () => {
                   </>
                 )}
             </div>
-            <button
-              type="button"
-              className="back-to-gallery-btn"
-              onClick={closeModal}
-            >
-              Back to gallery
-            </button>
+            <div className="modal-navigation">
+              <button
+                type="button"
+                className="modal-navigation-btn"
+                onClick={() => navigateToAdjacentProject(-1)}
+                aria-label="Previous project"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M199.7 299.8C189.4 312.4 190.2 330.9 201.9 342.6L329.9 470.6C339.1 479.8 352.8 482.5 364.8 477.5C376.8 472.5 384.6 460.9 384.6 447.9L384.6 191.9C384.6 179 376.8 167.3 364.8 162.3C352.8 157.3 339.1 160.1 329.9 169.2L201.9 297.2L199.7 299.6z" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                className="back-to-gallery-btn"
+                onClick={closeModal}
+              >
+                Back to gallery
+              </button>
+              <button
+                type="button"
+                className="modal-navigation-btn modal-navigation-btn-next"
+                onClick={() => navigateToAdjacentProject(1)}
+                aria-label="Next project"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M199.7 299.8C189.4 312.4 190.2 330.9 201.9 342.6L329.9 470.6C339.1 479.8 352.8 482.5 364.8 477.5C376.8 472.5 384.6 460.9 384.6 447.9L384.6 191.9C384.6 179 376.8 167.3 364.8 162.3C352.8 157.3 339.1 160.1 329.9 169.2L201.9 297.2L199.7 299.6z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       )}
