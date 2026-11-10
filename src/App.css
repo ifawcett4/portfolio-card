@@ -11,6 +11,18 @@ html {
   --type-display: 2.058rem;
   --type-hero: 2.618rem;
   --type-jumbo: 4.236rem;
+
+  @media only screen and (min-width: 1200px) {
+    /* Golden-ratio type scale, in half-steps for a smoother hierarchy. */
+    --type-small: calc(0.786rem * 1.1);
+    --type-base: calc(0.9rem * 1.1);
+    --type-large: calc(1.272rem * 1.1);
+    --type-heading: calc(1.618rem * 1.1);
+    --type-display: calc(2.058rem * 1.1);
+    --type-hero: calc(2.618rem * 1.1);
+    --type-jumbo: calc(4.236rem * 1.1);
+  }
+
 }
 
 /* SCSS HEX */
@@ -41,7 +53,6 @@ h4,
 h5,
 h6 {
     font-family: "Oxanium", sans-serif;
-
   line-height: 1.2;
 }
 
@@ -230,6 +241,7 @@ ul {
   font-style: normal;
   position: absolute;
   width: 100%;
+  max-width: 1440px;
   height: 100%;
   left: 50%;
   top: 50%;
