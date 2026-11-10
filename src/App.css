@@ -97,6 +97,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -124,6 +125,9 @@ ul {
   width: 1.5rem;
   height: 1.5rem;
   fill: currentColor;
+  padding: 0;
+  margin: 0;
+  transform: translate(0, 10%);
 }
 
 .nav-link:hover {
@@ -136,19 +140,27 @@ ul {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 1px;
   bottom: 0;
   left: 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgb(255, 106, 0),
     rgb(244, 203, 21),
     rgb(30, 255, 60),
     rgb(0, 41, 206)
+  ); */
+    background: linear-gradient(
+    to right,
+    rgb(196, 208, 255),
+    rgb(188, 201, 255)
   );
+
+  
+  
   /* background: linear-gradient(to right, rgb(225, 44, 87), rgb(147, 69, 231), rgb(48, 132, 216), rgb(1, 235, 227)); */
 
-  transition: transform 0.33s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .nav-link:hover::after {

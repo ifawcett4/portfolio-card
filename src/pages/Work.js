@@ -70,7 +70,7 @@ const Work = () => {
       cover: "https://res.cloudinary.com/dmdjguh0a/video/upload/v1793929514/Looking_Glass_Slack_Hype_260918b_v2iyxs.mp4",
       category: "Interactive Experience",
       toolsUsed: " Web | HTML | CSS | JavaScript | React Three Fiber | Electron | PlayCanvas",
-      summary: "This video showcases two interactive 3D holographic experiences built for the Looking Glass HLD display. The first is an 86-inch installation in a dedicated room within Bayer’s tour facility in Chesterfield, Missouri. Using Looking Glass’s glasses-free 3D technology, it lets visitors engage with a sequence of interactive scenes, animations, and hands-on interactions that explore the challenges of corn production, including pests, weather conditions, and weeds. Designed to complement the guided tour, it serves as a storytelling tool that helps Bayer’s tour guides communicate complex agricultural concepts in a visually compelling, memorable, and accessible way. The second is a research and development project for an undisclosed floral brand, which uses Gaussian splat technology to capture the true likeness of real flowers and present the company’s catalogue in 3D. It also features deep dives into color variations and plant information for each species.",
+      summary: "This video showcases two interactive 3D holographic experiences built for the Looking Glass HLD display. The first is an 86-inch installation in a dedicated room within Bayer’s tour facility in Chesterfield, Missouri. Using Looking Glass’s holographic technology, it lets visitors engage with a sequence of interactive scenes that explore the challenges of corn production, including pests, weather conditions, and weeds. It serves as a storytelling tool that helps Bayer’s tour guides communicate complex agricultural concepts in a visually compelling, memorable, and accessible way. The second is a research and development project for an undisclosed floral brand, which uses Gaussian Splat technology to capture the true likeness of real flowers and present the company’s catalogue in 3D. It also features deep dives into color variations and plant information for each species.",
       roleSummary: "On the Bayer project, I served as one of two developers, contributing significantly to core features and interactive functionality. I developed 3D objects and animations, liquid glass and glow effects, and UI interactions for content sequencing and scene transitions, using Electron, React, and React Three Fiber while maintaining performance on the HLD display. On the plant-branding R&D project, I was the sole developer collaborating with a 3D artist, building the experience in PlayCanvas and implementing the Gaussian splat pipeline that brings the flower catalogue to life.",
       gallery: [
 
@@ -844,10 +844,10 @@ const Work = () => {
       <div className="work-page">
         {/* Video at the top */}
         <div className="video-container">
-          {/* <video controls className="work-video">
-          <source src="https://files.catbox.moe/uay7us.mp4" type="video/mp4" />
+          <video controls className="work-video">
+          <source src="https://res.cloudinary.com/dmdjguh0a/video/upload/v1794271437/IMF_REEL_2026_001_wloip9.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video> */}
+        </video>
         </div>
 
         {/* Grid with customizable items */}
