@@ -845,9 +845,12 @@ const Work = () => {
         {/* Video at the top */}
         <div className="video-container">
           <video controls className="work-video">
-          <source src="https://res.cloudinary.com/dmdjguh0a/video/upload/v1794271437/IMF_REEL_2026_001_wloip9.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+            <source src="https://res.cloudinary.com/dmdjguh0a/video/upload/v1794271437/IMF_REEL_2026_001_wloip9.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="work-header-caption" aria-label="Turning brands and products into experiences">
+            <p>turning your brands and products into experiences people want to play with.</p>
+          </div>
         </div>
 
         {/* Grid with customizable items */}
