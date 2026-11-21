@@ -871,7 +871,8 @@ const Work = () => {
                   decoding="async"
                 />
                 <div className="gradient"></div>
-                <h3 className="grid-item-title">{item.title}</h3>
+                                <h3 className="grid-item-title">{item.title}</h3>
+
               </div>
             </div>
           ))}

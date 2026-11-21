@@ -1,11 +1,14 @@
 .contact-page {
   box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   color: #d0e4ff;
 
   .contact-form {

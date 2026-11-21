@@ -175,12 +175,10 @@ const About = () => {
                 <h2> Hi! I’m Irina!</h2>
                 <p className="body-text">
                   I’m a Creative Technologist with five years of
-                  agency experience working in immersive technology and a
-                  specialized focus in Augmented Reality. But really, I’m just
+                  agency experience working in immersive technology to create engaging and memorable digital experiences for brands. But really, I’m just
                   someone who can’t pick between design and development and loves
                   making cool things. The more interactive and immersive the
-                  better! I enjoy dabbling in 3D, web, XR, and interactive
-                  installations.
+                  better!
                 </p>
                 <p className="body-text">
                   Outside of work, I continue to explore creative technology

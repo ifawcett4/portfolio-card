@@ -3,7 +3,7 @@ import "../stylesheets/work.scss";
 
 const Home = () => {
   return (
-    <div className="home-page">
+    <div>
       <div className="home-text">
         {/* <h1 className="home-title">Irina Fawcett</h1> */}
         {/* <h2 className="home-subtitle">
